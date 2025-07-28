@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eméride Djivoessoun | Expert Support IT & Vidéosurveillance</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            background-color: #f9fafb;
+        }
+        .hero-bg {
+            background: linear-gradient(90deg, rgba(31, 41, 55, 0.9), rgba(31, 41, 55, 0.7)), url('https://www.apogea.fr/wp-content/uploads/2024/05/Mathilde.B-Brouillons-2024-05-27T183658.233.webp');
+            background-size: cover;
+            background-position: center;
+        }
+        .section {
+            padding: 4rem 0;
+        }
+        .card {
+            transition: all 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        .timeline-item {
+            position: relative;
+            padding-left: 40px;
+            margin-bottom: 50px;
+        }
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background-color: #3B82F6;
+        }
+        .timeline-item:after {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 0;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: #3B82F6;
+        }
+        .skill-bar {
+            height: 10px;
+            border-radius: 5px;
+            background-color: #e5e7eb;
+            margin-bottom: 20px;
+        }
+        .skill-progress {
+            height: 100%;
+            border-radius: 5px;
+            background-color: #3B82F6;
+        }
+        .service-item {
+            border-left: 4px solid #3B82F6;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header/Hero Section -->
+    <header class="hero-bg text-white min-h-screen flex flex-col justify-center">
+        <div class="container mx-auto px-4 py-16">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <h1 class="text-5xl font-bold mb-4">EMÉRIDE GBÈTOHO DJIVOESSOUN</h1>
+                    <h2 class="text-3xl mb-6">Technicien Réseau et Système</h2>
+                    <p class="text-xl mb-8">Support IT - Déploiement, Maintenance & Support sur mesure | Technicien Réseau et Système</p>
+                    <div class="flex space-x-4">
+                        <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                            Me contacter
+                        </a>
+                        <a href="#services" class="bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                            Mes services
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/3 flex justify-center">
+                    <img src="https://i.pinimg.com/1200x/f3/a7/2d/f3a72d25240c6abe79419dac5ec245d9.jpg" alt="Support IT" class="rounded-full w-64 h-64 object-cover shadow-2xl">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="section bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">À Propos</h2>
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/4 mb-6 md:mb-0">
+                    <img src="https://i.pinimg.com/736x/dc/99/00/dc99000647f5a63cd872afea077f5274.jpg" alt="Technicien maintenance" class="rounded-lg shadow-xl w-medium">
+                </div>
+                <div class="md:w-1/2 md:pl-10">
+                    <h3 class="text-2xl font-bold mb-4">Technicien Réseau et Système Passionné</h3>
+                    <p class="text-gray-700 mb-6">
+                        Je suis un professionnel du support IT avec une solide expérience dans la maintenance, le déploiement et le support informatique sur mesure. Ma spécialisation en sécurité des réseaux et systèmes me permet d'offrir des solutions complètes et adaptées aux besoins spécifiques de chaque client.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 mb-6">
+                        <div>
+                            <p class="font-bold">Nom:</p>
+                            <p class="text-gray-700">Eméride Gbètoho Djivoessoun</p>
+                        </div>
+                        <div>
+                            <p class="font-bold">Spécialité:</p>
+                            <p class="text-gray-700">Spécialisé dans le câblage réseau, l’installation de camera de surveimmance, le déploiement de solutions IT sur site,support technique utilisateur, la maintenance préventive et curative des postes de travail ainsi que la gestion des incidents réseau</p>
+                        </div>
+                        <div>
+                            <p class="font-bold">Expérience:</p>
+                            <p class="text-gray-700">+3 ans</p>
+                        </div>
+                        <div>
+                            <p class="font-bold">Disponibilité:</p>
+                            <p class="text-gray-700">Immédiate</p>
+                        </div>
+                    </div>
+                    <div class="flex space-x-4">
+                        <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300">
+                            Contact
+                        </a>
+                        <a href="#experience" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded transition duration-300">
+                            Expérience
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Compétences Techniques</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div>
+                    <h3 class="text-xl font-bold mb-6">Compétences Techniques</h3>
+                    
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-1">
+                            <span class="font-semibold">Windows (11 et antérieur)</span>
+                            <span>95%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 95%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-1">
+                            <span class="font-semibold">Microsoft Office (365 et antérieur)</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-1">
+                            <span class="font-semibold">Protocoles réseaux</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-1">
+                            <span class="font-semibold">Maintenance informatique</span>
+                            <span>95%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 95%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-1">
+                            <span class="font-semibold">Anglais technique</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-1">
+                            <span class="font-semibold">Logiciels de réunion</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-6">Synthèse des Compétences</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-white p-5 rounded-lg shadow-md card">
+                            <div class="text-blue-600 text-3xl mb-2">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                            <h4 class="font-bold mb-2">Support Technique</h4>
+                            <p class="text-gray-600">Assistance utilisateurs, résolution de problèmes, gestion des incidents</p>
+                        </div>
+                        
+                        <div class="bg-white p-5 rounded-lg shadow-md card">
+                            <div class="text-blue-600 text-3xl mb-2">
+                                <i class="fas fa-network-wired"></i>
+                            </div>
+                            <h4 class="font-bold mb-2">Réseaux</h4>
+                            <p class="text-gray-600">Configuration, maintenance, dépannage, protocoles réseaux</p>
+                        </div>
+                        
+                        <div class="bg-white p-5 rounded-lg shadow-md card">
+                            <div class="text-blue-600 text-3xl mb-2">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h4 class="font-bold mb-2">Sécurité</h4>
+                            <p class="text-gray-600">Vidéosurveillance, sécurisation des réseaux, contrôle d'accès</p>
+                        </div>
+                        
+                        <div class="bg-white p-5 rounded-lg shadow-md card">
+                            <div class="text-blue-600 text-3xl mb-2">
+                                <i class="fas fa-video"></i>
+                            </div>
+                            <h4 class="font-bold mb-2">Vidéosurveillance</h4>
+                            <p class="text-gray-600">Installation et configuration de systèmes Huawei et HIKVISION</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Expérience Professionnelle</h2>
+            <div class="max-w-3xl mx-auto">
+                <div class="timeline-item">
+                    <div class="mb-2">
+                        <span class="bg-blue-600 text-white text-sm py-1 px-3 rounded-full">Déc. 2024 - Présent</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-1">Support IT</h3>
+                    <h4 class="text-gray-700 mb-2">NEXERA - Cotonou</h4>
+                    <p class="text-gray-600">
+                        Assistance aux téléconseillers et superviseurs en cas de panne (PC, logiciels, casques, téléphones VoIP)                    </p>
+                    <p class="text-gray-600">
+                        Installation, configuration et mise à jour des postes de travail                  </p>
+                    <p class="text-gray-600">
+                        Résolution des problèmes de connexion aux applications métiers et aux bases de données clients
+                    </p>
+                    <p class="text-gray-600">
+                         Gestion des systèmes de gestion des appels (CRM)
+                    </p>
+                    <p class="text-gray-600">
+                        Surveillance des fichiers d'attente et de la qualité des appels
+                    <p class="text-gray-600">
+                       Support comptes & accès (gestion des identifiants, réinitialisation de mots de passe)
+                    </p>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="mb-2">
+                        <span class="bg-blue-600 text-white text-sm py-1 px-3 rounded-full">Avril 2024 - Déc. 2024</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-1">Stage Professionnel</h3>
+                    <h4 class="text-gray-700 mb-2">Atlantique Assurances - Cotonou</h4>
+                    <p class="text-gray-600">
+                        Résolution des problèmes liés au système d'information, à la bureautique des employés, au WiFi et à la VoIP                    </p>
+		    <p class="text-gray-600">
+                        Diagnostic et dépannage des pannes
+                    </p>
+		    <p class="text-gray-600">
+                       Configuration d'imprimantes et création de comptes utilisateurs.
+                    </p>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="mb-2">
+                        <span class="bg-blue-600 text-white text-sm py-1 px-3 rounded-full">2022 - Présent</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-1">Prestataire IT (Temps Partiel)</h3>
+                    <h4 class="text-gray-700 mb-2">Huawei Technologies Benin S.A - Cotonou</h4>
+                    <p class="text-gray-600">
+                        Installation, maintenance et configuration de caméras de surveillance (Huawei et HIKVISION)                    </p>
+		    <p class="text-gray-600">
+                        Câblage réseau et mise en place de gestionnaires de présence (ZK TIME).
+                    </p>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="mb-2">
+                        <span class="bg-blue-600 text-white text-sm py-1 px-3 rounded-full">Mai 2022 - Nov. 2023</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-1">Volontariat à l'Insertion Professionnelle</h3>
+                    <h4 class="text-gray-700 mb-2">ABMS - Cotonou</h4>
+                    <p class="text-gray-600">
+                        Résolution des problèmes liés au système d'information, à la bureautique et au réseau                    </p>
+		    <p class="text-gray-600">
+                        Diagnostic, dépannage et installation de nouveau matériel                    </p>
+		    <p class="text-gray-600">
+                        Maintenance préventive des ordinateurs.
+                    </p>
+                </div>
+
+		 <div class="timeline-item">
+                    <div class="mb-2">
+                        <span class="bg-blue-600 text-white text-sm py-1 px-3 rounded-full">Jan. 2022 -  Mai 2022</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-1">Stagiaire Sécurité Réseau et DevOps</h3>
+                    <h4 class="text-gray-700 mb-2">Soft Innovation Technologies -  Cotonou</h4>
+                    <p class="text-gray-600">
+                        Configuration de téléphones IP et NVR.
+                    </p>
+		    <p class="text-gray-600">
+                        Installation de caméras de surveillance, câblage et mise en place de salles serveur
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md card">
+                    <div class="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center text-blue-600 text-2xl mb-4">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Installation de Caméras de Surveillance</h3>
+                    <p class="text-gray-600 mb-4">
+                        Installation professionnelle de systèmes de vidéosurveillance Huawei et HIKVISION, incluant le câblage, la configuration et la formation.
+                    </p>
+                    <div class="mt-4">
+                        <img src="https://i.pinimg.com/736x/f3/a7/2d/f3a72d25240c6abe79419dac5ec245d9.jpg" alt="Installation caméra" class="w-full h-48 object-cover rounded-lg">
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md card">
+                    <div class="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center text-blue-600 text-2xl mb-4">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Support Réseau et Système</h3>
+                    <p class="text-gray-600 mb-4">
+                        Diagnostic, installation et maintenance de systèmes informatiques et réseaux pour entreprises et particuliers.
+                    </p>
+                    <div class="mt-4">
+                        <img src="https://www.apogea.fr/wp-content/uploads/2024/05/Mathilde.B-Brouillons-2024-05-27T183658.233.webp" alt="Support réseau" class="w-full h-48 object-cover rounded-lg">
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md card">
+                    <div class="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center text-blue-600 text-2xl mb-4">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Support Utilisateurs</h3>
+                    <p class="text-gray-600 mb-4">
+                        Assistance technique pour vos collaborateurs, résolution de problèmes et formation sur les outils informatiques.
+                    </p>
+                    <div class="mt-4">
+                        <img src="https://www.eni-ecole.fr/wp-content/uploads/2021/10/1374491905.jpg" alt="Support utilisateurs" class="w-full h-48 object-cover rounded-lg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+    <!-- Formation Section -->
+    <section id="formation" class="section bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Formation & Certifications</h2>
+            <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold mb-4">Formation</h3>
+                    <div class="mb-6 service-item pl-4">
+                        <h4 class="font-bold mb-1">Licence en Informatique</h4>
+                        <p class="text-gray-600 mb-1">ESGIS - Cotonou</p>
+                        <p class="text-sm text-gray-500">Sept. 2020</p>
+                        <p class="mt-2">Spécialisation en Sécurité Réseaux et Systèmes.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold mb-4">Certifications</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <i class="fas fa-certificate text-blue-600 mr-3"></i>
+                            <span>Agir contre l'exploitation des êtres humains</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-certificate text-blue-600 mr-3"></i>
+                            <span>Principes de base de l'aide humanitaire</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-certificate text-blue-600 mr-3"></i>
+                            <span>L'éthique dans le secteur du développement</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Témoignages Section -->
+    <section id="temoignages" class="section bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Références Professionnelles</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="bg-gray-100 p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-600 w-12 h-12 rounded-full flex items-center justify-center text-white text-xl mr-4">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold">GBESSEMEHLAN Chakirou</h3>
+                            <p class="text-gray-600">Ingénieur Réseau et DevOps, Soft Innovation Technologies</p>
+			    <p class="text-sm text-gray-500">+229 0166494749 </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-100 p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-600 w-12 h-12 rounded-full flex items-center justify-center text-white text-xl mr-4">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold">Anselme da-SYLVEIRA</h3>
+                            <p class="text-gray-600">Chef du département informatique, ABMS</p>
+			    <p class="text-sm text-gray-500">+229 0196738200 | adasylveira@abmsbj.org </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-100 p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-600 w-12 h-12 rounded-full flex items-center justify-center text-white text-xl mr-4">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold">GBAGUIDI Frédéric</h3>
+                            <p class="text-gray-600">Directeur des Systèmes d'Information, Atlantique Assurances Bénin</p>
+			    <p class="text-sm text-gray-500">+229 0190939870 | frederic.gbaguidi@atlantiqueassurancesbenin.net </p>
+
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-100 p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-600 w-12 h-12 rounded-full flex items-center justify-center text-white text-xl mr-4">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold">Farazdak AMADOU</h3>
+                            <p class="text-gray-600">Chef Projet, NEXERA</p>
+			    <p class="text-sm text-gray-500">+229 0197111625 | farazdakamadou@hotmail.fr </p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section bg-gray-900 text-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Contact</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-bold mb-6">Informations de Contact</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <div class="bg-blue-600 w-10 h-10 rounded-full flex items-center justify-center text-white mr-4">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div>
+                                    <p class="text-gray-300">Téléphone</p>
+                                    <p>+229 0168908277 / 0164053582</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center">
+                                <div class="bg-blue-600 w-10 h-10 rounded-full flex items-center justify-center text-white mr-4">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <p class="text-gray-300">Email</p>
+				     <p> <a href="mailto:edjivoessoun@gmail.com" class="text-blue-500 hover:underline">
+    DJIVOESSOUN Eméride 
+  </a> </p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center">
+                                <div class="bg-blue-600 w-10 h-10 rounded-full flex items-center justify-center text-white mr-4">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <p class="text-gray-300">Localisation</p>
+                                    <p>Cotonou, Bénin</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                      
+
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                            
+              
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2025 Eméride Gbètoho Djivoessoun. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
