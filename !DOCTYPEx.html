@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Éméride Djivoessoun – Technicien Réseau & Système | Support IT & Vidéosurveillance</title>
+  
+  <!-- Tailwind (CDN) -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
+  <!-- Google Font INTER (meilleure police pour IT) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  
+ <style>
+  * {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  /* CORRECTION ICÔNES - Préserve Font Awesome */
+  i, .fas, .far, .fab, .fa-solid, .fa-regular, .fa-brands,
+  [class*="fa-"] {
+    font-family: "Font Awesome 6 Free" !important;
+  }
+  .fab, [class*="fa-brands"] {
+    font-family: "Font Awesome 6 Brands" !important;
+  }
+  
+  body {
+    background: #fafcff;
+    color: #0b1b33;
+  }
+  .hero-bg {
+    background: linear-gradient(105deg, #0A1A2F 0%, #102b47 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-bg::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: url('https://www.apogea.fr/wp-content/uploads/2024/05/Mathilde.B-Brouillons-2024-05-27T183658.233.webp') no-repeat center center/cover;
+    opacity: 0.08;
+    mix-blend-mode: overlay;
+  }
+  .timeline-dot {
+    position: relative;
+    padding-left: 2.2rem;
+  }
+  .timeline-dot::before {
+    content: "\f0b1";
+    font-family: "Font Awesome 6 Free" !important;
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    top: 0.1rem;
+    color: #2563eb;
+    background: white;
+    width: 1.8rem;
+    height: 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(37,99,235,0.2);
+    border: 2px solid white;
+    font-size: 0.9rem;
+  }
+  .skill-pill {
+    background: #eef2ff;
+    color: #1e3a8a;
+    padding: 0.5rem 1.2rem;
+    border-radius: 50px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: 0.2s;
+    border: 1px solid rgba(37,99,235,0.1);
+  }
+  .skill-pill:hover {
+    background: #2563eb;
+    color: white;
+    transform: translateY(-2px);
+  }
+  .ref-card {
+    background: white;
+    border-left: 5px solid #2563eb;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.02);
+    transition: 0.25s;
+  }
+  .ref-card:hover {
+    box-shadow: 0 12px 24px rgba(37,99,235,0.08);
+    border-left-color: #0f2b5e;
+  }
+  .btn-primary {
+    background: #2563eb;
+    transition: all 0.2s;
+    border: none;
+  }
+  .btn-primary:hover {
+    background: #1e4bb7;
+    transform: scale(0.98);
+    box-shadow: 0 8px 18px rgba(37,99,235,0.25);
+  }
+  .glass-contact {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(2px);
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+  .exp-card {
+    transition: 0.2s;
+    border-radius: 20px;
+  }
+  .exp-card:hover {
+    background: #ffffff;
+    border-color: #bfdbfe !important;
+  }
+  .exp-list {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .exp-list li {
+    margin-bottom: 0.35rem;
+    color: #374151;
+  }
+</style>
+</head>
+<body class="antialiased">
+
+  <!-- ===== HERO ===== -->
+  <header class="hero-bg text-white relative">
+    <div class="container mx-auto px-5 lg:px-6 py-14 lg:py-20 relative z-10">
+      <div class="flex flex-col lg:flex-row items-center justify-between gap-12">
+        <div class="flex-1">
+          <span class="inline-block bg-blue-500/20 text-blue-100 px-4 py-1.5 rounded-full text-sm font-medium mb-5 border border-white/10">
+           Disponible immédiatement – Cotonou
+          </span>
+          <h1 class="text-4xl lg:text-5xl xl:text-6xl font-extrabold leading-tight mb-3 tracking-tight">
+            ÉMÉRIDE <span class="text-blue-300">GBÈTOHO</span> DJIVOESSOUN
+          </h1>
+          <h2 class="text-2xl lg:text-3xl font-semibold text-blue-100 mb-5 flex items-center gap-3">
+            <i class="fas fa-network-wired"></i> Technicien Réseau & Système
+          </h2>
+          <p class="text-gray-200 text-lg mb-8 max-w-2xl leading-relaxed">
+            Spécialiste en support IT, vidéosurveillance (Huawei, HIKVISION), câblage réseau et maintenance. 
+            Plus de 3 ans d’expérience terrain au Bénin · anglais technique · orientation solution.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a href="#contact" class="btn-primary bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3.5 px-8 rounded-xl shadow-xl shadow-blue-600/20 flex items-center gap-2">
+              <i class="fas fa-paper-plane"></i> Contact direct
+            </a>
+            <a href="#expertises" class="bg-white/10 backdrop-blur-sm border border-white/30 hover:bg-white/20 text-white font-semibold py-3.5 px-8 rounded-xl flex items-center gap-2 transition">
+              <i class="fas fa-toolbox"></i> Compétences
+            </a>
+            <a href="#references" class="bg-transparent border border-white/30 hover:border-white text-white font-semibold py-3.5 px-8 rounded-xl">
+              Références
+            </a>
+          </div>
+          <div class="flex flex-wrap gap-6 mt-10 text-sm text-blue-50">
+            <span><i class="fas fa-phone-alt mr-2 text-blue-300"></i> +229 0168908277 / 0164053582</span>
+            <span><i class="fas fa-envelope mr-2 text-blue-300"></i> edjivoessoun@gmail.com</span>
+            <span><i class="fas fa-map-pin mr-2 text-blue-300"></i> PK10/ENAFA, Cotonou</span>
+          </div>
+        </div>
+        <div class="flex-none">
+          <div class="relative">
+            <div class="w-64 h-64 lg:w-72 lg:h-72 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 p-1 shadow-2xl shadow-blue-500/30">
+              <div class="w-full h-full rounded-full overflow-hidden border-4 border-white/30">
+                <img src="https://i.pinimg.com/736x/dc/99/00/dc99000647f5a63cd872afea077f5274.jpg" 
+                     alt="Éméride Djivoessoun" 
+                     class="w-full h-full object-cover">
+              </div>
+            </div>
+            <span class="absolute bottom-4 right-4 bg-green-500 w-6 h-6 rounded-full border-4 border-white"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== SITUATION ACTUELLE – Port Autonome de Cotonou ===== -->
+  <section class="py-16 bg-white border-b border-gray-100">
+    <div class="container mx-auto px-5 max-w-6xl">
+      <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-8 lg:p-10 rounded-3xl border border-blue-100 shadow-sm">
+        <div class="flex flex-col lg:flex-row gap-8 items-start">
+          <div class="lg:w-2/3">
+            <div class="flex items-center gap-3 text-blue-700 mb-4">
+              <span class="bg-blue-600 text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wide">Stage professionnel · 2025</span>
+              <span class="bg-white px-4 py-1.5 rounded-full text-xs font-semibold text-gray-700 border border-gray-200"><i class="far fa-calendar-alt mr-1"></i> Actuel</span>
+            </div>
+            <h2 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-3 tracking-tight">Support IT & assistance de proximité</h2>
+            <h3 class="text-xl font-semibold text-blue-800 mb-3 flex items-center gap-2">
+              <i class="fas fa-ship"></i> Port Autonome de Cotonou
+            </h3>
+            <ul class="exp-list">
+              <li>Support utilisateurs et résolution d’incidents matériels/logiciels (bureautique, périphériques, accès).</li>
+              <li>Diagnostic et dépannage réseau local, connectivité, imprimantes, WiFi.</li>
+              <li>Maintenance préventive / curative du parc informatique, suivi des tickets.</li>
+              <li>Déploiement de postes, mise à jour et sécurisation de base.</li>
+            </ul>
+          </div>
+          <div class="lg:w-1/3 bg-white p-6 rounded-2xl shadow-md border border-gray-200 w-full">
+            <div class="flex items-center gap-4 mb-4">
+              <div class="bg-blue-100 p-3 rounded-full text-blue-700 text-2xl"><i class="fas fa-bolt"></i></div>
+              <div>
+                <p class="text-sm text-gray-500">Disponibilité</p>
+                <p class="font-bold text-gray-900">Immédiate / préavis</p>
+              </div>
+            </div>
+            <p class="text-gray-600 text-sm mb-4">📌 Prestations : support terrain, câblage, installation de caméras et systèmes de présence.</p>
+            <a href="#contact" class="w-full bg-gray-900 hover:bg-gray-800 text-white font-semibold py-3 px-4 rounded-xl flex items-center justify-center gap-2 transition">
+              <i class="fas fa-calendar-check"></i> Demander une intervention
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== COMPÉTENCES ===== -->
+  <section id="expertises" class="py-16 bg-gray-50">
+    <div class="container mx-auto px-5 max-w-6xl">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="bg-blue-100 text-blue-800 text-sm font-semibold px-4 py-1.5 rounded-full">Expertises</span>
+        <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mt-4 mb-3 tracking-tight">Compétences techniques</h2>
+        <p class="text-gray-600">Systèmes · Réseaux · Sécurité · Vidéosurveillance</p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-8 items-start">
+        <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100">
+          <h3 class="text-xl font-bold mb-5 flex items-center gap-2"><i class="fas fa-microchip text-blue-600"></i> Niveaux maîtrise</h3>
+          <div class="space-y-5">
+            <div><div class="flex justify-between mb-1"><span class="font-medium">Windows 11/10/Server</span><span class="text-blue-700">95%</span></div><div class="h-2 bg-gray-100 rounded-full"><div class="h-2 bg-blue-600 rounded-full" style="width:95%"></div></div></div>
+            <div><div class="flex justify-between mb-1"><span class="font-medium">Microsoft 365 & Office</span><span class="text-blue-700">90%</span></div><div class="h-2 bg-gray-100 rounded-full"><div class="h-2 bg-blue-600 rounded-full" style="width:90%"></div></div></div>
+            <div><div class="flex justify-between mb-1"><span class="font-medium">TCP/IP, LAN, WAN, Ethernet</span><span class="text-blue-700">88%</span></div><div class="h-2 bg-gray-100 rounded-full"><div class="h-2 bg-blue-600 rounded-full" style="width:88%"></div></div></div>
+            <div><div class="flex justify-between mb-1"><span class="font-medium">VoIP / Téléphonie IP</span><span class="text-blue-700">80%</span></div><div class="h-2 bg-gray-100 rounded-full"><div class="h-2 bg-blue-600 rounded-full" style="width:80%"></div></div></div>
+            <div><div class="flex justify-between mb-1"><span class="font-medium">Anglais technique</span><span class="text-blue-700">80%</span></div><div class="h-2 bg-gray-100 rounded-full"><div class="h-2 bg-blue-600 rounded-full" style="width:80%"></div></div></div>
+          </div>
+          <div class="mt-7 flex flex-wrap gap-2">
+            <span class="skill-pill"><i class="fas fa-camera mr-1"></i> Huawei/HIKVISION</span>
+            <span class="skill-pill"><i class="fas fa-id-card mr-1"></i> ZK TIME</span>
+            <span class="skill-pill"><i class="fas fa-headset mr-1"></i> CRM, gestion appels</span>
+            <span class="skill-pill"><i class="fas fa-print"></i> Imprimantes</span>
+            <span class="skill-pill"><i class="fas fa-tools"></i> Diagnostic</span>
+          </div>
+        </div>
+        
+        <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100">
+          <h3 class="text-xl font-bold mb-5 flex items-center gap-2"><i class="fas fa-bolt text-blue-600"></i> Spécialisations</h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="flex items-start gap-3 bg-blue-50/40 p-4 rounded-xl">
+              <div class="bg-blue-600 text-white p-3 rounded-full text-lg"><i class="fas fa-video"></i></div>
+              <div><h4 class="font-bold">Vidéosurveillance</h4><p class="text-sm text-gray-600">Caméras Huawei, HIKVISION, NVR</p></div>
+            </div>
+            <div class="flex items-start gap-3 bg-blue-50/40 p-4 rounded-xl">
+              <div class="bg-blue-600 text-white p-3 rounded-full text-lg"><i class="fas fa-network-wired"></i></div>
+              <div><h4 class="font-bold">Câblage & Réseau</h4><p class="text-sm text-gray-600">Salle serveur, switch, brassage</p></div>
+            </div>
+            <div class="flex items-start gap-3 bg-blue-50/40 p-4 rounded-xl">
+              <div class="bg-blue-600 text-white p-3 rounded-full text-lg"><i class="fas fa-user-lock"></i></div>
+              <div><h4 class="font-bold">Gestion accès</h4><p class="text-sm text-gray-600">Création comptes, mots de passe, droits</p></div>
+            </div>
+            <div class="flex items-start gap-3 bg-blue-50/40 p-4 rounded-xl">
+            </div>
+          </div>
+          <div class="mt-6 border-t pt-6 border-gray-100">
+            <p class="text-sm uppercase tracking-wide text-gray-500">Formation</p>
+            <p class="font-semibold"><i class="fas fa-graduation-cap text-blue-600 mr-2"></i> Licence Informatique – ESGIS, Cotonou (2020)</p>
+            <p class="text-sm text-gray-600 mt-1">Certifications : Éthique humanitaire, lutte contre l'exploitation, principes d'aide.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EXPÉRIENCES PROFESSIONNELLES (listes à puces) ===== -->
+  <section id="experience" class="py-16 bg-white">
+    <div class="container mx-auto px-5 max-w-4xl">
+      <div class="text-center mb-12">
+        <span class="bg-indigo-100 text-indigo-800 text-sm font-semibold px-4 py-1.5 rounded-full">Parcours</span>
+        <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mt-3 tracking-tight">Expériences professionnelles</h2>
+      </div>
+      
+      <div class="space-y-6">
+        <!-- NEXERA -->
+        <div class="exp-card bg-gray-50 p-6 lg:p-7 rounded-2xl border border-gray-200 timeline-dot">
+          <div class="flex flex-wrap gap-3 items-center mb-2">
+            <span class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1.5 rounded-full">Déc 2024 – Sep 2025</span>
+            <span class="bg-gray-200 text-gray-800 px-3 py-1.5 rounded-full text-xs">Technicien Support IT</span>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900">Assistance aux téléconseillers et superviseurs (centre d’appels)</h3>
+          <p class="text-blue-700 font-medium mb-3">NEXERA – Cotonou</p>
+          <ul class="exp-list">
+            <li>Assistance aux téléconseillers et superviseurs en cas de panne (PC, logiciels, casques, téléphones VoIP).</li>
+            <li>Installation, configuration et mise à jour des postes de travail.</li>
+            <li>Résolution des problèmes de connexion aux applications métiers et aux bases de données clients.</li>
+            <li>Gestion des systèmes de gestion des appels (CRM).</li>
+            <li>Surveillance des fichiers d'attente et de la qualité des appels.</li>
+            <li>Support comptes & accès (gestion des identifiants, réinitialisation de mots de passe).</li>
+          </ul>
+        </div>
+        
+        <!-- AFG ASSURANCES / ATLANTIQUE ASSURANCES -->
+        <div class="exp-card bg-gray-50 p-6 lg:p-7 rounded-2xl border border-gray-200 timeline-dot">
+          <div class="flex flex-wrap gap-3 items-center mb-2">
+            <span class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1.5 rounded-full">Avril 2024 – Déc 2024</span>
+            <span class="bg-gray-200 text-gray-800 px-3 py-1.5 rounded-full text-xs">Stage professionnel</span>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900">Support Systèmes & Réseaux</h3>
+          <p class="text-blue-700 font-medium mb-3">AFG ASSURANCES Bénin – Cotonou</p>
+          <ul class="exp-list">
+            <li>Connaissance des protocoles réseaux (TCP/IP, Ethernet, LAN, WAN).</li>
+            <li>Résolution des problèmes liés au système d'information, à la bureautique des employés, au WiFi et à la VoIP.</li>
+            <li>Expérience avec les logiciels de réunion (Zoom, Google Meet, Microsoft Teams).</li>
+            <li>Diagnostic et dépannage des pannes.</li>
+            <li>Configuration d'imprimantes et création de comptes utilisateurs.</li>
+            <li>Maintenance physique et logicielle du matériel informatique.</li>
+            <li>Maîtrise de l'anglais technique.</li>
+          </ul>
+        </div>
+        
+        <!-- HUAWEI Technologies Benin -->
+        <div class="exp-card bg-gray-50 p-6 lg:p-7 rounded-2xl border border-gray-200 timeline-dot">
+          <div class="flex flex-wrap gap-3 items-center mb-2">
+            <span class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1.5 rounded-full">2022 – Présent</span>
+            <span class="bg-gray-200 text-gray-800 px-3 py-1.5 rounded-full text-xs">Prestataire IT (temps partiel)</span>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900">Technicien vidéosurveillance & contrôle d’accès</h3>
+          <p class="text-blue-700 font-medium mb-3">Huawei Technologies Benin S.A – Cotonou</p>
+          <ul class="exp-list">
+            <li>Installation, maintenance et configuration de caméras de surveillance (Huawei et HIKVISION).</li>
+            <li>Câblage réseau et mise en place de gestionnaires de présence (ZK TIME).</li>
+            <li>Configuration NVR et téléphones IP.</li>
+          </ul>
+        </div>
+        
+        <!-- ABMS volontariat -->
+        <div class="exp-card bg-gray-50 p-6 lg:p-7 rounded-2xl border border-gray-200 timeline-dot">
+          <div class="flex flex-wrap gap-3 items-center mb-2">
+            <span class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1.5 rounded-full">Mai 2022 – Nov 2023</span>
+            <span class="bg-gray-200 text-gray-800 px-3 py-1.5 rounded-full text-xs">Volontariat</span>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900">Assistant support informatique</h3>
+          <p class="text-blue-700 font-medium mb-3">Association Béninoise pour le Marketing Social – Cotonou</p>
+          <ul class="exp-list">
+            <li>Résolution des problèmes liés au système d'information, à la bureautique et au réseau.</li>
+            <li>Diagnostic, dépannage et installation de nouveau matériel.</li>
+            <li>Maintenance préventive des ordinateurs.</li>
+            <li>Formation utilisateurs (bases).</li>
+          </ul>
+        </div>
+        
+        <!-- Soft Innovation Technologies -->
+        <div class="exp-card bg-gray-50 p-6 lg:p-7 rounded-2xl border border-gray-200 timeline-dot">
+          <div class="flex flex-wrap gap-3 items-center mb-2">
+            <span class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1.5 rounded-full">Jan 2022 – Mai 2022</span>
+            <span class="bg-gray-200 text-gray-800 px-3 py-1.5 rounded-full text-xs">Stage</span>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900">Stagiaire Sécurité Réseau & DevOps</h3>
+          <p class="text-blue-700 font-medium mb-3">Soft Innovation Technologies – Cotonou</p>
+          <ul class="exp-list">
+            <li>Installation de caméras de surveillance, câblage et mise en place de salles serveur.</li>
+            <li>Configuration de téléphones IP et NVR.</li>
+            <li>Découverte des concepts DevOps.</li>
+          </ul>
+        </div>
+
+        <!-- MINISTÈRE AFFAIRES SOCIALES -->
+        <div class="exp-card bg-gray-50 p-6 lg:p-7 rounded-2xl border border-gray-200 timeline-dot">
+          <div class="flex flex-wrap gap-3 items-center mb-2">
+            <span class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1.5 rounded-full">Avr 2021 – Juil 2021</span>
+            <span class="bg-gray-200 text-gray-800 px-3 py-1.5 rounded-full text-xs">Stage</span>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900">Stagiaire Département informatique</h3>
+          <p class="text-blue-700 font-medium mb-3">Ministère des Affaires Sociales et de la Microfinance (MASM)</p>
+          <ul class="exp-list">
+            <li>Maintenance logicielle et matérielle.</li>
+            <li>Diagnostic, dépannage et installation de nouveau matériel.</li>
+            <li>Surveillance et élimination des virus.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== RÉFÉRENCES PROFESSIONNELLES ===== -->
+  <section id="references" class="py-16 bg-gray-50">
+    <div class="container mx-auto px-5 max-w-6xl">
+      <h2 class="text-3xl font-bold text-center text-gray-900 mb-4 tracking-tight">Références & recommandations</h2>
+      <p class="text-center text-gray-600 mb-12">Contacts vérifiés, issus de mon parcours</p>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="ref-card bg-white p-6 rounded-2xl flex gap-4 items-start">
+          <div class="bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl shrink-0"><i class="fas fa-user-tie"></i></div>
+          <div>
+            <h3 class="font-bold text-gray-900">Chakirou GBESSEMEHLAN</h3>
+            <p class="text-gray-600 text-sm">Ingénieur Réseau & DevOps, Soft Innovation Technologies</p>
+            <p class="text-gray-500 text-sm flex items-center gap-1 mt-1"><i class="fas fa-phone-alt"></i> +229 0166494749</p>
+          </div>
+        </div>
+        <div class="ref-card bg-white p-6 rounded-2xl flex gap-4 items-start">
+          <div class="bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl shrink-0"><i class="fas fa-user-tie"></i></div>
+          <div>
+            <h3 class="font-bold text-gray-900">Anselme da-SYLVEIRA</h3>
+            <p class="text-gray-600 text-sm">Chef département informatique, ABMS</p>
+            <p class="text-gray-500 text-sm">+229 0196738200 • adasylveira@abmsbi.org</p>
+          </div>
+        </div>
+        <div class="ref-card bg-white p-6 rounded-2xl flex gap-4 items-start">
+          <div class="bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl shrink-0"><i class="fas fa-user-tie"></i></div>
+          <div>
+            <h3 class="font-bold text-gray-900">Frédéric GBAGUIDI</h3>
+            <p class="text-gray-600 text-sm">Directeur des Systèmes d'Information, AFG Assurances Bénin</p>
+            <p class="text-gray-500 text-sm">+229 0190939870 • frederic.gbaguidi@atlantiqueassurancesbenin.net</p>
+          </div>
+        </div>
+        <!-- RÉFÉRENCE MISE À JOUR : Anas ABDENNOUR -->
+        <div class="ref-card bg-white p-6 rounded-2xl flex gap-4 items-start">
+          <div class="bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl shrink-0"><i class="fas fa-user-tie"></i></div>
+          <div>
+            <h3 class="font-bold text-gray-900">Anas ABDENNOUR</h3>
+            <p class="text-gray-600 text-sm">Chef Service Informatique/IONOW, NEXERA</p>
+            <p class="text-gray-500 text-sm">+212 614-808469 • anas.a@ionow.fr</p>
+          </div>
+        </div>
+      </div>
+         </div>
+  </section>
+
+  <!-- ===== CONTACT avec formulaire 100% lisible (fond blanc, texte noir) ===== -->
+  <section id="contact" class="py-16 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+    <div class="container mx-auto px-5 max-w-5xl">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl lg:text-4xl font-bold mb-3 tracking-tight">Discutons de vos besoins</h2>
+        <p class="text-gray-300">Support IT, déploiement réseau, installation de caméras ou maintenance.</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8 glass-contact p-8 lg:p-10 rounded-3xl">
+        <div>
+          <h3 class="text-2xl font-semibold mb-6 flex items-center gap-2"><span class="bg-blue-500 w-2 h-8 rounded-full"></span> Éméride Djivoessoun</h3>
+          <div class="space-y-5">
+            <div class="flex items-center gap-4">
+              <div class="bg-blue-600 w-12 h-12 rounded-full flex items-center justify-center"><i class="fas fa-mobile-alt text-xl"></i></div>
+              <div>
+                <p class="text-gray-300 text-sm">Téléphone</p>
+                <p class="font-semibold text-white">+229 0168908277 / 0164053582</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-4">
+              <div class="bg-blue-600 w-12 h-12 rounded-full flex items-center justify-center"><i class="fas fa-envelope text-xl"></i></div>
+              <div>
+                <p class="text-gray-300 text-sm">Email</p>
+                <a href="mailto:edjivoessoun@gmail.com" class="font-semibold text-blue-200 hover:underline">edjivoessoun@gmail.com</a>
+              </div>
+            </div>
+            <div class="flex items-center gap-4">
+              <div class="bg-blue-600 w-12 h-12 rounded-full flex items-center justify-center"><i class="fas fa-map-marker-alt text-xl"></i></div>
+              <div>
+                <p class="text-gray-300 text-sm">Adresse</p>
+                <p class="font-semibold">PK10/ENAFA, Cotonou, Bénin</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- RÉSEAUX SOCIAUX avec liens réels -->
+          <div class="mt-8 flex gap-4">
+            <a href="https://wa.me/2290168908277" target="_blank" rel="noopener noreferrer" 
+               class="bg-green-600 hover:bg-green-700 text-white w-12 h-12 rounded-full flex items-center justify-center text-2xl transition transform hover:scale-110">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/em%C3%A9ride-djivoessoun-2816aa360/" target="_blank" rel="noopener noreferrer"
+               class="bg-blue-700 hover:bg-blue-800 text-white w-12 h-12 rounded-full flex items-center justify-center text-2xl transition transform hover:scale-110">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="mailto:edjivoessoun@gmail.com" 
+               class="bg-gray-600 hover:bg-gray-700 text-white w-12 h-12 rounded-full flex items-center justify-center text-2xl transition transform hover:scale-110">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
+          
+          <div class="mt-8 border-t border-white/20 pt-6">
+            <p class="text-gray-200 text-sm italic">« Professionnel, réactif et orienté solution. »</p>
+          </div>
+        </div>
+        
+        <!-- FORMULAIRE avec texte 100% VISIBLE (fond blanc, texte noir) -->
+        <div>
+          <h3 class="text-xl font-semibold mb-5">Écrivez-moi rapidement</h3>
+          <form action="https://formspree.io/f/meoeeoag" method="POST" class="space-y-4">
+            <input type="text" name="nom" placeholder="Votre nom / société" required
+                   class="w-full px-5 py-3 rounded-xl bg-white border border-gray-300 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+            <input type="email" name="email" placeholder="Votre adresse email" required
+                   class="w-full px-5 py-3 rounded-xl bg-white border border-gray-300 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+            <input type="text" name="sujet" placeholder="Sujet" 
+                   class="w-full px-5 py-3 rounded-xl bg-white border border-gray-300 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+            <textarea name="message" rows="4" placeholder="Précisez votre demande (type d’intervention, lieu, urgence…)" required
+                      class="w-full px-5 py-3 rounded-xl bg-white border border-gray-300 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"></textarea>
+            
+            <!-- Champ caché pour rediriger après envoi (optionnel - à supprimer si pas de page merci) -->
+            <!-- <input type="hidden" name="_next" value="https://votre-site.com/merci.html"> -->
+            <input type="hidden" name="_subject" value="Nouveau message depuis votre CV en ligne">
+            
+            <button type="submit" 
+                    class="w-full bg-blue-600 hover:bg-blue-500 text-white font-semibold py-3.5 px-6 rounded-xl transition flex items-center justify-center gap-2">
+              <i class="fas fa-paper-plane"></i> Envoyer la demande
+            </button>
+            <p class="text-xs text-gray-400 mt-2"> Votre message sera envoyé directement sur ma boîte email. Réponse sous 24h.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- footer avec liens sociaux réels -->
+  <footer class="bg-gray-900 text-gray-300 py-8 border-t border-gray-800">
+    <div class="container mx-auto px-5 text-center text-sm">
+      <p>© 2026 Éméride Gbètoho Djivoessoun – Technicien Réseau & Système.</p>
+      <p class="mt-2 flex justify-center gap-5">
+        <a href="https://www.linkedin.com/in/em%C3%A9ride-djivoessoun-2816aa360/" target="_blank" rel="noopener noreferrer" class="hover:text-white flex items-center gap-1">
+          <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+        <a href="https://wa.me/2290168908277" target="_blank" rel="noopener noreferrer" class="hover:text-white flex items-center gap-1">
+          <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+        <a href="mailto:edjivoessoun@gmail.com" class="hover:text-white flex items-center gap-1">
+          <i class="fas fa-envelope"></i> Email
+        </a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- smooth scroll -->
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href === "#" || href === "") return;
+        const target = document.querySelector(href);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
