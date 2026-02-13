@@ -9,125 +9,395 @@
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
   <!-- Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
-  <!-- Google Font INTER (meilleure police pour IT) -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <!-- Google Font INTER (remplacé par Garamond pour l'ambiance) -->
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   
- <style>
-  * {
-    font-family: 'Inter', sans-serif;
-  }
-  
-  /* CORRECTION ICÔNES - Préserve Font Awesome */
-  i, .fas, .far, .fab, .fa-solid, .fa-regular, .fa-brands,
-  [class*="fa-"] {
-    font-family: "Font Awesome 6 Free" !important;
-  }
-  .fab, [class*="fa-brands"] {
-    font-family: "Font Awesome 6 Brands" !important;
-  }
-  
-  body {
-    background: #fafcff;
-    color: #0b1b33;
-  }
-  .hero-bg {
-    background: linear-gradient(105deg, #0A1A2F 0%, #102b47 100%);
-    position: relative;
-    overflow: hidden;
-  }
-  .hero-bg::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: url('https://www.apogea.fr/wp-content/uploads/2024/05/Mathilde.B-Brouillons-2024-05-27T183658.233.webp') no-repeat center center/cover;
-    opacity: 0.08;
-    mix-blend-mode: overlay;
-  }
-  .timeline-dot {
-    position: relative;
-    padding-left: 2.2rem;
-  }
-  .timeline-dot::before {
-    content: "\f0b1";
-    font-family: "Font Awesome 6 Free" !important;
-    font-weight: 900;
-    position: absolute;
-    left: 0;
-    top: 0.1rem;
-    color: #2563eb;
-    background: white;
-    width: 1.8rem;
-    height: 1.8rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    box-shadow: 0 4px 10px rgba(37,99,235,0.2);
-    border: 2px solid white;
-    font-size: 0.9rem;
-  }
-  .skill-pill {
-    background: #eef2ff;
-    color: #1e3a8a;
-    padding: 0.5rem 1.2rem;
-    border-radius: 50px;
-    font-weight: 500;
-    font-size: 0.9rem;
-    transition: 0.2s;
-    border: 1px solid rgba(37,99,235,0.1);
-  }
-  .skill-pill:hover {
-    background: #2563eb;
-    color: white;
-    transform: translateY(-2px);
-  }
-  .ref-card {
-    background: white;
-    border-left: 5px solid #2563eb;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.02);
-    transition: 0.25s;
-  }
-  .ref-card:hover {
-    box-shadow: 0 12px 24px rgba(37,99,235,0.08);
-    border-left-color: #0f2b5e;
-  }
-  .btn-primary {
-    background: #2563eb;
-    transition: all 0.2s;
-    border: none;
-  }
-  .btn-primary:hover {
-    background: #1e4bb7;
-    transform: scale(0.98);
-    box-shadow: 0 8px 18px rgba(37,99,235,0.25);
-  }
-  .glass-contact {
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(2px);
-    border: 1px solid rgba(255,255,255,0.1);
-  }
-  .exp-card {
-    transition: 0.2s;
-    border-radius: 20px;
-  }
-  .exp-card:hover {
-    background: #ffffff;
-    border-color: #bfdbfe !important;
-  }
-  .exp-list {
-    list-style-type: disc;
-    padding-left: 1.5rem;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-  }
-  .exp-list li {
-    margin-bottom: 0.35rem;
-    color: #374151;
-  }
-</style>
+  <style>
+    * {
+      font-family: 'EB Garamond', serif;
+    }
+    
+    /* CORRECTION ICÔNES - Préserve Font Awesome */
+    i, .fas, .far, .fab, .fa-solid, .fa-regular, .fa-brands,
+    [class*="fa-"] {
+      font-family: "Font Awesome 6 Free" !important;
+    }
+    .fab, [class*="fa-brands"] {
+      font-family: "Font Awesome 6 Brands" !important;
+    }
+    
+    /* ===== DARK ULTRA TECH THEME ===== */
+    body {
+      background: #0b1220;
+      color: #e2e8f0;
+    }
+    
+    /* Surcharge des fonds clairs Tailwind */
+    .bg-white, .bg-gray-50, .bg-gray-100, .bg-blue-50, .bg-indigo-50, .bg-gradient-to-r {
+      background-color: #111827 !important;
+    }
+    .bg-gray-200, .bg-gray-300 {
+      background-color: #1f2937 !important;
+    }
+    .bg-blue-100, .bg-indigo-100 {
+      background-color: #1e293b !important;
+    }
+    .bg-blue-600, .bg-blue-700, .bg-green-600, .bg-gray-900, .bg-gray-800 {
+      filter: brightness(1.2);
+    }
+    
+    /* Texte clair */
+    .text-gray-900, .text-gray-800, .text-gray-700, .text-gray-600, .text-blue-800, .text-indigo-800 {
+      color: #e2e8f0 !important;
+    }
+    .text-gray-500, .text-gray-400 {
+      color: #94a3b8 !important;
+    }
+    .text-blue-700, .text-indigo-700 {
+      color: #60a5fa !important;
+    }
+    .text-blue-600 {
+      color: #3b82f6 !important;
+    }
+    
+    /* Bordures */
+    .border-gray-100, .border-gray-200, .border-gray-300 {
+      border-color: #1e293b !important;
+    }
+    .border-blue-100 {
+      border-color: #2563eb !important;
+    }
+    
+    /* Ombres adaptées */
+    .shadow-sm, .shadow, .shadow-md, .shadow-lg {
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5) !important;
+    }
+    
+    /* HERO */
+    .hero-bg {
+      background: linear-gradient(105deg, #0a0f1a 0%, #0f1a2f 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-bg::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: url('https://www.apogea.fr/wp-content/uploads/2024/05/Mathilde.B-Brouillons-2024-05-27T183658.233.webp') no-repeat center center/cover;
+      opacity: 0.05;
+      mix-blend-mode: overlay;
+    }
+    
+    /* Timeline dot */
+    .timeline-dot::before {
+      content: "\f0b1";
+      font-family: "Font Awesome 6 Free" !important;
+      font-weight: 900;
+      position: absolute;
+      left: 0;
+      top: 0.1rem;
+      color: #3b82f6;
+      background: #111827;
+      width: 1.8rem;
+      height: 1.8rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      box-shadow: 0 4px 10px rgba(0, 255, 255, 0.2);
+      border: 2px solid #0b1220;
+      font-size: 0.9rem;
+    }
+    
+    /* Skill pills */
+    .skill-pill {
+      background: #1e293b;
+      color: #94a3b8;
+      padding: 0.5rem 1.2rem;
+      border-radius: 50px;
+      font-weight: 500;
+      font-size: 0.9rem;
+      transition: 0.2s;
+      border: 1px solid #334155;
+    }
+    .skill-pill:hover {
+      background: #3b82f6;
+      color: white;
+      transform: translateY(-2px);
+      border-color: #3b82f6;
+    }
+    
+    /* Références cards */
+    .ref-card {
+      background: #111827;
+      border-left: 5px solid #3b82f6;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.5);
+      transition: 0.25s;
+    }
+    .ref-card:hover {
+      box-shadow: 0 12px 24px rgba(59,130,246,0.2);
+      border-left-color: #60a5fa;
+    }
+    
+    /* Bouton primaire */
+    .btn-primary {
+      background: #3b82f6;
+      transition: all 0.2s;
+      border: none;
+    }
+    .btn-primary:hover {
+      background: #2563eb;
+      transform: scale(0.98);
+      box-shadow: 0 8px 18px rgba(59,130,246,0.4);
+    }
+    
+    /* Glass contact */
+    .glass-contact {
+      background: rgba(17, 24, 39, 0.7);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(59,130,246,0.2);
+    }
+    
+    /* Exp cards */
+    .exp-card {
+      transition: 0.2s;
+      border-radius: 20px;
+      background: #111827 !important;
+      border-color: #1e293b !important;
+    }
+    .exp-card:hover {
+      background: #1f2937 !important;
+      border-color: #3b82f6 !important;
+    }
+    
+    /* Listes */
+    .exp-list {
+      list-style-type: disc;
+      padding-left: 1.5rem;
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .exp-list li {
+      margin-bottom: 0.35rem;
+      color: #cbd5e1;
+    }
+    
+    /* Proof button */
+    .proof-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      background: #0f172a;
+      color: #94a3b8;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      border: 1px solid #334155;
+      transition: all 0.2s;
+    }
+    .proof-btn:hover {
+      background: #3b82f6;
+      color: white;
+      border-color: #3b82f6;
+    }
+    
+    /* Cert link */
+    .cert-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      color: #60a5fa;
+      font-size: 0.75rem;
+      font-weight: 500;
+      text-decoration: none;
+      border-bottom: 1px dashed #60a5fa;
+    }
+    .cert-link:hover {
+      color: #3b82f6;
+      border-bottom: 1px solid #3b82f6;
+    }
+    
+    /* Gallery button */
+    .gallery-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #1e293b;
+      color: #60a5fa;
+      padding: 0.35rem 1rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      transition: all 0.2s;
+      border: 1px solid #3b82f6;
+    }
+    .gallery-btn:hover {
+      background: #3b82f6;
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(59,130,246,0.3);
+    }
+    
+    /* CV button */
+    .cv-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #1e293b;
+      color: #fbbf24;
+      padding: 0.5rem 1.25rem;
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: all 0.2s;
+      border: 1px solid #fbbf24;
+    }
+    .cv-btn:hover {
+      background: #fbbf24;
+      color: #0b1220;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(251,191,36,0.3);
+    }
+    
+    /* Barres de progression */
+    .bg-blue-600 {
+      background-color: #3b82f6 !important;
+    }
+    .bg-gray-100 {
+      background-color: #1f2937 !important;
+    }
+    
+    /* Formulaire */
+    input, textarea {
+      background-color: #1f2937 !important;
+      border-color: #374151 !important;
+      color: #e2e8f0 !important;
+    }
+    input:focus, textarea:focus {
+      border-color: #3b82f6 !important;
+      ring-color: #3b82f6 !important;
+    }
+    
+    /* Footer */
+    footer.bg-gray-900 {
+      background-color: #0a0f1a !important;
+      border-color: #1e293b !important;
+    }
+    
+    /* Ajustements divers */
+    .bg-gradient-to-br.from-gray-900.to-gray-800 {
+      background: linear-gradient(135deg, #0b1220, #111827) !important;
+    }
+    
+    .bg-blue-500\/20 {
+      background-color: rgba(59,130,246,0.2) !important;
+    }
+    
+    .border-white\/10 {
+      border-color: rgba(255,255,255,0.05) !important;
+    }
+    
+    .text-blue-300, .text-blue-200, .text-blue-100 {
+      color: #94a3b8 !important;
+    }
+    
+    /* Petites retouches */
+    .bg-blue-600.text-white.p-3.rounded-full {
+      background-color: #3b82f6 !important;
+    }
+    
+    /* ===== CORRECTION SECTION PORT AUTONOME ===== */
+    section.bg-white.border-b.border-gray-100 {
+      background-color: #111827 !important;
+      border-bottom-color: #1e293b !important;
+    }
+    .bg-gradient-to-r.from-blue-50.to-indigo-50 {
+      background: #1f2937 !important;
+      border-color: #374151 !important;
+    }
+    .bg-gradient-to-r.from-blue-50.to-indigo-50 .text-gray-900,
+    .bg-gradient-to-r.from-blue-50.to-indigo-50 .text-gray-800,
+    .bg-gradient-to-r.from-blue-50.to-indigo-50 .text-gray-700,
+    .bg-gradient-to-r.from-blue-50.to-indigo-50 .text-blue-800 {
+      color: #e2e8f0 !important;
+    }
+    .bg-gradient-to-r.from-blue-50.to-indigo-50 .text-gray-500,
+    .bg-gradient-to-r.from-blue-50.to-indigo-50 .text-gray-600 {
+      color: #94a3b8 !important;
+    }
+    .bg-gradient-to-r.from-blue-50.to-indigo-50 .bg-white {
+      background-color: #1f2937 !important;
+      border-color: #374151 !important;
+    }
+    .bg-gradient-to-r.from-blue-50.to-indigo-50 .bg-blue-100 {
+      background-color: #1e293b !important;
+    }
+    .bg-gradient-to-r.from-blue-50.to-indigo-50 .text-blue-700 {
+      color: #60a5fa !important;
+    }
+    
+    /* ===== MODAL STYLES ===== */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+      backdrop-filter: blur(4px);
+    }
+    .modal.active {
+      display: flex;
+    }
+    .modal-content {
+      position: relative;
+      max-width: 90vw;
+      max-height: 90vh;
+      background: #111827;
+      border: 2px solid #3b82f6;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 0 30px rgba(59,130,246,0.3);
+    }
+    .modal-content img {
+      width: 100%;
+      height: auto;
+      max-height: 85vh;
+      object-fit: contain;
+      display: block;
+    }
+    .modal-close {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      background: rgba(0,0,0,0.6);
+      color: white;
+      border: 1px solid #3b82f6;
+      font-size: 28px;
+      font-weight: bold;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: 0.2s;
+      z-index: 10000;
+    }
+    .modal-close:hover {
+      background: #3b82f6;
+      color: #000;
+    }
+  </style>
 </head>
 <body class="antialiased">
 
@@ -188,9 +458,13 @@
       <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-8 lg:p-10 rounded-3xl border border-blue-100 shadow-sm">
         <div class="flex flex-col lg:flex-row gap-8 items-start">
           <div class="lg:w-2/3">
-            <div class="flex items-center gap-3 text-blue-700 mb-4">
+            <div class="flex items-center gap-3 text-blue-700 mb-4 flex-wrap">
               <span class="bg-blue-600 text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wide">Stage professionnel · 2025</span>
               <span class="bg-white px-4 py-1.5 rounded-full text-xs font-semibold text-gray-700 border border-gray-200"><i class="far fa-calendar-alt mr-1"></i> Actuel</span>
+              <!-- 🔗 PREUVE PORT AUTONOME -->
+              <a href="https://drive.google.com/file/d/ID_DU_FICHIER_PORT_AUTONOME/view" target="_blank" class="proof-btn ml-auto">
+                <i class="fas fa-file-pdf"></i> Attestation
+              </a>
             </div>
             <h2 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-3 tracking-tight">Support IT & assistance de proximité</h2>
             <h3 class="text-xl font-semibold text-blue-800 mb-3 flex items-center gap-2">
@@ -198,9 +472,8 @@
             </h3>
             <ul class="exp-list">
               <li>Support utilisateurs et résolution d’incidents matériels/logiciels (bureautique, périphériques, accès).</li>
-              <li>Diagnostic et dépannage réseau local, connectivité, imprimantes, WiFi.</li>
-              <li>Maintenance préventive / curative du parc informatique, suivi des tickets.</li>
-              <li>Déploiement de postes, mise à jour et sécurisation de base.</li>
+              <li>Maintenance préventive / curative du parc informatique.</li>
+              <li>Déploiement de postes, mise à jour des logiciels et systèmes.</li>
             </ul>
           </div>
           <div class="lg:w-1/3 bg-white p-6 rounded-2xl shadow-md border border-gray-200 w-full">
@@ -267,17 +540,47 @@
             <div class="flex items-start gap-3 bg-blue-50/40 p-4 rounded-xl">
             </div>
           </div>
+          
+          <!-- ===== FORMATION AVEC PREUVE ===== -->
           <div class="mt-6 border-t pt-6 border-gray-100">
-            <p class="text-sm uppercase tracking-wide text-gray-500">Formation</p>
-            <p class="font-semibold"><i class="fas fa-graduation-cap text-blue-600 mr-2"></i> Licence Informatique – ESGIS, Cotonou (2020)</p>
-            <p class="text-sm text-gray-600 mt-1">Certifications : Éthique humanitaire, lutte contre l'exploitation, principes d'aide.</p>
+            <div class="flex items-center justify-between">
+              <p class="text-sm uppercase tracking-wide text-gray-500">Formation</p>
+              <!-- 🔗 PREUVE LICENCE -->
+              <a href="https://drive.google.com/file/d/1pqqKMps1HyiXRbriTVdYTpGSmcIxhd6c/view?usp=sharing" target="_blank" class="proof-btn">
+                <i class="fas fa-file-pdf"></i> Diplôme
+              </a>
+            </div>
+            <p class="font-semibold mt-1"><i class="fas fa-graduation-cap text-blue-600 mr-2"></i> Licence Informatique – ESGIS, Cotonou (2020)</p>
+            
+            <!-- ===== CERTIFICATIONS AVEC PREUVES ===== -->
+            <p class="text-sm uppercase tracking-wide text-gray-500 mt-4 mb-2">Certifications</p>
+            <div class="space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="text-sm text-gray-700"><i class="fas fa-certificate text-blue-600 mr-2"></i> Éthique dans le secteur du développement</span>
+                <a href="https://drive.google.com/file/d/1cO648_L3nO31VbBV6jxmmayIUTJ4IR7g/view?usp=sharing" target="_blank" class="cert-link">
+                  <i class="fas fa-file-pdf"></i> PDF
+                </a>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-sm text-gray-700"><i class="fas fa-certificate text-blue-600 mr-2"></i> Lutte contre l'exploitation</span>
+                <a href="https://drive.google.com/file/d/1yk_5Sq1aSGePchP_q3MB-vd6o9h4m8Jv/view?usp=sharing" target="_blank" class="cert-link">
+                  <i class="fas fa-file-pdf"></i> PDF
+                </a>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-sm text-gray-700"><i class="fas fa-certificate text-blue-600 mr-2"></i> Principes de l'aide humanitaire</span>
+                <a href="https://drive.google.com/file/d/1LC0wAzjXKHfA5_L3_42F3GEFWww4K1LD/view?usp=sharing" target="_blank" class="cert-link">
+                  <i class="fas fa-file-pdf"></i> PDF
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== EXPÉRIENCES PROFESSIONNELLES (listes à puces) ===== -->
+  <!-- ===== EXPÉRIENCES PROFESSIONNELLES avec PREUVES ===== -->
   <section id="experience" class="py-16 bg-white">
     <div class="container mx-auto px-5 max-w-4xl">
       <div class="text-center mb-12">
@@ -286,13 +589,22 @@
       </div>
       
       <div class="space-y-6">
-        <!-- NEXERA -->
+        <!-- NEXERA avec PREUVE -->
         <div class="exp-card bg-gray-50 p-6 lg:p-7 rounded-2xl border border-gray-200 timeline-dot">
-          <div class="flex flex-wrap gap-3 items-center mb-2">
-            <span class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1.5 rounded-full">Déc 2024 – Sep 2025</span>
-            <span class="bg-gray-200 text-gray-800 px-3 py-1.5 rounded-full text-xs">Technicien Support IT</span>
+          <div class="flex flex-wrap items-center gap-3 mb-2">
+            <span class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1.5 rounded-full">
+              Déc 2024 – Sep 2025
+            </span>
+            <span class="bg-gray-200 text-gray-800 px-3 py-1.5 rounded-full text-xs">
+              Technicien Support IT
+            </span>
+            <!-- 🔗 PREUVE NEXERA -->
+            <a href="https://drive.google.com/file/d/ID_DU_FICHIER_NEXERA/view" target="_blank" 
+               class="proof-btn ml-auto">
+              <i class="fas fa-file-pdf"></i> Attestation
+            </a>
           </div>
-          <h3 class="text-xl font-bold text-gray-900">Assistance aux téléconseillers et superviseurs (centre d’appels)</h3>
+          <h3 class="text-xl font-bold text-gray-900">Assistance aux téléconseillers et superviseurs (centre d'appels)</h3>
           <p class="text-blue-700 font-medium mb-3">NEXERA – Cotonou</p>
           <ul class="exp-list">
             <li>Assistance aux téléconseillers et superviseurs en cas de panne (PC, logiciels, casques, téléphones VoIP).</li>
@@ -304,11 +616,20 @@
           </ul>
         </div>
         
-        <!-- AFG ASSURANCES / ATLANTIQUE ASSURANCES -->
+        <!-- AFG ASSURANCES avec PREUVE -->
         <div class="exp-card bg-gray-50 p-6 lg:p-7 rounded-2xl border border-gray-200 timeline-dot">
-          <div class="flex flex-wrap gap-3 items-center mb-2">
-            <span class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1.5 rounded-full">Avril 2024 – Déc 2024</span>
-            <span class="bg-gray-200 text-gray-800 px-3 py-1.5 rounded-full text-xs">Stage professionnel</span>
+          <div class="flex flex-wrap items-center gap-3 mb-2">
+            <span class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1.5 rounded-full">
+              Avril 2024 – Déc 2024
+            </span>
+            <span class="bg-gray-200 text-gray-800 px-3 py-1.5 rounded-full text-xs">
+              Stage professionnel
+            </span>
+            <!-- 🔗 PREUVE AFG -->
+            <a href="https://drive.google.com/file/d/1pqqKMps1HyiXRbriTVdYTpGSmcIxhd6c/view?usp=sharing" target="_blank" 
+               class="proof-btn ml-auto">
+              <i class="fas fa-file-pdf"></i> Certificat
+            </a>
           </div>
           <h3 class="text-xl font-bold text-gray-900">Support Systèmes & Réseaux</h3>
           <p class="text-blue-700 font-medium mb-3">AFG ASSURANCES Bénin – Cotonou</p>
@@ -323,26 +644,61 @@
           </ul>
         </div>
         
-        <!-- HUAWEI Technologies Benin -->
+        <!-- HUAWEI Technologies Benin avec GALERIE (MODAL) -->
         <div class="exp-card bg-gray-50 p-6 lg:p-7 rounded-2xl border border-gray-200 timeline-dot">
-          <div class="flex flex-wrap gap-3 items-center mb-2">
-            <span class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1.5 rounded-full">2022 – Présent</span>
-            <span class="bg-gray-200 text-gray-800 px-3 py-1.5 rounded-full text-xs">Prestataire IT (temps partiel)</span>
+          <div class="flex flex-wrap items-center gap-3 mb-2">
+            <span class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1.5 rounded-full">
+              2022 – Présent
+            </span>
+            <span class="bg-gray-200 text-gray-800 px-3 py-1.5 rounded-full text-xs">
+              Prestataire IT (temps partiel)
+            </span>
+            <!-- 🖼️ GALERIE HUAWEI (au lieu d'attestation) -->
+            <a href="https://drive.google.com/drive/folders/11bcpCjUc0iQoJLJEPZrAGw9DGy_wpMD0?usp=sharing" target="_blank" 
+               class="gallery-btn ml-auto">
+              <i class="fas fa-images"></i> Voir la galerie
+            </a>
           </div>
-          <h3 class="text-xl font-bold text-gray-900">Technicien vidéosurveillance & contrôle d’accès</h3>
+          <h3 class="text-xl font-bold text-gray-900">Technicien vidéosurveillance & contrôle d'accès</h3>
           <p class="text-blue-700 font-medium mb-3">Huawei Technologies Benin S.A – Cotonou</p>
           <ul class="exp-list">
             <li>Installation, maintenance et configuration de caméras de surveillance (Huawei et HIKVISION).</li>
             <li>Câblage réseau et mise en place de gestionnaires de présence (ZK TIME).</li>
             <li>Configuration NVR et téléphones IP.</li>
           </ul>
+          <!-- Mini-galerie d'aperçu (MODAL SUR LES IMAGES) -->
+          <div class="mt-4 flex gap-2 overflow-x-auto pb-2">
+            <a href="https://drive.google.com/file/d/1fIdyXiGo7Dw4slL-s9ql2NycTyFMYLVV/view?usp=sharing" target="_blank" class="gallery-image-link block w-16 h-16 rounded-lg overflow-hidden border-2 border-gray-200 hover:border-purple-500 transition">
+              <img src="https://drive.google.com/file/d/1fIdyXiGo7Dw4slL-s9ql2NycTyFMYLVV/view?usp=sharing" alt="Installation caméra" class="w-full h-full object-cover">
+            </a>
+            <a href="https://drive.google.com/file/d/1dxJtotkMrnS2C8gBzkFFFtje-4gCBKX-/view?usp=sharing" target="_blank" class="gallery-image-link block w-16 h-16 rounded-lg overflow-hidden border-2 border-gray-200 hover:border-purple-500 transition">
+              <img src="https://drive.google.com/file/d/1dxJtotkMrnS2C8gBzkFFFtje-4gCBKX-/view?usp=sharing" alt="Câblage" class="w-full h-full object-cover">
+            </a>
+            <a href="https://drive.google.com/file/d/1cN2M7IsI_kGpatM9nanDT5A52fZb1xRW/view?usp=sharing" target="_blank" class="gallery-image-link block w-16 h-16 rounded-lg overflow-hidden border-2 border-gray-200 hover:border-purple-500 transition">
+              <img src="https://drive.google.com/file/d/1cN2M7IsI_kGpatM9nanDT5A52fZb1xRW/view?usp=sharing" alt="Configuration NVR" class="w-full h-full object-cover">
+            </a>
+            <a href="https://drive.google.com/drive/folders/11bcpCjUc0iQoJLJEPZrAGw9DGy_wpMD0?usp=sharing" target="_blank" class="block w-16 h-16 rounded-lg bg-purple-100 text-purple-700 flex items-center justify-center font-bold text-xs border-2 border-purple-200 hover:bg-purple-200">
+              <i class="fas fa-plus"></i>
+            </a>
+          </div>
+          <p class="text-xs text-gray-500 mt-2 flex items-center gap-1">
+            <i class="fas fa-images text-purple-500"></i> Photos d'installations réelles (cliquez pour agrandir)
+          </p>
         </div>
         
-        <!-- ABMS volontariat -->
+        <!-- ABMS volontariat avec PREUVE -->
         <div class="exp-card bg-gray-50 p-6 lg:p-7 rounded-2xl border border-gray-200 timeline-dot">
-          <div class="flex flex-wrap gap-3 items-center mb-2">
-            <span class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1.5 rounded-full">Mai 2022 – Nov 2023</span>
-            <span class="bg-gray-200 text-gray-800 px-3 py-1.5 rounded-full text-xs">Volontariat</span>
+          <div class="flex flex-wrap items-center gap-3 mb-2">
+            <span class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1.5 rounded-full">
+              Mai 2022 – Nov 2023
+            </span>
+            <span class="bg-gray-200 text-gray-800 px-3 py-1.5 rounded-full text-xs">
+              Volontariat
+            </span>
+            <!-- 🔗 PREUVE ABMS -->
+            <a href="https://drive.google.com/file/d/15UTw9ECCN_zEginYf39IirOmV0ihp8iS/view?usp=sharing" target="_blank" class="proof-btn ml-auto">
+              <i class="fas fa-file-pdf"></i> Certificat
+            </a>
           </div>
           <h3 class="text-xl font-bold text-gray-900">Assistant support informatique</h3>
           <p class="text-blue-700 font-medium mb-3">Association Béninoise pour le Marketing Social – Cotonou</p>
@@ -350,15 +706,23 @@
             <li>Résolution des problèmes liés au système d'information, à la bureautique et au réseau.</li>
             <li>Diagnostic, dépannage et installation de nouveau matériel.</li>
             <li>Maintenance préventive des ordinateurs.</li>
-            <li>Formation utilisateurs (bases).</li>
           </ul>
         </div>
         
-        <!-- Soft Innovation Technologies -->
+        <!-- Soft Innovation Technologies avec PREUVE -->
         <div class="exp-card bg-gray-50 p-6 lg:p-7 rounded-2xl border border-gray-200 timeline-dot">
-          <div class="flex flex-wrap gap-3 items-center mb-2">
-            <span class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1.5 rounded-full">Jan 2022 – Mai 2022</span>
-            <span class="bg-gray-200 text-gray-800 px-3 py-1.5 rounded-full text-xs">Stage</span>
+          <div class="flex flex-wrap items-center gap-3 mb-2">
+            <span class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1.5 rounded-full">
+              Jan 2022 – Mai 2022
+            </span>
+            <span class="bg-gray-200 text-gray-800 px-3 py-1.5 rounded-full text-xs">
+              Stage
+            </span>
+            <!-- 🔗 PREUVE SOFT INNOVATION -->
+            <a href="https://drive.google.com/file/d/1lBC8lWK83Av5KTiMabSKMPffgvuLpUAX/view?usp=sharing" target="_blank" 
+               class="proof-btn ml-auto">
+              <i class="fas fa-file-pdf"></i> Certificat
+            </a>
           </div>
           <h3 class="text-xl font-bold text-gray-900">Stagiaire Sécurité Réseau & DevOps</h3>
           <p class="text-blue-700 font-medium mb-3">Soft Innovation Technologies – Cotonou</p>
@@ -369,11 +733,20 @@
           </ul>
         </div>
 
-        <!-- MINISTÈRE AFFAIRES SOCIALES -->
+        <!-- MINISTÈRE AFFAIRES SOCIALES avec PREUVE -->
         <div class="exp-card bg-gray-50 p-6 lg:p-7 rounded-2xl border border-gray-200 timeline-dot">
-          <div class="flex flex-wrap gap-3 items-center mb-2">
-            <span class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1.5 rounded-full">Avr 2021 – Juil 2021</span>
-            <span class="bg-gray-200 text-gray-800 px-3 py-1.5 rounded-full text-xs">Stage</span>
+          <div class="flex flex-wrap items-center gap-3 mb-2">
+            <span class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1.5 rounded-full">
+              Avr 2021 – Juil 2021
+            </span>
+            <span class="bg-gray-200 text-gray-800 px-3 py-1.5 rounded-full text-xs">
+              Stage
+            </span>
+            <!-- 🔗 PREUVE MINISTÈRE -->
+            <a href="https://drive.google.com/file/d/1PUvlzeSR0Eyjb6ovoD4f26cvPZExTOua/view?usp=sharing" target="_blank" 
+               class="proof-btn ml-auto">
+              <i class="fas fa-file-pdf"></i> Attestation
+            </a>
           </div>
           <h3 class="text-xl font-bold text-gray-900">Stagiaire Département informatique</h3>
           <p class="text-blue-700 font-medium mb-3">Ministère des Affaires Sociales et de la Microfinance (MASM)</p>
@@ -418,7 +791,6 @@
             <p class="text-gray-500 text-sm">+229 0190939870 • frederic.gbaguidi@atlantiqueassurancesbenin.net</p>
           </div>
         </div>
-        <!-- RÉFÉRENCE MISE À JOUR : Anas ABDENNOUR -->
         <div class="ref-card bg-white p-6 rounded-2xl flex gap-4 items-start">
           <div class="bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl shrink-0"><i class="fas fa-user-tie"></i></div>
           <div>
@@ -428,10 +800,10 @@
           </div>
         </div>
       </div>
-         </div>
+    </div>
   </section>
 
-  <!-- ===== CONTACT avec formulaire 100% lisible (fond blanc, texte noir) ===== -->
+  <!-- ===== CONTACT ===== -->
   <section id="contact" class="py-16 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
     <div class="container mx-auto px-5 max-w-5xl">
       <div class="text-center mb-10">
@@ -465,7 +837,6 @@
             </div>
           </div>
           
-          <!-- RÉSEAUX SOCIAUX avec liens réels -->
           <div class="mt-8 flex gap-4">
             <a href="https://wa.me/2290168908277" target="_blank" rel="noopener noreferrer" 
                class="bg-green-600 hover:bg-green-700 text-white w-12 h-12 rounded-full flex items-center justify-center text-2xl transition transform hover:scale-110">
@@ -486,7 +857,6 @@
           </div>
         </div>
         
-        <!-- FORMULAIRE avec texte 100% VISIBLE (fond blanc, texte noir) -->
         <div>
           <h3 class="text-xl font-semibold mb-5">Écrivez-moi rapidement</h3>
           <form action="https://formspree.io/f/meoeeoag" method="POST" class="space-y-4">
@@ -499,24 +869,27 @@
             <textarea name="message" rows="4" placeholder="Précisez votre demande (type d’intervention, lieu, urgence…)" required
                       class="w-full px-5 py-3 rounded-xl bg-white border border-gray-300 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"></textarea>
             
-            <!-- Champ caché pour rediriger après envoi (optionnel - à supprimer si pas de page merci) -->
-            <!-- <input type="hidden" name="_next" value="https://votre-site.com/merci.html"> -->
             <input type="hidden" name="_subject" value="Nouveau message depuis votre CV en ligne">
             
             <button type="submit" 
                     class="w-full bg-blue-600 hover:bg-blue-500 text-white font-semibold py-3.5 px-6 rounded-xl transition flex items-center justify-center gap-2">
               <i class="fas fa-paper-plane"></i> Envoyer la demande
             </button>
-            <p class="text-xs text-gray-400 mt-2"> Votre message sera envoyé directement sur ma boîte email. Réponse sous 24h.</p>
+            <p class="text-xs text-gray-400 mt-2"> Réponse sous 24h.</p>
           </form>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- footer avec liens sociaux réels -->
+  <!-- footer avec bouton VOIR MON CV et liens sociaux -->
   <footer class="bg-gray-900 text-gray-300 py-8 border-t border-gray-800">
     <div class="container mx-auto px-5 text-center text-sm">
+      <div class="flex justify-center mb-4">
+        <a href="https://drive.google.com/file/d/1iQM9Rwa_AEsx0mycyqPfs19lKyq-fYzU/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="cv-btn">
+          <i class="fas fa-file-alt"></i> Voir mon CV (PDF)
+        </a>
+      </div>
       <p>© 2026 Éméride Gbètoho Djivoessoun – Technicien Réseau & Système.</p>
       <p class="mt-2 flex justify-center gap-5">
         <a href="https://www.linkedin.com/in/em%C3%A9ride-djivoessoun-2816aa360/" target="_blank" rel="noopener noreferrer" class="hover:text-white flex items-center gap-1">
@@ -532,8 +905,17 @@
     </div>
   </footer>
 
-  <!-- smooth scroll -->
+  <!-- MODAL POUR GALERIE HUAWEI -->
+  <div id="imageModal" class="modal" tabindex="-1" role="dialog" aria-modal="true" aria-label="Agrandissement d'image">
+    <div class="modal-content">
+      <span class="modal-close" id="modalCloseBtn">&times;</span>
+      <img id="modalImage" src="" alt="Image agrandie">
+    </div>
+  </div>
+
+  <!-- smooth scroll et gestion modal -->
   <script>
+    // Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         const href = this.getAttribute('href');
@@ -545,6 +927,61 @@
         }
       });
     });
+
+    // Modal pour les images de la galerie Huawei
+    (function() {
+      const modal = document.getElementById('imageModal');
+      const modalImg = document.getElementById('modalImage');
+      const closeBtn = document.getElementById('modalCloseBtn');
+
+      // Fonction pour extraire l'ID d'un lien Google Drive
+      function extractGoogleDriveId(url) {
+        const match = url.match(/\/d\/([a-zA-Z0-9_-]+)/);
+        return match ? match[1] : null;
+      }
+
+      // Ouvrir modal
+      function openModal(imageSrc) {
+        modalImg.src = imageSrc;
+        modal.classList.add('active');
+        modal.focus(); // le tabindex permet de recevoir le focus
+      }
+
+      // Fermer modal
+      function closeModal() {
+        modal.classList.remove('active');
+        modalImg.src = ''; // libère la mémoire
+      }
+
+      // Événements de fermeture
+      closeBtn.addEventListener('click', closeModal);
+      modal.addEventListener('click', function(e) {
+        if (e.target === modal) closeModal(); // clic sur le fond
+      });
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+          closeModal();
+        }
+      });
+
+      // Sélectionne tous les liens d'images de la galerie Huawei
+      const galleryLinks = document.querySelectorAll('.gallery-image-link');
+      galleryLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault(); // empêche l'ouverture du lien
+          const href = this.getAttribute('href');
+          const fileId = extractGoogleDriveId(href);
+          if (fileId) {
+            const directUrl = `https://drive.google.com/uc?export=view&id=${fileId}`;
+            openModal(directUrl);
+          } else {
+            // fallback: ouvrir le lien normalement si l'ID n'est pas trouvé
+            window.open(href, '_blank');
+          }
+        });
+      });
+    })();
   </script>
 </body>
 </html>
+```
