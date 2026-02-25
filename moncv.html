@@ -1,0 +1,1903 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Portfolio professionnel – Support IT | Technicien Réseau & Système | Maintenance Informatique – Cotonou" />
+  <title>EMÉRIDE GBÈTOHO DJIVOESSOUN — Support IT | Technicien Réseau & Système</title>
+
+  <!-- Fonts (CDN OK, pas de fichier séparé) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome SUPPRIMÉ, remplacé par sprite SVG -->
+
+  <style>
+    /* =========================================================
+       Design System — Portfolio IT (Corporate/Tech, haut de gamme)
+       Tout dans un seul fichier : CSS ici, JS en bas.
+       ========================================================= */
+
+    :root{
+      --bg: #0b1220;
+      --panel: rgba(255,255,255,0.06);
+      --panel-2: rgba(255,255,255,0.08);
+      --text: #eaf0ff;
+      --muted: rgba(234,240,255,0.72);
+      --muted-2: rgba(234,240,255,0.58);
+      --border: rgba(255,255,255,0.10);
+
+      --primary: #4da3ff;
+      --primary-2: #2b7cff;
+      --ok: #2ee59d;
+      --warn: #ffcc66;
+
+      --shadow: 0 18px 60px rgba(0,0,0,0.45);
+      --shadow-soft: 0 10px 30px rgba(0,0,0,0.25);
+
+      --radius: 18px;
+      --radius-2: 26px;
+
+      --container: 1120px;
+      --glass: blur(10px);
+    }
+
+    /* Light theme */
+    [data-theme="light"]{
+      --bg: #f6f8fc;
+      --panel: rgba(0,0,0,0.03);
+      --panel-2: rgba(0,0,0,0.05);
+      --text: #0b1220;
+      --muted: rgba(11,18,32,0.72);
+      --muted-2: rgba(11,18,32,0.58);
+      --border: rgba(11,18,32,0.12);
+
+      --shadow: 0 18px 60px rgba(16,24,40,0.14);
+      --shadow-soft: 0 10px 30px rgba(16,24,40,0.10);
+    }
+
+    *{ box-sizing: border-box; }
+    html{ scroll-behavior: smooth; }
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1000px 500px at 20% -10%, rgba(77,163,255,0.28), transparent 55%),
+                  radial-gradient(900px 520px at 95% 0%, rgba(46,229,157,0.16), transparent 60%),
+                  radial-gradient(900px 620px at 40% 120%, rgba(77,163,255,0.14), transparent 55%),
+                  var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a{ color: inherit; text-decoration: none; }
+    .container{ width: min(var(--container), calc(100% - 40px)); margin: 0 auto; }
+
+    /* Accessibility */
+    .skip-link{
+      position:absolute; left:-999px; top:10px;
+      background: var(--text); color: var(--bg);
+      padding:10px 12px; border-radius: 10px; z-index: 99999;
+    }
+    .skip-link:focus{ left:10px; }
+
+    /* =========================
+       Loader + Toast + BackTop
+       ========================= */
+    .loader{
+      position: fixed; inset:0;
+      display:flex; align-items:center; justify-content:center;
+      background: rgba(0,0,0,0.60);
+      backdrop-filter: var(--glass);
+      z-index: 9999;
+      transition: opacity .25s ease, visibility .25s ease;
+    }
+    .loader.hidden{ opacity:0; visibility:hidden; }
+    .loader-card{
+      width:min(520px, calc(100% - 40px));
+      border: 1px solid var(--border);
+      border-radius: var(--radius-2);
+      padding: 18px 18px;
+      background: rgba(10,16,28,0.55);
+      box-shadow: var(--shadow);
+    }
+    [data-theme="light"] .loader-card{ background: rgba(255,255,255,0.65); }
+    .loader-top{
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+      margin-bottom: 12px;
+    }
+    .loader-badge{
+      display:inline-flex; align-items:center; gap:10px;
+      padding: 10px 12px; border-radius: 999px;
+      border: 1px solid var(--border);
+      background: var(--panel);
+      font-weight: 700;
+    }
+    .spinner{
+      width: 46px; height:46px; border-radius:50%;
+      border: 3px solid rgba(255,255,255,0.18);
+      border-top-color: var(--primary);
+      animation: spin 1s linear infinite;
+    }
+    [data-theme="light"] .spinner{ border-color: rgba(11,18,32,0.16); border-top-color: var(--primary); }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .toast-wrap{
+      position: fixed;
+      right: 14px; top: 14px;
+      display:flex; flex-direction:column; gap:10px;
+      z-index: 99999;
+      pointer-events:none;
+    }
+    .toast{
+      pointer-events:auto;
+      width: min(420px, calc(100vw - 28px));
+      background: rgba(10,16,28,0.72);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: var(--shadow-soft);
+      padding: 12px 12px;
+      backdrop-filter: var(--glass);
+      display:flex; gap:12px; align-items:flex-start;
+      animation: toastIn .22s ease both;
+    }
+    [data-theme="light"] .toast{ background: rgba(255,255,255,0.80); }
+    @keyframes toastIn{
+      from{ transform: translateY(-8px); opacity:0; }
+      to{ transform: translateY(0); opacity:1; }
+    }
+    .toast .icon{
+      width: 36px; height: 36px;
+      border-radius: 12px;
+      display:flex; align-items:center; justify-content:center;
+      background: rgba(77,163,255,0.18);
+      color: var(--primary);
+      border: 1px solid rgba(77,163,255,0.25);
+      flex: 0 0 auto;
+    }
+    .toast .content{ flex:1; }
+    .toast .title{ font-weight: 800; margin:0; font-size: 0.95rem; }
+    .toast .msg{ margin: 2px 0 0; color: var(--muted); font-size: 0.92rem; }
+    .toast .close{
+      border:0; background: transparent; color: var(--muted);
+      cursor:pointer; padding: 6px; border-radius: 10px;
+    }
+    .toast .close:hover{ background: var(--panel); color: var(--text); }
+
+    .backtop{
+      position: fixed;
+      right: 16px; bottom: 16px;
+      width: 48px; height: 48px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: rgba(10,16,28,0.62);
+      backdrop-filter: var(--glass);
+      color: var(--text);
+      display:flex; align-items:center; justify-content:center;
+      cursor:pointer;
+      box-shadow: var(--shadow-soft);
+      opacity:0; transform: translateY(8px);
+      pointer-events:none;
+      transition: .2s ease;
+      z-index: 9998;
+    }
+    [data-theme="light"] .backtop{ background: rgba(255,255,255,0.70); }
+    .backtop.visible{ opacity:1; transform: translateY(0); pointer-events:auto; }
+    .backtop:hover{ border-color: rgba(77,163,255,0.45); }
+
+    /* =========================
+       Header / Nav
+       ========================= */
+    header{
+      position: relative;
+      padding-bottom: 28px;
+    }
+    .nav{
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(11,18,32,0.42);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      backdrop-filter: var(--glass);
+    }
+    [data-theme="light"] .nav{ background: rgba(246,248,252,0.78); border-bottom-color: rgba(11,18,32,0.10); }
+    .nav-inner{
+      display:flex; align-items:center; justify-content:space-between;
+      padding: 12px 0;
+      gap: 14px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      min-width: 250px;
+    }
+    .brand-mark{
+      width: 40px; height: 40px;
+      border-radius: 14px;
+      display:flex; align-items:center; justify-content:center;
+      background: linear-gradient(135deg, rgba(77,163,255,0.26), rgba(46,229,157,0.16));
+      border: 1px solid var(--border);
+      box-shadow: 0 12px 22px rgba(0,0,0,0.18);
+    }
+    .brand-title{ line-height: 1.05; }
+    .brand-title strong{ display:block; font-weight: 900; font-size: 0.98rem; letter-spacing: 0.2px; }
+    .brand-title span{ display:block; font-size: 0.82rem; color: var(--muted); font-weight: 600; }
+
+    .nav-links{
+      display:flex; align-items:center; gap: 18px;
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 0.92rem;
+    }
+    .nav-links a{ padding: 10px 10px; border-radius: 12px; }
+    .nav-links a:hover{ background: var(--panel); color: var(--text); }
+
+    .nav-actions{
+      display:flex; align-items:center; gap: 10px;
+    }
+    .btn{
+      border: 1px solid var(--border);
+      background: var(--panel);
+      color: var(--text);
+      border-radius: 14px;
+      padding: 10px 12px;
+      font-weight: 800;
+      cursor:pointer;
+      display:inline-flex; align-items:center; gap:10px;
+      transition: .18s ease;
+      white-space: nowrap;
+    }
+    .btn:hover{ transform: translateY(-1px); border-color: rgba(77,163,255,0.35); }
+    .btn-primary{
+      background: linear-gradient(135deg, rgba(77,163,255,0.95), rgba(43,124,255,0.95));
+      border-color: rgba(77,163,255,0.35);
+      color: #07101f;
+      box-shadow: 0 14px 30px rgba(77,163,255,0.18);
+    }
+    .btn-primary:hover{ box-shadow: 0 18px 44px rgba(77,163,255,0.26); }
+    .btn-ghost{ background: transparent; }
+    .btn-warn{
+      background: linear-gradient(135deg, rgba(255,204,102,0.95), rgba(255,175,55,0.95));
+      border-color: rgba(255,204,102,0.45);
+      color: #14100a;
+    }
+    .btn-icon{
+      width: 44px; height: 44px;
+      border-radius: 14px;
+      padding: 0;
+      justify-content:center;
+    }
+
+    .hamburger{ display:none; }
+    @media (max-width: 980px){
+      .nav-links{ display:none; }
+      .hamburger{ display:inline-flex; }
+    }
+
+    /* Mobile menu */
+    .mobile{
+      display:none;
+      border-top: 1px solid var(--border);
+      padding: 12px 0 16px;
+    }
+    .mobile.open{ display:block; }
+    .mobile a{
+      display:flex; align-items:center; justify-content:space-between;
+      padding: 12px 10px;
+      border-radius: 14px;
+      color: var(--muted);
+      font-weight: 800;
+    }
+    .mobile a:hover{ background: var(--panel); color: var(--text); }
+
+    /* =========================
+       Hero
+       ========================= */
+    .hero{
+      padding: 44px 0 26px;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+    @media (max-width: 980px){
+      .hero-grid{ grid-template-columns: 1fr; }
+    }
+
+    .card{
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.05);
+      border-radius: var(--radius-2);
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: var(--glass);
+    }
+    [data-theme="light"] .card{ background: rgba(255,255,255,0.75); }
+
+    .hero-main{
+      padding: 26px;
+      position: relative;
+      overflow:hidden;
+    }
+    .hero-main:before{
+      content:"";
+      position:absolute; inset:-2px;
+      background:
+        radial-gradient(700px 260px at 20% 10%, rgba(77,163,255,0.22), transparent 60%),
+        radial-gradient(700px 260px at 70% 0%, rgba(46,229,157,0.16), transparent 60%);
+      pointer-events:none;
+    }
+    .hero-main > *{ position: relative; z-index: 1; }
+
+    .status{
+      display:inline-flex; align-items:center; gap:10px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: var(--panel);
+      color: var(--muted);
+      font-weight: 800;
+      font-size: 0.9rem;
+    }
+    .dot{
+      width: 10px; height:10px; border-radius:50%;
+      background: var(--ok);
+      box-shadow: 0 0 0 6px rgba(46,229,157,0.16);
+    }
+
+    .hero h1{
+      margin: 14px 0 8px;
+      font-size: clamp(1.85rem, 3.2vw, 2.8rem);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+    }
+    .role{
+      display:flex; align-items:center; gap:10px;
+      color: var(--muted);
+      font-weight: 800;
+      font-size: 1.05rem;
+      margin: 0 0 10px;
+    }
+    .typing{
+      margin: 10px 0 18px;
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 1.02rem;
+    }
+    .typing code{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      background: rgba(77,163,255,0.14);
+      border: 1px solid rgba(77,163,255,0.22);
+      padding: 2px 8px;
+      border-radius: 10px;
+      color: var(--text);
+      font-weight: 800;
+    }
+    .hero-cta{
+      display:flex; flex-wrap:wrap; gap:10px;
+      margin-top: 16px;
+    }
+
+    .hero-aside{
+      padding: 22px;
+      display:flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .profile{
+      display:flex; gap: 14px; align-items:center;
+      padding: 14px;
+      border-radius: var(--radius);
+      background: var(--panel);
+      border: 1px solid var(--border);
+    }
+    .avatar{
+      width: 58px; height:58px; border-radius: 18px;
+      background: linear-gradient(135deg, rgba(77,163,255,0.35), rgba(46,229,157,0.16));
+      display:flex; align-items:center; justify-content:center;
+      border: 1px solid rgba(255,255,255,0.14);
+      box-shadow: 0 16px 30px rgba(0,0,0,0.18);
+      flex: 0 0 auto;
+    }
+    .profile strong{ display:block; font-weight: 900; }
+    .profile span{ display:block; color: var(--muted); font-weight: 700; font-size: 0.92rem; }
+
+    .info-grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+    .info{
+      padding: 12px 14px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: var(--panel);
+      display:flex; gap:12px; align-items:flex-start;
+    }
+    .info i{
+      width: 34px; height:34px;
+      border-radius: 14px;
+      display:flex; align-items:center; justify-content:center;
+      background: rgba(77,163,255,0.16);
+      border: 1px solid rgba(77,163,255,0.22);
+      color: var(--primary);
+      flex: 0 0 auto;
+    }
+    .info .label{ font-weight: 900; font-size: 0.92rem; margin:0; }
+    .info .value{ margin: 2px 0 0; color: var(--muted); font-weight: 700; font-size: 0.92rem; }
+
+    /* =========================
+       Sections
+       ========================= */
+    section{ padding: 54px 0; }
+    .section-head{
+      display:flex; align-items:flex-end; justify-content:space-between; gap: 14px;
+      margin-bottom: 22px;
+    }
+    .kicker{
+      display:inline-flex; align-items:center; gap:10px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: var(--panel);
+      color: var(--muted);
+      font-weight: 900;
+      font-size: 0.9rem;
+    }
+    h2{
+      margin: 10px 0 0;
+      font-size: clamp(1.35rem, 2.0vw, 1.75rem);
+      letter-spacing: -0.02em;
+    }
+    .sub{
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .grid-2{ display:grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    @media (max-width: 980px){ .grid-2{ grid-template-columns: 1fr; } }
+    .grid-3{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    @media (max-width: 980px){ .grid-3{ grid-template-columns: 1fr; } }
+
+    .panel{
+      padding: 20px;
+      border-radius: var(--radius-2);
+      border: 1px solid var(--border);
+      background: var(--panel);
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: var(--glass);
+    }
+
+    /* About */
+    .about p{ margin: 0; color: var(--muted); font-weight: 650; }
+    .highlights{
+      display:grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
+      margin-top: 14px;
+    }
+    @media (max-width: 980px){ .highlights{ grid-template-columns: 1fr; } }
+    .hl{
+      padding: 14px;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.04);
+    }
+    [data-theme="light"] .hl{ background: rgba(255,255,255,0.65); }
+    .hl strong{ display:block; font-weight: 900; }
+    .hl span{ display:block; color: var(--muted); font-weight: 700; margin-top: 2px; }
+
+    /* Skills */
+    .skill{
+      padding: 12px 0;
+    }
+    .skill-top{
+      display:flex; align-items:center; justify-content:space-between; gap: 12px;
+      font-weight: 900;
+    }
+    .skill-top span{ color: var(--muted); font-weight: 900; }
+    .bar{
+      height: 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.10);
+      overflow:hidden;
+      margin-top: 8px;
+    }
+    [data-theme="light"] .bar{ background: rgba(11,18,32,0.08); border-color: rgba(11,18,32,0.10); }
+    .bar > i{
+      display:block;
+      height: 100%;
+      width: 0%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(77,163,255,0.95), rgba(46,229,157,0.85));
+      box-shadow: 0 12px 26px rgba(77,163,255,0.16);
+      transition: width 1.2s cubic-bezier(.2,.8,.2,1);
+    }
+    .chips{ display:flex; flex-wrap:wrap; gap: 10px; margin-top: 10px; }
+    .chip{
+      display:inline-flex; align-items:center; gap:10px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.04);
+      color: var(--muted);
+      font-weight: 800;
+      font-size: 0.92rem;
+    }
+    [data-theme="light"] .chip{ background: rgba(255,255,255,0.55); }
+    .chip i{ color: var(--primary); }
+
+    /* Timeline */
+    .timeline{
+      position: relative;
+      padding-left: 18px;
+    }
+    .timeline:before{
+      content:"";
+      position:absolute;
+      left: 7px; top: 6px; bottom: 6px;
+      width: 2px;
+      background: linear-gradient(180deg, rgba(77,163,255,0.55), rgba(46,229,157,0.25));
+      opacity: 0.9;
+    }
+    .t-item{
+      position: relative;
+      padding: 16px 16px 16px 18px;
+      margin-bottom: 14px;
+      border-radius: var(--radius-2);
+      border: 1px solid var(--border);
+      background: var(--panel);
+      box-shadow: var(--shadow-soft);
+    }
+    .t-item:before{
+      content:"";
+      position:absolute; left: -2px; top: 20px;
+      width: 14px; height: 14px; border-radius: 50%;
+      background: var(--primary);
+      box-shadow: 0 0 0 6px rgba(77,163,255,0.16);
+      border: 1px solid rgba(255,255,255,0.20);
+    }
+    .t-head{
+      display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap: 10px;
+      margin-bottom: 6px;
+    }
+    .tagrow{ display:flex; flex-wrap:wrap; gap: 8px; }
+    .tag{
+      display:inline-flex; align-items:center; gap:8px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.04);
+      color: var(--muted);
+      font-weight: 900;
+      font-size: 0.86rem;
+    }
+    [data-theme="light"] .tag{ background: rgba(255,255,255,0.55); }
+    .t-item h3{
+      margin: 0;
+      font-size: 1.02rem;
+      letter-spacing: -0.01em;
+    }
+    .t-item .where{
+      margin: 4px 0 0;
+      color: var(--muted);
+      font-weight: 800;
+    }
+    .t-item ul{
+      margin: 10px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+      font-weight: 650;
+    }
+    .proof{
+      display:inline-flex; align-items:center; gap:10px;
+      padding: 9px 11px;
+      border-radius: 14px;
+      border: 1px solid rgba(77,163,255,0.22);
+      background: rgba(77,163,255,0.10);
+      color: var(--text);
+      font-weight: 900;
+      font-size: 0.9rem;
+    }
+    .proof:hover{ border-color: rgba(77,163,255,0.42); }
+
+    /* Cards (Services / Projects) */
+    .c{
+      padding: 18px;
+      border-radius: var(--radius-2);
+      border: 1px solid var(--border);
+      background: var(--panel);
+      box-shadow: var(--shadow-soft);
+      transition: transform .18s ease, border-color .18s ease;
+    }
+    .c:hover{ transform: translateY(-3px); border-color: rgba(77,163,255,0.38); }
+    .c .icon{
+      width: 46px; height:46px;
+      border-radius: 18px;
+      display:flex; align-items:center; justify-content:center;
+      background: rgba(77,163,255,0.16);
+      border: 1px solid rgba(77,163,255,0.22);
+      color: var(--primary);
+      margin-bottom: 10px;
+      font-size: 1.05rem;
+    }
+    .c h3{ margin: 0 0 6px; font-size: 1.05rem; }
+    .c p{ margin: 0; color: var(--muted); font-weight: 650; }
+
+    /* Stats */
+    .stats{
+      display:grid; grid-template-columns: repeat(4, 1fr); gap: 14px;
+    }
+    @media (max-width: 980px){ .stats{ grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 560px){ .stats{ grid-template-columns: 1fr; } }
+    .stat{
+      padding: 18px;
+      border-radius: var(--radius-2);
+      border: 1px solid var(--border);
+      background: var(--panel);
+      box-shadow: var(--shadow-soft);
+    }
+    .stat .n{
+      font-weight: 950;
+      font-size: 1.8rem;
+      letter-spacing: -0.02em;
+      margin: 0;
+    }
+    .stat .l{
+      margin: 2px 0 0;
+      color: var(--muted);
+      font-weight: 800;
+    }
+
+    /* Contact */
+    .contact-grid{
+      display:grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 16px;
+      align-items: start;
+    }
+    @media (max-width: 980px){ .contact-grid{ grid-template-columns: 1fr; } }
+    .contact-card{
+      padding: 18px;
+      border-radius: var(--radius-2);
+      border: 1px solid var(--border);
+      background: var(--panel);
+      box-shadow: var(--shadow-soft);
+    }
+    .contact-card h3{ margin: 0 0 10px; }
+    .contact-list{ display:flex; flex-direction:column; gap: 10px; margin-top: 10px; }
+    .contact-item{
+      display:flex; gap: 12px; align-items:flex-start;
+      padding: 12px 12px;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.04);
+    }
+    [data-theme="light"] .contact-item{ background: rgba(255,255,255,0.60); }
+    .contact-item i{
+      width: 38px; height:38px; border-radius: 16px;
+      display:flex; align-items:center; justify-content:center;
+      background: rgba(46,229,157,0.16);
+      border: 1px solid rgba(46,229,157,0.22);
+      color: var(--ok);
+      flex:0 0 auto;
+    }
+    .contact-item strong{ display:block; font-weight: 950; }
+    .contact-item span{ display:block; color: var(--muted); font-weight: 750; margin-top: 2px; }
+
+    form .row{ display:grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    @media (max-width: 560px){ form .row{ grid-template-columns: 1fr; } }
+    label{ display:block; font-weight: 900; margin: 0 0 6px; color: var(--muted); }
+    input, textarea{
+      width: 100%;
+      padding: 12px 12px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.04);
+      color: var(--text);
+      outline: none;
+      font-weight: 700;
+      transition: border-color .15s ease, transform .15s ease;
+    }
+    [data-theme="light"] input,
+    [data-theme="light"] textarea{ background: rgba(255,255,255,0.70); }
+    input:focus, textarea:focus{ border-color: rgba(77,163,255,0.55); transform: translateY(-1px); }
+    textarea{ min-height: 140px; resize: vertical; }
+
+    .fineprint{
+      color: var(--muted-2);
+      font-weight: 700;
+      font-size: 0.92rem;
+      margin-top: 10px;
+    }
+
+    /* Footer */
+    footer{
+      border-top: 1px solid var(--border);
+      padding: 22px 0;
+      color: var(--muted);
+    }
+    footer .foot{
+      display:flex; align-items:center; justify-content:space-between; gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    /* Reveal on scroll */
+    .reveal{
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity .55s ease, transform .55s ease;
+      will-change: opacity, transform;
+    }
+    .reveal.visible{
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      html{ scroll-behavior: auto; }
+      .reveal{ transition: none; transform:none; opacity:1; }
+      .toast{ animation:none; }
+      .bar > i{ transition:none; }
+      .btn:hover{ transform:none; }
+    }
+
+    /* =========================
+       SVG icons styles
+       ========================= */
+    .svg-ico{
+      width: 1em;
+      height: 1em;
+      display: inline-block;
+      vertical-align: -0.125em;
+      color: currentColor;
+      fill: currentColor;
+    }
+    .svg-ico.lg{ width: 1.25em; height: 1.25em; }
+    .svg-ico.xl{ width: 1.5em; height: 1.5em; }
+    .btn .svg-ico{ margin-right: 4px; }
+  </style>
+</head>
+
+<body>
+  <!-- Sprite SVG unique -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+    <!-- Icônes fournies par l'utilisateur -->
+    <symbol id="i-mail" viewBox="0 0 24 24">
+      <path d="M4 6h16v12H4z" fill="none" stroke="currentColor" stroke-width="2"/>
+      <path d="M4 7l8 6 8-6" fill="none" stroke="currentColor" stroke-width="2"/>
+    </symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24">
+      <path d="M7 3h4l2 5-2 1c1.2 2.6 3.3 4.7 5.9 5.9l1.1-2 5 2v4c0 1-1 2-2 2C10 22 2 14 2 4c0-1 1-2 2-2h3z" fill="currentColor"/>
+    </symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24">
+      <path d="M12 22s7-6.1 7-12a7 7 0 1 0-14 0c0 5.9 7 12 7 12z" fill="none" stroke="currentColor" stroke-width="2"/>
+      <circle cx="12" cy="10" r="2.5" fill="currentColor"/>
+    </symbol>
+    <symbol id="i-plane" viewBox="0 0 24 24">
+      <path d="M2 12l20-8-7 20-3-8-8-4z" fill="currentColor"/>
+    </symbol>
+    <symbol id="i-whatsapp" viewBox="0 0 24 24">
+      <path d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.9-1.4A10 10 0 1 0 12 2z" fill="none" stroke="currentColor" stroke-width="2"/>
+      <path d="M9.3 8.6c-.2-.5-.4-.5-.7-.5h-.6c-.2 0-.6.1-.9.5-.3.4-1.2 1.2-1.2 3s1.2 3.4 1.4 3.6c.2.2 2.4 3.7 5.9 5 2.9 1.1 3.5.9 4.2.8.6-.1 1.9-.8 2.2-1.6.3-.8.3-1.5.2-1.6-.1-.1-.4-.2-.9-.4s-1.9-.9-2.2-1-.5-.2-.8.2-.9 1-1.1 1.2-.4.3-.8.1c-.4-.2-1.5-.6-2.8-1.8-1-1-1.7-2.2-1.9-2.6-.2-.4 0-.6.2-.8.2-.2.4-.4.6-.7.2-.2.2-.4.3-.6.1-.2 0-.5-.1-.7z" fill="currentColor"/>
+    </symbol>
+
+    <!-- Icônes supplémentaires pour couvrir toutes les utilisations -->
+    <symbol id="i-shield" viewBox="0 0 24 24">
+      <path d="M12 2L3 6v8c0 5 9 8 9 8s9-3 9-8V6l-9-4z" fill="none" stroke="currentColor" stroke-width="2"/>
+    </symbol>
+    <symbol id="i-network" viewBox="0 0 24 24">
+      <circle cx="12" cy="6" r="2.5" fill="none" stroke="currentColor" stroke-width="2"/>
+      <circle cx="5" cy="18" r="2.5" fill="none" stroke="currentColor" stroke-width="2"/>
+      <circle cx="19" cy="18" r="2.5" fill="none" stroke="currentColor" stroke-width="2"/>
+      <path d="M12 8.5V12M7 16l2-3M17 16l-2-3" stroke="currentColor" stroke-width="2" fill="none"/>
+    </symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24">
+      <path d="M21 12.8A9 9 0 0 1 12 21 9 9 0 0 1 8 3.5 9 9 0 0 0 21 12.8z" fill="currentColor"/>
+    </symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/>
+      <path d="M12 2v2M12 20v2M4 4l2 2M18 18l2 2M2 12h2M20 12h2M4 20l2-2M18 6l2-2" stroke="currentColor" stroke-width="2" fill="none"/>
+    </symbol>
+    <symbol id="i-file-download" viewBox="0 0 24 24">
+      <path d="M14 2v6h6" stroke="currentColor" stroke-width="2" fill="none"/>
+      <path d="M4 4v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6H6a2 2 0 0 0-2 2z" stroke="currentColor" stroke-width="2" fill="none"/>
+      <path d="M12 12v6m-3-3l3 3 3-3" stroke="currentColor" stroke-width="2" fill="none"/>
+    </symbol>
+    <symbol id="i-bars" viewBox="0 0 24 24">
+      <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" fill="none"/>
+    </symbol>
+    <symbol id="i-xmark" viewBox="0 0 24 24">
+      <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2"/>
+    </symbol>
+    <symbol id="i-headset" viewBox="0 0 24 24">
+      <path d="M4 14h2v6H4a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2zm16 0h2v4a2 2 0 0 1-2 2h-2v-6z" fill="none" stroke="currentColor" stroke-width="2"/>
+      <path d="M12 2a8 8 0 0 0-8 8v4" stroke="currentColor" stroke-width="2" fill="none"/>
+      <path d="M20 10a8 8 0 0 0-16 0" stroke="currentColor" stroke-width="2" fill="none"/>
+    </symbol>
+    <symbol id="i-tools" viewBox="0 0 24 24">
+      <path d="M14 9l3-3a3 3 0 0 1 4 4l-3 3m-4 4l-3 3a3 3 0 0 1-4-4l3-3" stroke="currentColor" stroke-width="2" fill="none"/>
+      <circle cx="7.5" cy="16.5" r="2.5" fill="none" stroke="currentColor" stroke-width="2"/>
+      <circle cx="16.5" cy="7.5" r="2.5" fill="none" stroke="currentColor" stroke-width="2"/>
+    </symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24">
+      <rect x="9" y="9" width="13" height="13" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" stroke="currentColor" stroke-width="2" fill="none"/>
+    </symbol>
+    <symbol id="i-user-shield" viewBox="0 0 24 24">
+      <circle cx="10" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="2"/>
+      <path d="M2 20v-2a6 6 0 0 1 10-4.5" stroke="currentColor" stroke-width="2" fill="none"/>
+      <path d="M17 13v6l3-1.5 3 1.5v-6" stroke="currentColor" stroke-width="2" fill="none"/>
+    </symbol>
+    <symbol id="i-id-badge" viewBox="0 0 24 24">
+      <rect x="4" y="4" width="16" height="16" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+      <circle cx="12" cy="10" r="2" fill="none" stroke="currentColor" stroke-width="2"/>
+      <path d="M8 18v-1a4 4 0 0 1 8 0v1" stroke="currentColor" stroke-width="2" fill="none"/>
+    </symbol>
+    <symbol id="i-windows" viewBox="0 0 24 24">
+      <path d="M3 3h8v8H3zM13 3h8v8h-8zM3 13h8v8H3zM13 13h8v8h-8z" stroke="currentColor" stroke-width="2" fill="none"/>
+    </symbol>
+    <symbol id="i-cloud" viewBox="0 0 24 24">
+      <path d="M18 10h-2.2A6 6 0 0 0 6 10H6a4 4 0 0 0 0 8h12a4 4 0 0 0 0-8z" stroke="currentColor" stroke-width="2" fill="none"/>
+    </symbol>
+    <symbol id="i-print" viewBox="0 0 24 24">
+      <path d="M6 9V4h12v5" stroke="currentColor" stroke-width="2" fill="none"/>
+      <rect x="4" y="9" width="16" height="10" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+      <path d="M8 13h8M8 17h4" stroke="currentColor" stroke-width="2" fill="none"/>
+    </symbol>
+    <symbol id="i-video" viewBox="0 0 24 24">
+      <rect x="2" y="6" width="16" height="12" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+      <path d="M22 8l-4 4 4 4V8z" stroke="currentColor" stroke-width="2" fill="none"/>
+    </symbol>
+    <symbol id="i-phone-volume" viewBox="0 0 24 24">
+      <path d="M7 3h4l2 5-2 1c1.2 2.6 3.3 4.7 5.9 5.9l1.1-2 5 2v4c0 1-1 2-2 2C10 22 2 14 2 4c0-1 1-2 2-2h3z" fill="none" stroke="currentColor" stroke-width="2"/>
+      <path d="M15 8a4 4 0 0 1 0 6M18 5a7 7 0 0 1 0 10" stroke="currentColor" stroke-width="2" fill="none"/>
+    </symbol>
+    <symbol id="i-users" viewBox="0 0 24 24">
+      <circle cx="9" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="2"/>
+      <circle cx="17" cy="14" r="4" fill="none" stroke="currentColor" stroke-width="2"/>
+      <path d="M2 20v-2a5 5 0 0 1 8-3M16 20v-2a5 5 0 0 0-4-3" stroke="currentColor" stroke-width="2" fill="none"/>
+    </symbol>
+    <symbol id="i-diagram" viewBox="0 0 24 24">
+      <rect x="2" y="2" width="6" height="6" fill="none" stroke="currentColor" stroke-width="2"/>
+      <rect x="16" y="2" width="6" height="6" fill="none" stroke="currentColor" stroke-width="2"/>
+      <rect x="9" y="16" width="6" height="6" fill="none" stroke="currentColor" stroke-width="2"/>
+      <path d="M5 8v3h6v5M19 8v3h-6v2" stroke="currentColor" stroke-width="2" fill="none"/>
+    </symbol>
+    <symbol id="i-camera" viewBox="0 0 24 24">
+      <rect x="2" y="6" width="20" height="14" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+      <circle cx="12" cy="13" r="4" fill="none" stroke="currentColor" stroke-width="2"/>
+      <path d="M8 6l2-4h4l2 4" stroke="currentColor" stroke-width="2" fill="none"/>
+    </symbol>
+    <symbol id="i-briefcase" viewBox="0 0 24 24">
+      <rect x="2" y="7" width="20" height="14" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+      <path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" stroke="currentColor" stroke-width="2" fill="none"/>
+    </symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24">
+      <rect x="3" y="4" width="18" height="18" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+      <path d="M3 10h18M8 2v4M16 2v4" stroke="currentColor" stroke-width="2" fill="none"/>
+    </symbol>
+    <symbol id="i-bolt" viewBox="0 0 24 24">
+      <path d="M13 2L4 14h7l-2 8 9-12h-7l2-8z" stroke="currentColor" stroke-width="2" fill="none"/>
+    </symbol>
+    <symbol id="i-file-pdf" viewBox="0 0 24 24">
+      <path d="M14 2v6h6" stroke="currentColor" stroke-width="2" fill="none"/>
+      <path d="M4 4v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6H6a2 2 0 0 0-2 2z" stroke="currentColor" stroke-width="2" fill="none"/>
+      <path d="M8 12h8M8 16h5" stroke="currentColor" stroke-width="2" fill="none"/>
+      <path d="M14 16v-4" stroke="currentColor" stroke-width="2" fill="none"/>
+    </symbol>
+    <symbol id="i-info" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/>
+      <path d="M12 16v-4M12 8h.01" stroke="currentColor" stroke-width="2"/>
+    </symbol>
+    <symbol id="i-images" viewBox="0 0 24 24">
+      <rect x="2" y="2" width="16" height="16" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+      <circle cx="7" cy="7" r="1.5" fill="currentColor"/>
+      <path d="M18 8l2 2v10a2 2 0 0 1-2 2H6" stroke="currentColor" stroke-width="2" fill="none"/>
+      <path d="M14 18l-5-5-3 3" stroke="currentColor" stroke-width="2" fill="none"/>
+    </symbol>
+    <symbol id="i-handshake" viewBox="0 0 24 24">
+      <path d="M17 11l4-4a2 2 0 0 0 0-3l-1-1a2 2 0 0 0-3 0l-4 4M7 13L3 9a2 2 0 0 1 0-3l1-1a2 2 0 0 1 3 0l4 4" stroke="currentColor" stroke-width="2" fill="none"/>
+      <path d="M12 8l2 2-2 2-2-2 2-2zM8 12l2 2-2 2-2-2 2-2zM16 12l2 2-2 2-2-2 2-2zM12 16l2 2-2 2-2-2 2-2z" stroke="currentColor" stroke-width="2" fill="none"/>
+    </symbol>
+    <symbol id="i-laptop-medical" viewBox="0 0 24 24">
+      <rect x="2" y="4" width="20" height="12" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+      <path d="M8 20h8M12 16v4" stroke="currentColor" stroke-width="2" fill="none"/>
+      <path d="M12 8v4M10 10h4" stroke="currentColor" stroke-width="2" fill="none"/>
+    </symbol>
+    <symbol id="i-user-headset" viewBox="0 0 24 24">
+      <circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="2"/>
+      <path d="M2 20v-2a6 6 0 0 1 12 0v2" stroke="currentColor" stroke-width="2" fill="none"/>
+      <path d="M18 10h2a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2v-8z" stroke="currentColor" stroke-width="2" fill="none"/>
+      <path d="M20 14h-2" stroke="currentColor" stroke-width="2" fill="none"/>
+    </symbol>
+    <symbol id="i-ethernet" viewBox="0 0 24 24">
+      <rect x="4" y="4" width="16" height="16" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+      <path d="M8 10v4M12 10v4M16 10v4" stroke="currentColor" stroke-width="2" fill="none"/>
+    </symbol>
+    <symbol id="i-boxes" viewBox="0 0 24 24">
+      <path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z" stroke="currentColor" stroke-width="2" fill="none"/>
+    </symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="2.5" fill="none" stroke="currentColor" stroke-width="2"/>
+      <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z" stroke="currentColor" stroke-width="2" fill="none"/>
+    </symbol>
+    <symbol id="i-chart-line" viewBox="0 0 24 24">
+      <path d="M3 17l5-5 4 4 7-7" stroke="currentColor" stroke-width="2" fill="none"/>
+      <path d="M3 21h18" stroke="currentColor" stroke-width="2" fill="none"/>
+    </symbol>
+    <symbol id="i-chevron-right" viewBox="0 0 24 24">
+      <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none"/>
+    </symbol>
+    <symbol id="i-arrow-up" viewBox="0 0 24 24">
+      <path d="M12 19V5M5 12l7-7 7 7" stroke="currentColor" stroke-width="2" fill="none"/>
+    </symbol>
+    <symbol id="i-palette" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/>
+      <path d="M12 2v4M12 22v-4M22 12h-4M2 12h4" stroke="currentColor" stroke-width="2" fill="none"/>
+      <circle cx="7.5" cy="7.5" r="1.5" fill="currentColor"/>
+      <circle cx="16.5" cy="7.5" r="1.5" fill="currentColor"/>
+      <circle cx="7.5" cy="16.5" r="1.5" fill="currentColor"/>
+      <circle cx="16.5" cy="16.5" r="1.5" fill="currentColor"/>
+    </symbol>
+    <symbol id="i-clipboard-check" viewBox="0 0 24 24">
+      <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" stroke="currentColor" stroke-width="2" fill="none"/>
+      <path d="M8 2h8v4H8V2zM9 13l2 2 4-4" stroke="currentColor" stroke-width="2" fill="none"/>
+    </symbol>
+    <symbol id="i-triangle-exclamation" viewBox="0 0 24 24">
+      <path d="M12 9v4M12 17h.01" stroke="currentColor" stroke-width="2" fill="none"/>
+      <path d="M3 20h18L12 4 3 20z" stroke="currentColor" stroke-width="2" fill="none"/>
+    </symbol>
+    <symbol id="i-check" viewBox="0 0 24 24">
+      <path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" fill="none"/>
+    </symbol>
+    <symbol id="i-circle-info" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/>
+      <path d="M12 16v-4M12 8h.01" stroke="currentColor" stroke-width="2"/>
+    </symbol>
+    <symbol id="i-print" viewBox="0 0 24 24">
+      <path d="M6 9V4h12v5" stroke="currentColor" stroke-width="2" fill="none"/>
+      <rect x="4" y="9" width="16" height="10" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+      <path d="M8 13h8M8 17h4" stroke="currentColor" stroke-width="2" fill="none"/>
+    </symbol>
+    <symbol id="i-phone-volume" viewBox="0 0 24 24">
+      <path d="M7 3h4l2 5-2 1c1.2 2.6 3.3 4.7 5.9 5.9l1.1-2 5 2v4c0 1-1 2-2 2C10 22 2 14 2 4c0-1 1-2 2-2h3z" fill="none" stroke="currentColor" stroke-width="2"/>
+      <path d="M15 8a4 4 0 0 1 0 6M18 5a7 7 0 0 1 0 10" stroke="currentColor" stroke-width="2" fill="none"/>
+    </symbol>
+    <symbol id="i-users-gear" viewBox="0 0 24 24">
+      <circle cx="9" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="2"/>
+      <circle cx="17" cy="14" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+      <path d="M2 20v-2a5 5 0 0 1 8-3M16 20v-2a5 5 0 0 0-4-3" stroke="currentColor" stroke-width="2" fill="none"/>
+      <path d="M20 14l1 1-2 2-1-1 2-2z" stroke="currentColor" stroke-width="2" fill="none"/>
+    </symbol>
+    <symbol id="i-diagram-project" viewBox="0 0 24 24">
+      <rect x="2" y="2" width="6" height="6" fill="none" stroke="currentColor" stroke-width="2"/>
+      <rect x="16" y="2" width="6" height="6" fill="none" stroke="currentColor" stroke-width="2"/>
+      <rect x="9" y="16" width="6" height="6" fill="none" stroke="currentColor" stroke-width="2"/>
+      <path d="M5 8v3h6v5M19 8v3h-6v2" stroke="currentColor" stroke-width="2" fill="none"/>
+    </symbol>
+    <symbol id="i-camera" viewBox="0 0 24 24">
+      <rect x="2" y="6" width="20" height="14" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+      <circle cx="12" cy="13" r="4" fill="none" stroke="currentColor" stroke-width="2"/>
+      <path d="M8 6l2-4h4l2 4" stroke="currentColor" stroke-width="2" fill="none"/>
+    </symbol>
+    <symbol id="i-screwdriver-wrench" viewBox="0 0 24 24">
+      <path d="M14 9l3-3a3 3 0 0 1 4 4l-3 3m-4 4l-3 3a3 3 0 0 1-4-4l3-3" stroke="currentColor" stroke-width="2" fill="none"/>
+      <circle cx="7.5" cy="16.5" r="2.5" fill="none" stroke="currentColor" stroke-width="2"/>
+      <circle cx="16.5" cy="7.5" r="2.5" fill="none" stroke="currentColor" stroke-width="2"/>
+    </symbol>
+  </svg>
+
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+  <!-- Loader -->
+  <div class="loader" id="loader" aria-label="Chargement du site">
+    <div class="loader-card" role="status" aria-live="polite">
+      <div class="loader-top">
+        <div class="loader-badge">
+          <svg class="svg-ico" aria-hidden="true"><use href="#i-shield"></use></svg>
+          Initialisation…
+        </div>
+        <div class="spinner" aria-hidden="true"></div>
+      </div>
+      <div style="color: var(--muted); font-weight: 750;">
+        Chargement du portfolio professionnel (thème, animations, composants)…
+      </div>
+    </div>
+  </div>
+
+  <!-- Toasts -->
+  <div class="toast-wrap" id="toastWrap" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- Back to top -->
+  <button class="backtop" id="backTop" type="button" aria-label="Retour en haut">
+    <svg class="svg-ico" aria-hidden="true"><use href="#i-arrow-up"></use></svg>
+  </button>
+
+  <!-- NAV -->
+  <div class="nav">
+    <div class="container">
+      <div class="nav-inner">
+        <a class="brand" href="#top" aria-label="Retour accueil">
+          <div class="brand-mark" aria-hidden="true">
+            <svg class="svg-ico" aria-hidden="true"><use href="#i-network"></use></svg>
+          </div>
+          <div class="brand-title">
+            <strong>EMÉRIDE DJIVOESSOUN</strong>
+            <span>Support IT · Réseau & Système</span>
+          </div>
+        </a>
+
+        <nav class="nav-links" aria-label="Navigation principale">
+          <a href="#apropos">À propos</a>
+          <a href="#competences">Compétences</a>
+          <a href="#experience">Expériences</a>
+          <a href="#services">Services</a>
+          <a href="#realisations">Réalisations</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="nav-actions">
+          <button class="btn btn-icon" id="themeBtn" type="button" aria-label="Basculer le thème">
+            <svg class="svg-ico" aria-hidden="true"><use href="#i-moon"></use></svg>
+          </button>
+
+          <button class="btn btn-warn" id="cvBtn" type="button" title="Télécharger le CV">
+            <svg class="svg-ico" aria-hidden="true"><use href="#i-file-download"></use></svg>
+            Télécharger CV
+          </button>
+
+          <button class="btn btn-icon hamburger" id="menuBtn" type="button" aria-label="Ouvrir le menu">
+            <svg class="svg-ico" aria-hidden="true"><use href="#i-bars"></use></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile menu -->
+      <div class="mobile" id="mobileMenu" aria-label="Menu mobile">
+        <a href="#apropos">À propos <svg class="svg-ico" aria-hidden="true"><use href="#i-chevron-right"></use></svg></a>
+        <a href="#competences">Compétences <svg class="svg-ico" aria-hidden="true"><use href="#i-chevron-right"></use></svg></a>
+        <a href="#experience">Expériences <svg class="svg-ico" aria-hidden="true"><use href="#i-chevron-right"></use></svg></a>
+        <a href="#services">Services <svg class="svg-ico" aria-hidden="true"><use href="#i-chevron-right"></use></svg></a>
+        <a href="#realisations">Réalisations <svg class="svg-ico" aria-hidden="true"><use href="#i-chevron-right"></use></svg></a>
+        <a href="#contact">Contact <svg class="svg-ico" aria-hidden="true"><use href="#i-chevron-right"></use></svg></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <header id="top" class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="card hero-main reveal">
+          <div class="status">
+            <span class="dot" aria-hidden="true"></span>
+            Disponible immédiatement · Cotonou
+          </div>
+
+          <h1 id="contenu">
+            EMÉRIDE GBÈTOHO DJIVOESSOUN
+          </h1>
+
+          <p class="role">
+            <svg class="svg-ico" aria-hidden="true"><use href="#i-headset"></use></svg>
+            Support IT | Technicien Réseau et Système
+          </p>
+
+          <p class="typing">
+            <span style="color: var(--muted-2); font-weight: 900;">Focus :</span>
+            <code id="typed"></code><span id="caret" aria-hidden="true">▍</span>
+          </p>
+
+          <p class="sub" style="margin-top: 0;">
+            Technicien informatique orienté <strong>qualité de service</strong> : support utilisateurs,
+            maintenance systèmes, déploiement de postes, gestion d’incidents et interventions terrain.
+          </p>
+
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#contact">
+              <svg class="svg-ico" aria-hidden="true"><use href="#i-plane"></use></svg>
+              Contact
+            </a>
+            <a class="btn" href="#competences">
+              <svg class="svg-ico" aria-hidden="true"><use href="#i-tools"></use></svg>
+              Voir les compétences
+            </a>
+            <button class="btn btn-ghost" id="copyEmailBtn" type="button">
+              <svg class="svg-ico" aria-hidden="true"><use href="#i-copy"></use></svg>
+              Copier l’email
+            </button>
+          </div>
+
+          <p class="fineprint">
+            Objectif : inspirer confiance, montrer un profil opérationnel, et faciliter la prise de contact recruteur / client.
+          </p>
+        </div>
+
+        <aside class="card hero-aside reveal">
+          <div class="profile">
+            <div class="avatar" aria-hidden="true">
+              <svg class="svg-ico xl" aria-hidden="true"><use href="#i-user-shield"></use></svg>
+            </div>
+            <div>
+              <strong>Support IT — Terrain & Entreprise</strong>
+              <span>Windows · Réseaux · O365 · Vidéosurveillance</span>
+            </div>
+          </div>
+
+          <div class="info-grid">
+            <div class="info">
+              <svg class="svg-ico lg" aria-hidden="true"><use href="#i-phone"></use></svg>
+              <div>
+                <p class="label">Téléphone</p>
+                <p class="value">+229 0168908277 · 0164053582</p>
+              </div>
+            </div>
+            <div class="info">
+              <svg class="svg-ico lg" aria-hidden="true"><use href="#i-mail"></use></svg>
+              <div>
+                <p class="label">Email</p>
+                <p class="value" id="emailText">edjivoessoun@gmail.com</p>
+              </div>
+            </div>
+            <div class="info">
+              <svg class="svg-ico lg" aria-hidden="true"><use href="#i-pin"></use></svg>
+              <div>
+                <p class="label">Localisation</p>
+                <p class="value">Cotonou (PK10/ENAFA)</p>
+              </div>
+            </div>
+            <a class="btn" id="whatsBtn" href="#" target="_blank" rel="noopener">
+              <svg class="svg-ico" aria-hidden="true"><use href="#i-whatsapp"></use></svg>
+              WhatsApp direct
+            </a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </header>
+
+  <!-- ABOUT -->
+  <section id="apropos" class="about">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <span class="kicker">
+            <svg class="svg-ico" aria-hidden="true"><use href="#i-id-badge"></use></svg>
+            À propos
+          </span>
+          <h2>Profil professionnel</h2>
+          <p class="sub">
+            Support IT · Maintenance informatique · Déploiement · Gestion d’incidents
+          </p>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="panel reveal">
+          <p>
+            Technicien informatique avec expérience en <strong>maintenance des systèmes</strong>, <strong>support utilisateurs</strong>,
+            <strong>déploiement de postes</strong> et <strong>gestion des incidents IT</strong>.
+            Habitué aux environnements entreprise et centres de services (qualité, délai, priorisation).
+          </p>
+
+          <div class="highlights">
+            <div class="hl">
+              <strong>Orientation service</strong>
+              <span>Explication claire, suivi, rigueur</span>
+            </div>
+            <div class="hl">
+              <strong>Interventions terrain</strong>
+              <span>Diagnostic, dépannage, installation</span>
+            </div>
+            <div class="hl">
+              <strong>Culture IT</strong>
+              <span>Process, incidents, sécurité de base</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel reveal">
+          <div class="chips" aria-label="Domaines de travail">
+            <span class="chip"><svg class="svg-ico" aria-hidden="true"><use href="#i-windows"></use></svg> Windows / Postes</span>
+            <span class="chip"><svg class="svg-ico" aria-hidden="true"><use href="#i-cloud"></use></svg> Microsoft 365</span>
+            <span class="chip"><svg class="svg-ico" aria-hidden="true"><use href="#i-network"></use></svg> TCP/IP · LAN/WAN</span>
+            <span class="chip"><svg class="svg-ico" aria-hidden="true"><use href="#i-print"></use></svg> Imprimantes</span>
+            <span class="chip"><svg class="svg-ico" aria-hidden="true"><use href="#i-video"></use></svg> Caméras IP / NVR</span>
+            <span class="chip"><svg class="svg-ico" aria-hidden="true"><use href="#i-phone-volume"></use></svg> VoIP (bases)</span>
+            <span class="chip"><svg class="svg-ico" aria-hidden="true"><use href="#i-users"></use></svg> Support utilisateurs</span>
+            <span class="chip"><svg class="svg-ico" aria-hidden="true"><use href="#i-shield"></use></svg> Bonnes pratiques</span>
+          </div>
+
+          <p class="fineprint">
+            Astuce recruteur : ce portfolio met en avant les compétences “exécution terrain” + “support entreprise” plutôt que du code.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="competences">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <span class="kicker">
+            <svg class="svg-ico" aria-hidden="true"><use href="#i-tools"></use></svg>
+            Compétences techniques
+          </span>
+          <h2>Niveaux & outils</h2>
+          <p class="sub">Barres animées (au scroll) + domaines clés pour Support IT.</p>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="panel reveal">
+          <div class="skill" data-skill="95">
+            <div class="skill-top"><div>Windows (10/11) · Dépannage</div><span>95%</span></div>
+            <div class="bar" aria-label="Niveau Windows"><i></i></div>
+          </div>
+          <div class="skill" data-skill="90">
+            <div class="skill-top"><div>Microsoft 365 / Office</div><span>90%</span></div>
+            <div class="bar" aria-label="Niveau Microsoft 365"><i></i></div>
+          </div>
+          <div class="skill" data-skill="78">
+            <div class="skill-top"><div>Réseau TCP/IP · LAN/WAN</div><span>78%</span></div>
+            <div class="bar" aria-label="Niveau Réseau"><i></i></div>
+          </div>
+          <div class="skill" data-skill="82">
+            <div class="skill-top"><div>Maintenance matériel & logiciel</div><span>82%</span></div>
+            <div class="bar" aria-label="Niveau Maintenance"><i></i></div>
+          </div>
+          <div class="skill" data-skill="60">
+            <div class="skill-top"><div>Anglais technique</div><span>60%</span></div>
+            <div class="bar" aria-label="Niveau Anglais"><i></i></div>
+          </div>
+        </div>
+
+        <div class="panel reveal">
+          <h3 style="margin:0 0 10px;">Spécialisations</h3>
+          <div class="grid-2" style="margin-top: 10px;">
+            <div class="c">
+              <div class="icon"><svg class="svg-ico" aria-hidden="true"><use href="#i-headset"></use></svg></div>
+              <h3>Support utilisateurs</h3>
+              <p>Incidents, assistance, prise en main, suivi et communication.</p>
+            </div>
+            <div class="c">
+              <div class="icon"><svg class="svg-ico" aria-hidden="true"><use href="#i-diagram"></use></svg></div>
+              <h3>Déploiement postes</h3>
+              <p>Installation, configuration, mises à jour, transferts de profils.</p>
+            </div>
+            <div class="c">
+              <div class="icon"><svg class="svg-ico" aria-hidden="true"><use href="#i-video"></use></svg></div>
+              <h3>Caméras IP / Vidéosurveillance</h3>
+              <p>Installation, configuration NVR, tests, support.</p>
+            </div>
+            <div class="c">
+              <div class="icon"><svg class="svg-ico" aria-hidden="true"><use href="#i-phone-volume"></use></svg></div>
+              <h3>VoIP (bases)</h3>
+              <p>Dépannage de premier niveau, équipements, connectivité.</p>
+            </div>
+          </div>
+
+          <div class="chips" style="margin-top: 12px;">
+            <span class="chip"><svg class="svg-ico" aria-hidden="true"><use href="#i-users-gear"></use></svg> Outils support</span>
+            <span class="chip"><svg class="svg-ico" aria-hidden="true"><use href="#i-camera"></use></svg> HIKVISION / NVR</span>
+            <span class="chip"><svg class="svg-ico" aria-hidden="true"><use href="#i-ethernet"></use></svg> Switch · Brassage</span>
+            <span class="chip"><svg class="svg-ico" aria-hidden="true"><use href="#i-print"></use></svg> Imprimantes</span>
+          </div>
+
+          <p class="fineprint">
+            (Option) Active Directory : si vous l’utilisez réellement (création comptes, groupes, reset mdp), je l’ajoute explicitement.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <span class="kicker">
+            <svg class="svg-ico" aria-hidden="true"><use href="#i-briefcase"></use></svg>
+            Expériences professionnelles
+          </span>
+          <h2>Timeline</h2>
+          <p class="sub">Mise en avant “missions + impact” (ce que veut un recruteur IT).</p>
+        </div>
+      </div>
+
+      <div class="timeline reveal">
+        <article class="t-item">
+          <div class="t-head">
+            <div class="tagrow">
+              <span class="tag"><svg class="svg-ico" aria-hidden="true"><use href="#i-calendar"></use></svg> 2025 · Actuel</span>
+              <span class="tag"><svg class="svg-ico" aria-hidden="true"><use href="#i-bolt"></use></svg> Support IT</span>
+            </div>
+            <a class="proof" href="https://drive.google.com/file/d/1jwSRrH96RQDSey0coj31ZERZRFZFZEFF" target="_blank" rel="noopener">
+              <svg class="svg-ico" aria-hidden="true"><use href="#i-file-pdf"></use></svg> Note de service
+            </a>
+          </div>
+          <h3>Port Autonome de Cotonou</h3>
+          <p class="where">Support utilisateurs · Maintenance parc · Déploiement postes</p>
+          <ul>
+            <li>Support utilisateurs (incidents matériels/logiciels, bureautique, périphériques, accès).</li>
+            <li>Maintenance préventive et curative du parc informatique.</li>
+            <li>Configuration et déploiement de postes, mises à jour systèmes et logiciels.</li>
+          </ul>
+        </article>
+
+        <article class="t-item">
+          <div class="t-head">
+            <div class="tagrow">
+              <span class="tag"><svg class="svg-ico" aria-hidden="true"><use href="#i-calendar"></use></svg> 2024 · 2025</span>
+              <span class="tag"><svg class="svg-ico" aria-hidden="true"><use href="#i-headset"></use></svg> Technicien Support IT</span>
+            </div>
+            <span class="tag" title="À remplacer si vous avez un lien PDF réel"><svg class="svg-ico" aria-hidden="true"><use href="#i-info"></use></svg> Attestation (option)</span>
+          </div>
+          <h3>NEXERA — Centre d’appels</h3>
+          <p class="where">Assistance téléconseillers / superviseurs · Continuité de service</p>
+          <ul>
+            <li>Dépannage postes, logiciels, casques et téléphones VoIP.</li>
+            <li>Installation, configuration et mises à jour des postes de travail.</li>
+            <li>Support sur applications métiers / accès / réinitialisation mots de passe.</li>
+          </ul>
+        </article>
+
+        <article class="t-item">
+          <div class="t-head">
+            <div class="tagrow">
+              <span class="tag"><svg class="svg-ico" aria-hidden="true"><use href="#i-calendar"></use></svg> 2024</span>
+              <span class="tag"><svg class="svg-ico" aria-hidden="true"><use href="#i-network"></use></svg> Support Systèmes & Réseaux</span>
+            </div>
+            <a class="proof" href="https://drive.google.com/file/d/1pqqKMps1HyiXRbriTVdYTpGSmcIxhd6c/view?usp=sharing" target="_blank" rel="noopener">
+              <svg class="svg-ico" aria-hidden="true"><use href="#i-file-pdf"></use></svg> Certificat
+            </a>
+          </div>
+          <h3>AFG ASSURANCES Bénin</h3>
+          <p class="where">Support SI · WiFi/VoIP · Diagnostic pannes</p>
+          <ul>
+            <li>Support bureautique et incidents réseau (TCP/IP, LAN/WAN, Ethernet).</li>
+            <li>Outils de réunion : Teams / Zoom / Google Meet.</li>
+            <li>Configuration imprimantes, comptes utilisateurs, maintenance IT.</li>
+          </ul>
+        </article>
+
+        <article class="t-item">
+          <div class="t-head">
+            <div class="tagrow">
+              <span class="tag"><svg class="svg-ico" aria-hidden="true"><use href="#i-calendar"></use></svg> 2022 · Présent</span>
+              <span class="tag"><svg class="svg-ico" aria-hidden="true"><use href="#i-video"></use></svg> Vidéosurveillance & Contrôle d’accès</span>
+            </div>
+            <a class="proof" href="https://drive.google.com/drive/folders/11bcpCjUc0iQoJLJEPZrAGw9DGy_wpMD0?usp=sharing" target="_blank" rel="noopener">
+              <svg class="svg-ico" aria-hidden="true"><use href="#i-images"></use></svg> Galerie terrain
+            </a>
+          </div>
+          <h3>Huawei Technologies (prestations)</h3>
+          <p class="where">Installation · Configuration · Vérification · Support</p>
+          <ul>
+            <li>Interventions sur caméras IP et enregistreurs (NVR), tests et recette.</li>
+            <li>Câblage et raccordements selon contraintes site.</li>
+            <li>Support opérationnel après installation.</li>
+          </ul>
+        </article>
+
+        <article class="t-item">
+          <div class="t-head">
+            <div class="tagrow">
+              <span class="tag"><svg class="svg-ico" aria-hidden="true"><use href="#i-calendar"></use></svg> 2022 · 2023</span>
+              <span class="tag"><svg class="svg-ico" aria-hidden="true"><use href="#i-tools"></use></svg> Assistant Support</span>
+            </div>
+            <a class="proof" href="https://drive.google.com/file/d/15UTw9ECCN_zEginYf39IirOmV0ihp8iS/view?usp=sharing" target="_blank" rel="noopener">
+              <svg class="svg-ico" aria-hidden="true"><use href="#i-file-pdf"></use></svg> Certificat
+            </a>
+          </div>
+          <h3>ABMS — Association Béninoise pour le Marketing Social</h3>
+          <p class="where">Dépannage · Installation · Maintenance préventive</p>
+          <ul>
+            <li>Résolution incidents SI / bureautique / réseau.</li>
+            <li>Installation et remplacement de matériel.</li>
+            <li>Maintenance préventive des ordinateurs.</li>
+          </ul>
+        </article>
+
+        <article class="t-item">
+          <div class="t-head">
+            <div class="tagrow">
+              <span class="tag"><svg class="svg-ico" aria-hidden="true"><use href="#i-calendar"></use></svg> 2022</span>
+              <span class="tag"><svg class="svg-ico" aria-hidden="true"><use href="#i-shield"></use></svg> Stage</span>
+            </div>
+            <a class="proof" href="https://drive.google.com/file/d/1lBC8lWK83Av5KTiMabSKMPffgvuLpUAX/view?usp=sharing" target="_blank" rel="noopener">
+              <svg class="svg-ico" aria-hidden="true"><use href="#i-file-pdf"></use></svg> Certificat
+            </a>
+          </div>
+          <h3>Soft Innovation Technologies</h3>
+          <p class="where">Sécurité réseau (initiation) · Installations terrain</p>
+          <ul>
+            <li>Caméras de surveillance, câblage, mise en place de salles serveur (initiation).</li>
+            <li>Configuration téléphones IP et NVR (initiation).</li>
+            <li>Découverte concepts DevOps (initiation).</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <span class="kicker">
+            <svg class="svg-ico" aria-hidden="true"><use href="#i-handshake"></use></svg>
+            Services
+          </span>
+          <h2>Ce que je peux prendre en charge</h2>
+        </div>
+      </div>
+
+      <div class="grid-3 reveal">
+        <div class="c">
+          <div class="icon"><svg class="svg-ico" aria-hidden="true"><use href="#i-laptop-medical"></use></svg></div>
+          <h3>Maintenance informatique</h3>
+          <p>Préventif/curatif, optimisation, nettoyage, drivers, sécurité de base.</p>
+        </div>
+        <div class="c">
+          <div class="icon"><svg class="svg-ico" aria-hidden="true"><use href="#i-user-headset"></use></svg></div>
+          <h3>Support utilisateurs</h3>
+          <p>Assistance, incidents, explication claire, suivi et clôture.</p>
+        </div>
+        <div class="c">
+          <div class="icon"><svg class="svg-ico" aria-hidden="true"><use href="#i-ethernet"></use></svg></div>
+          <h3>Installation réseau</h3>
+          <p>Brassage, câblage, tests, mise en service, documentation simple.</p>
+        </div>
+        <div class="c">
+          <div class="icon"><svg class="svg-ico" aria-hidden="true"><use href="#i-boxes"></use></svg></div>
+          <h3>Déploiement de postes</h3>
+          <p>Configuration, migration, logiciels, profils utilisateurs, mises à jour.</p>
+        </div>
+        <div class="c">
+          <div class="icon"><svg class="svg-ico" aria-hidden="true"><use href="#i-eye"></use></svg></div>
+          <h3>Sécurité & surveillance</h3>
+          <p>Caméras IP, NVR, configuration, vérification, support après installation.</p>
+        </div>
+        <div class="c">
+          <div class="icon"><svg class="svg-ico" aria-hidden="true"><use href="#i-tools"></use></svg></div>
+          <h3>Assistance technique</h3>
+          <p>Diagnostic, résolution rapide, priorisation, prévention des récidives.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS / REALISATIONS -->
+  <section id="realisations">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <span class="kicker">
+            <svg class="svg-ico" aria-hidden="true"><use href="#i-diagram-project"></use></svg>
+            Projets / Réalisations
+          </span>
+          <h2>Exemples concrets</h2>
+        </div>
+      </div>
+
+      <div class="grid-3 reveal">
+        <div class="c">
+          <div class="icon"><svg class="svg-ico" aria-hidden="true"><use href="#i-boxes"></use></svg></div>
+          <h3>Déploiement parc informatique</h3>
+          <p>Préparation, installation OS/logiciels, validation, accompagnement utilisateurs.</p>
+        </div>
+        <div class="c">
+          <div class="icon"><svg class="svg-ico" aria-hidden="true"><use href="#i-video"></use></svg></div>
+          <h3>Installation caméras IP</h3>
+          <p>Pose, câblage, paramétrage NVR, tests d’enregistrement et accès.</p>
+        </div>
+        <div class="c">
+          <div class="icon"><svg class="svg-ico" aria-hidden="true"><use href="#i-network"></use></svg></div>
+          <h3>Configuration réseau entreprise</h3>
+          <p>Brassage, switch (basique), adressage, connectivité, résolution incidents.</p>
+        </div>
+        <div class="c">
+          <div class="icon"><svg class="svg-ico" aria-hidden="true"><use href="#i-headset"></use></svg></div>
+          <h3>Support centre d’appel</h3>
+          <p>Continuité de service : PC, logiciels, casques, VoIP, accès.</p>
+        </div>
+        <div class="c">
+          <div class="icon"><svg class="svg-ico" aria-hidden="true"><use href="#i-print"></use></svg></div>
+          <h3>Gestion imprimantes</h3>
+          <p>Installation, partage, dépannage files d’attente, erreurs courantes.</p>
+        </div>
+        <div class="c">
+          <div class="icon"><svg class="svg-ico" aria-hidden="true"><use href="#i-shield"></use></svg></div>
+          <h3>Hygiène informatique</h3>
+          <p>Mises à jour, bonnes pratiques, réduction des incidents récurrents.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section id="stats">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <span class="kicker">
+            <svg class="svg-ico" aria-hidden="true"><use href="#i-chart-line"></use></svg>
+            Statistiques (bonus)
+          </span>
+          <h2>Indicateurs</h2>
+        </div>
+      </div>
+
+      <div class="stats reveal">
+        <div class="stat">
+          <p class="n" data-count="180"> 0</p>
+          <p class="l">Postes déployés (ex.)</p>
+        </div>
+        <div class="stat">
+          <p class="n" data-count="420">0</p>
+          <p class="l">Incidents résolus (ex.)</p>
+        </div>
+        <div class="stat">
+          <p class="n" data-count="60">0</p>
+          <p class="l">Clients/équipes accompagnés (ex.)</p>
+        </div>
+        <div class="stat">
+          <p class="n" data-count="3">0</p>
+          <p class="l">Années d’expérience (ex.)</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <span class="kicker">
+            <svg class="svg-ico" aria-hidden="true"><use href="#i-plane"></use></svg>
+            Contact
+          </span>
+          <h2>Parlons de votre besoin</h2>
+        </div>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-card reveal">
+          <h3>Coordonnées</h3>
+          <div class="contact-list">
+            <div class="contact-item">
+              <svg class="svg-ico lg" aria-hidden="true"><use href="#i-phone"></use></svg>
+              <div>
+                <strong>Téléphone</strong>
+                <span>+229 0168908277 · 0164053582</span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <svg class="svg-ico lg" aria-hidden="true"><use href="#i-mail"></use></svg>
+              <div>
+                <strong>Email</strong>
+                <span>edjivoessoun@gmail.com</span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <svg class="svg-ico lg" aria-hidden="true"><use href="#i-pin"></use></svg>
+              <div>
+                <strong>Localisation</strong>
+                <span>Cotonou</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="display:flex; flex-wrap:wrap; gap:10px; margin-top: 12px;">
+            <a class="btn" id="callBtn" href="tel:+2290168908277">
+              <svg class="svg-ico" aria-hidden="true"><use href="#i-phone"></use></svg> Appeler
+            </a>
+            <a class="btn" id="mailBtn" href="mailto:edjivoessoun@gmail.com?subject=Contact%20Portfolio%20-%20Support%20IT">
+              <svg class="svg-ico" aria-hidden="true"><use href="#i-mail"></use></svg> Envoyer un email
+            </a>
+            <a class="btn" id="whatsBtn2" href="#" target="_blank" rel="noopener">
+              <svg class="svg-ico" aria-hidden="true"><use href="#i-whatsapp"></use></svg> WhatsApp
+            </a>
+          </div>
+
+  
+        </div>
+
+        <div class="contact-card reveal">
+          <h3>Formulaire</h3>
+          <form id="contactForm">
+            <div class="row">
+              <div>
+                <label for="name">Nom</label>
+                <input id="name" name="name" type="text" autocomplete="name" placeholder="Votre nom" required>
+              </div>
+              <div>
+                <label for="company">Entreprise (option)</label>
+                <input id="company" name="company" type="text" placeholder="Entreprise / Organisation">
+              </div>
+            </div>
+
+            <div class="row" style="margin-top: 12px;">
+              <div>
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" autocomplete="email" placeholder="vous@exemple.com" required>
+              </div>
+              <div>
+                <label for="phone">Téléphone (option)</label>
+                <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="+229 ...">
+              </div>
+            </div>
+
+            <div style="margin-top: 12px;">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Expliquez votre besoin (support, installation, maintenance, etc.)" required></textarea>
+            </div>
+
+            <div style="display:flex; flex-wrap:wrap; gap:10px; margin-top: 12px;">
+              <button class="btn btn-primary" type="submit">
+                <svg class="svg-ico" aria-hidden="true"><use href="#i-plane"></use></svg> Envoyer (email)
+              </button>
+              <button class="btn" type="button" id="copyPhoneBtn">
+                <svg class="svg-ico" aria-hidden="true"><use href="#i-copy"></use></svg> Copier téléphone
+              </button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="foot">
+        <div style="font-weight: 900;">
+          © <span id="year"></span> — EMÉRIDE GBÈTOHO DJIVOESSOUN
+        </div>
+        <div style="font-weight: 750;">
+          Support IT · Technicien Réseau & Système · Cotonou
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    /* =========================================================
+       JS — typing, thème, animations, toasts, progress, stats
+       ========================================================= */
+
+    const $ = (s, root=document) => root.querySelector(s);
+    const $$ = (s, root=document) => [...root.querySelectorAll(s)];
+
+    // ---------- Toasts ----------
+    const toastWrap = $("#toastWrap");
+    function toast({title="Info", msg="", icon="i-circle-info", ms=3200}){
+      const el = document.createElement("div");
+      el.className = "toast";
+      el.innerHTML = `
+        <div class="icon"><svg class="svg-ico" aria-hidden="true"><use href="#${icon}"></use></svg></div>
+        <div class="content">
+          <p class="title">${escapeHtml(title)}</p>
+          <p class="msg">${escapeHtml(msg)}</p>
+        </div>
+        <button class="close" type="button" aria-label="Fermer notification">
+          <svg class="svg-ico" aria-hidden="true"><use href="#i-xmark"></use></svg>
+        </button>
+      `;
+      toastWrap.appendChild(el);
+
+      const t = setTimeout(() => el.remove(), ms);
+      el.querySelector(".close").addEventListener("click", () => { clearTimeout(t); el.remove(); });
+    }
+    function escapeHtml(str){
+      return String(str).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));
+    }
+
+    // ---------- Loader ----------
+    const loader = $("#loader");
+    window.addEventListener("load", () => {
+      setTimeout(() => loader.classList.add("hidden"), 350);
+    });
+
+    // ---------- Theme (localStorage) ----------
+    const themeBtn = $("#themeBtn");
+    const THEME_KEY = "edj_portfolio_theme";
+    function setTheme(theme){
+      document.documentElement.setAttribute("data-theme", theme);
+      localStorage.setItem(THEME_KEY, theme);
+      themeBtn.innerHTML = theme === "light"
+        ? '<svg class="svg-ico" aria-hidden="true"><use href="#i-moon"></use></svg>'
+        : '<svg class="svg-ico" aria-hidden="true"><use href="#i-sun"></use></svg>';
+    }
+    (function initTheme(){
+      const saved = localStorage.getItem(THEME_KEY);
+      if(saved === "light" || saved === "dark"){
+        setTheme(saved);
+      }else{
+        setTheme("dark");
+      }
+    })();
+    themeBtn.addEventListener("click", () => {
+      const current = document.documentElement.getAttribute("data-theme") || "dark";
+      setTheme(current === "dark" ? "light" : "dark");
+      toast({
+        title: "Thème mis à jour",
+        msg: `Mode ${document.documentElement.getAttribute("data-theme")} activé.`,
+        icon: "i-palette",
+      });
+    });
+
+    // ---------- Mobile menu ----------
+    const menuBtn = $("#menuBtn");
+    const mobileMenu = $("#mobileMenu");
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("open");
+      menuBtn.innerHTML = mobileMenu.classList.contains("open")
+        ? '<svg class="svg-ico" aria-hidden="true"><use href="#i-xmark"></use></svg>'
+        : '<svg class="svg-ico" aria-hidden="true"><use href="#i-bars"></use></svg>';
+    });
+
+    $$("#mobileMenu a").forEach(a => a.addEventListener("click", () => {
+      mobileMenu.classList.remove("open");
+      menuBtn.innerHTML = '<svg class="svg-ico" aria-hidden="true"><use href="#i-bars"></use></svg>';
+    }));
+
+    // ---------- Typing effect ----------
+    const typedEl = $("#typed");
+    const caret = $("#caret");
+    const phrases = [
+      "Support utilisateurs & gestion d’incidents",
+      "Déploiement et configuration de postes",
+      "Réseau LAN/WAN · TCP/IP · câblage",
+      "Maintenance matériel & logiciel",
+      "Vidéosurveillance : caméras IP & NVR"
+    ];
+    let pi = 0, ci = 0, deleting = false;
+
+    function typeLoop(){
+      const current = phrases[pi];
+      const speed = deleting ? 24 : 34;
+
+      if(!deleting){
+        ci++;
+        typedEl.textContent = current.slice(0, ci);
+        if(ci >= current.length){
+          deleting = true;
+          setTimeout(typeLoop, 900);
+          return;
+        }
+      }else{
+        ci--;
+        typedEl.textContent = current.slice(0, ci);
+        if(ci <= 0){
+          deleting = false;
+          pi = (pi + 1) % phrases.length;
+        }
+      }
+      setTimeout(typeLoop, speed);
+    }
+    typeLoop();
+
+    // Caret blink
+    setInterval(() => caret.style.opacity = (caret.style.opacity === "0" ? "1" : "0"), 520);
+
+    // ---------- WhatsApp links ----------
+    const phoneWhats = "2290168908277"; // WhatsApp format (sans +)
+    const waMsg = encodeURIComponent("Bonjour Éméride, je vous contacte via votre portfolio. J’aimerais échanger sur un besoin IT.");
+    const waUrl = `https://wa.me/${phoneWhats}?text=${waMsg}`;
+    $("#whatsBtn").href = waUrl;
+    $("#whatsBtn2").href = waUrl;
+
+    // ---------- Copy helpers ----------
+    async function copyText(text, okMsg){
+      try{
+        await navigator.clipboard.writeText(text);
+        toast({title:"Copié", msg: okMsg, icon:"i-clipboard-check"});
+      }catch(e){
+        toast({title:"Action impossible", msg:"Copie non autorisée par le navigateur.", icon:"i-triangle-exclamation"});
+      }
+    }
+    $("#copyEmailBtn").addEventListener("click", () => copyText("edjivoessoun@gmail.com", "Email copié : edjivoessoun@gmail.com"));
+    $("#copyPhoneBtn").addEventListener("click", () => copyText("+229 0168908277", "Téléphone copié : +229 0168908277"));
+
+    // ---------- CV Download (à connecter à votre vrai lien) ----------
+    $("#cvBtn").addEventListener("click", () => {
+      // TODO: remplacez par un lien réel vers votre CV (PDF) :
+       window.open("https://drive.google.com/file/d/1iQM9Rwa_AEsx0mycyqPfs19lKyq-fYzU/view?usp=sharing", "_blank");
+      toast({
+        title: "CV",
+        icon: "i-file-download"
+      });
+    });
+
+    // ---------- Scroll reveal + Skill bars + Stats counters ----------
+    const revealEls = $$(".reveal");
+    const skillEls = $$(".skill");
+    const countEls = $$("[data-count]");
+
+    function animateCount(el, target){
+      const duration = 900;
+      const start = performance.now();
+      const from = 0;
+      function step(t){
+        const p = Math.min((t - start) / duration, 1);
+        const value = Math.round(from + (target - from) * (p*p*(3-2*p)));
+        el.textContent = value;
+        if(p < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }
+
+    const io = new IntersectionObserver((entries) => {
+      for(const entry of entries){
+        if(entry.isIntersecting){
+          entry.target.classList.add("visible");
+
+          // Skill bars
+          if(entry.target.classList.contains("skill")){
+            const level = Number(entry.target.getAttribute("data-skill")) || 0;
+            const fill = entry.target.querySelector(".bar > i");
+            if(fill && fill.style.width === "0%") fill.style.width = Math.max(0, Math.min(100, level)) + "%";
+          }
+
+          // Stats
+          if(entry.target.hasAttribute("data-count")){
+            const target = Number(entry.target.getAttribute("data-count")) || 0;
+            if(entry.target.textContent.trim() === "0") animateCount(entry.target, target);
+          }
+
+          io.unobserve(entry.target);
+        }
+      }
+    }, { threshold: 0.15 });
+
+    revealEls.forEach(el => io.observe(el));
+    skillEls.forEach(el => io.observe(el));
+    countEls.forEach(el => io.observe(el));
+
+    // ---------- Back to top ----------
+    const backTop = $("#backTop");
+    window.addEventListener("scroll", () => {
+      backTop.classList.toggle("visible", window.scrollY > 800);
+    });
+    backTop.addEventListener("click", () => window.scrollTo({top:0, behavior:"smooth"}));
+
+    // ---------- Contact form -> mailto ----------
+    $("#contactForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const data = new FormData(e.currentTarget);
+      const name = (data.get("name") || "").toString().trim();
+      const company = (data.get("company") || "").toString().trim();
+      const email = (data.get("email") || "").toString().trim();
+      const phone = (data.get("phone") || "").toString().trim();
+      const message = (data.get("message") || "").toString().trim();
+
+      if(!name || !email || !message){
+        toast({title:"Champs requis", msg:"Merci de remplir Nom, Email et Message.", icon:"i-triangle-exclamation"});
+        return;
+      }
+
+      const subject = encodeURIComponent("Contact Portfolio — Support IT");
+      const body = encodeURIComponent(
+        `Nom: ${name}\nEntreprise: ${company || "-"}\nEmail: ${email}\nTéléphone: ${phone || "-"}\n\nMessage:\n${message}\n`
+      );
+
+      window.location.href = `mailto:edjivoessoun@gmail.com?subject=${subject}&body=${body}`;
+      toast({title:"Ouverture email", msg:"Votre client email va s’ouvrir avec le message prêt à envoyer.", icon:"i-plane"});
+      e.currentTarget.reset();
+    });
+
+    // ---------- Footer year ----------
+    $("#year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
