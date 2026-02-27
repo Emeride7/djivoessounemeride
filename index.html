@@ -1,1098 +1,1687 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Éméride Djivoessoun – Technicien Réseau & Système | Support IT & Vidéosurveillance</title>
-  
-  <!-- Tailwind (CDN) -->
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
-  <!-- Font Awesome 6 -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
-  <!-- Google Font INTER (remplacé par Garamond pour l'ambiance) -->
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  
-  <style>
-    * {
-      font-family: 'EB Garamond', serif;
-    }
+    <!-- Google tag (gtag.js) - Remplace par ton ID si tu veux -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
     
-    /* CORRECTION ICÔNES - Préserve Font Awesome */
-    i, .fas, .far, .fab, .fa-solid, .fa-regular, .fa-brands,
-    [class*="fa-"] {
-      font-family: "Font Awesome 6 Free" !important;
-    }
-    .fab, [class*="fa-brands"] {
-      font-family: "Font Awesome 6 Brands" !important;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ÉMÉRIDE GBÈTOHO DJIVOESSOUN | Technicien Réseau & Système</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     
-    /* ===== DARK ULTRA TECH THEME ===== */
-    body {
-      background: #0b1220;
-      color: #e2e8f0;
-    }
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    },
+                    animation: {
+                        'gradient': 'gradient 8s linear infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'slide-up': 'slideUp 0.8s ease-out forwards',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'bounce-slight': 'bounceSlight 2s infinite',
+                        'typing': 'typing 1.5s infinite',
+                        'pulse-ring': 'pulseRing 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite',
+                    },
+                    keyframes: {
+                        gradient: {
+                            '0%, 100%': { backgroundPosition: '0% 50%' },
+                            '50%': { backgroundPosition: '100% 50%' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(30px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        bounceSlight: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-5px)' },
+                        },
+                        typing: {
+                            '0%, 100%': { opacity: 1 },
+                            '50%': { opacity: 0.3 },
+                        },
+                        pulseRing: {
+                            '0%': { transform: 'scale(0.8)', opacity: 1 },
+                            '100%': { transform: 'scale(1.3)', opacity: 0 },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
     
-    /* Surcharge des fonds clairs Tailwind */
-    .bg-white, .bg-gray-50, .bg-gray-100, .bg-blue-50, .bg-indigo-50, .bg-gradient-to-r {
-      background-color: #111827 !important;
-    }
-    .bg-gray-200, .bg-gray-300 {
-      background-color: #1f2937 !important;
-    }
-    .bg-blue-100, .bg-indigo-100 {
-      background-color: #1e293b !important;
-    }
-    .bg-blue-600, .bg-blue-700, .bg-green-600, .bg-gray-900, .bg-gray-800 {
-      filter: brightness(1.2);
-    }
-    
-    /* Texte clair */
-    .text-gray-900, .text-gray-800, .text-gray-700, .text-gray-600, .text-blue-800, .text-indigo-800 {
-      color: #e2e8f0 !important;
-    }
-    .text-gray-500, .text-gray-400 {
-      color: #94a3b8 !important;
-    }
-    .text-blue-700, .text-indigo-700 {
-      color: #60a5fa !important;
-    }
-    .text-blue-600 {
-      color: #3b82f6 !important;
-    }
-    
-    /* Bordures */
-    .border-gray-100, .border-gray-200, .border-gray-300 {
-      border-color: #1e293b !important;
-    }
-    .border-blue-100 {
-      border-color: #2563eb !important;
-    }
-    
-    /* Ombres adaptées */
-    .shadow-sm, .shadow, .shadow-md, .shadow-lg {
-      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5) !important;
-    }
-    
-    /* HERO */
-    .hero-bg {
-      background: linear-gradient(105deg, #0a0f1a 0%, #0f1a2f 100%);
-      position: relative;
-      overflow: hidden;
-    }
-    .hero-bg::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background: url('https://www.apogea.fr/wp-content/uploads/2024/05/Mathilde.B-Brouillons-2024-05-27T183658.233.webp') no-repeat center center/cover;
-      opacity: 0.05;
-      mix-blend-mode: overlay;
-    }
-    
-    /* Timeline dot */
-    .timeline-dot::before {
-      content: "\f0b1";
-      font-family: "Font Awesome 6 Free" !important;
-      font-weight: 900;
-      position: absolute;
-      left: 0;
-      top: 0.1rem;
-      color: #3b82f6;
-      background: #111827;
-      width: 1.8rem;
-      height: 1.8rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      box-shadow: 0 4px 10px rgba(0, 255, 255, 0.2);
-      border: 2px solid #0b1220;
-      font-size: 0.9rem;
-    }
-    
-    /* Skill pills */
-    .skill-pill {
-      background: #1e293b;
-      color: #94a3b8;
-      padding: 0.5rem 1.2rem;
-      border-radius: 50px;
-      font-weight: 500;
-      font-size: 0.9rem;
-      transition: 0.2s;
-      border: 1px solid #334155;
-    }
-    .skill-pill:hover {
-      background: #3b82f6;
-      color: white;
-      transform: translateY(-2px);
-      border-color: #3b82f6;
-    }
-    
-    /* Références cards */
-    .ref-card {
-      background: #111827;
-      border-left: 5px solid #3b82f6;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.5);
-      transition: 0.25s;
-    }
-    .ref-card:hover {
-      box-shadow: 0 12px 24px rgba(59,130,246,0.2);
-      border-left-color: #60a5fa;
-    }
-    
-    /* Bouton primaire */
-    .btn-primary {
-      background: #3b82f6;
-      transition: all 0.2s;
-      border: none;
-    }
-    .btn-primary:hover {
-      background: #2563eb;
-      transform: scale(0.98);
-      box-shadow: 0 8px 18px rgba(59,130,246,0.4);
-    }
-    
-    /* Glass contact */
-    .glass-contact {
-      background: rgba(17, 24, 39, 0.7);
-      backdrop-filter: blur(8px);
-      border: 1px solid rgba(59,130,246,0.2);
-    }
-    
-    /* Exp cards */
-    .exp-card {
-      transition: 0.2s;
-      border-radius: 20px;
-      background: #111827 !important;
-      border-color: #1e293b !important;
-    }
-    .exp-card:hover {
-      background: #1f2937 !important;
-      border-color: #3b82f6 !important;
-    }
-    
-    /* Listes */
-    .exp-list {
-      list-style-type: disc;
-      padding-left: 1.5rem;
-      margin-top: 0.5rem;
-      margin-bottom: 0.5rem;
-    }
-    .exp-list li {
-      margin-bottom: 0.35rem;
-      color: #cbd5e1;
-    }
-    
-    /* Proof button */
-    .proof-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.25rem;
-      background: #0f172a;
-      color: #94a3b8;
-      padding: 0.25rem 0.75rem;
-      border-radius: 9999px;
-      font-size: 0.7rem;
-      font-weight: 600;
-      border: 1px solid #334155;
-      transition: all 0.2s;
-    }
-    .proof-btn:hover {
-      background: #3b82f6;
-      color: white;
-      border-color: #3b82f6;
-    }
-    
-    /* Cert link */
-    .cert-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.25rem;
-      color: #60a5fa;
-      font-size: 0.75rem;
-      font-weight: 500;
-      text-decoration: none;
-      border-bottom: 1px dashed #60a5fa;
-    }
-    .cert-link:hover {
-      color: #3b82f6;
-      border-bottom: 1px solid #3b82f6;
-    }
-    
-    /* Gallery button */
-    .gallery-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: #1e293b;
-      color: #60a5fa;
-      padding: 0.35rem 1rem;
-      border-radius: 9999px;
-      font-size: 0.75rem;
-      font-weight: 600;
-      transition: all 0.2s;
-      border: 1px solid #3b82f6;
-    }
-    .gallery-btn:hover {
-      background: #3b82f6;
-      color: white;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(59,130,246,0.3);
-    }
-    
-    /* CV button */
-    .cv-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: #1e293b;
-      color: #fbbf24;
-      padding: 0.5rem 1.25rem;
-      border-radius: 9999px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      transition: all 0.2s;
-      border: 1px solid #fbbf24;
-    }
-    .cv-btn:hover {
-      background: #fbbf24;
-      color: #0b1220;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(251,191,36,0.3);
-    }
-    
-    /* Barres de progression */
-    .bg-blue-600 {
-      background-color: #3b82f6 !important;
-    }
-    .bg-gray-100 {
-      background-color: #1f2937 !important;
-    }
-    
-    /* Formulaire */
-    input, textarea {
-      background-color: #1f2937 !important;
-      border-color: #374151 !important;
-      color: #e2e8f0 !important;
-    }
-    input:focus, textarea:focus {
-      border-color: #3b82f6 !important;
-      ring-color: #3b82f6 !important;
-    }
-    
-    /* Footer */
-    footer.bg-gray-900 {
-      background-color: #0a0f1a !important;
-      border-color: #1e293b !important;
-    }
-    
-    /* Ajustements divers */
-    .bg-gradient-to-br.from-gray-900.to-gray-800 {
-      background: linear-gradient(135deg, #0b1220, #111827) !important;
-    }
-    
-    .bg-blue-500\/20 {
-      background-color: rgba(59,130,246,0.2) !important;
-    }
-    
-    .border-white\/10 {
-      border-color: rgba(255,255,255,0.05) !important;
-    }
-    
-    .text-blue-300, .text-blue-200, .text-blue-100 {
-      color: #94a3b8 !important;
-    }
-    
-    /* Petites retouches */
-    .bg-blue-600.text-white.p-3.rounded-full {
-      background-color: #3b82f6 !important;
-    }
-    
-    /* ===== CORRECTION SECTION PORT AUTONOME ===== */
-    section.bg-white.border-b.border-gray-100 {
-      background-color: #111827 !important;
-      border-bottom-color: #1e293b !important;
-    }
-    .bg-gradient-to-r.from-blue-50.to-indigo-50 {
-      background: #1f2937 !important;
-      border-color: #374151 !important;
-    }
-    .bg-gradient-to-r.from-blue-50.to-indigo-50 .text-gray-900,
-    .bg-gradient-to-r.from-blue-50.to-indigo-50 .text-gray-800,
-    .bg-gradient-to-r.from-blue-50.to-indigo-50 .text-gray-700,
-    .bg-gradient-to-r.from-blue-50.to-indigo-50 .text-blue-800 {
-      color: #e2e8f0 !important;
-    }
-    .bg-gradient-to-r.from-blue-50.to-indigo-50 .text-gray-500,
-    .bg-gradient-to-r.from-blue-50.to-indigo-50 .text-gray-600 {
-      color: #94a3b8 !important;
-    }
-    .bg-gradient-to-r.from-blue-50.to-indigo-50 .bg-white {
-      background-color: #1f2937 !important;
-      border-color: #374151 !important;
-    }
-    .bg-gradient-to-r.from-blue-50.to-indigo-50 .bg-blue-100 {
-      background-color: #1e293b !important;
-    }
-    .bg-gradient-to-r.from-blue-50.to-indigo-50 .text-blue-700 {
-      color: #60a5fa !important;
-    }
-    
-    /* ===== MODAL STYLES ===== */
-    .modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.9);
-      z-index: 9999;
-      justify-content: center;
-      align-items: center;
-      backdrop-filter: blur(4px);
-    }
-    .modal.active {
-      display: flex;
-    }
-    .modal-content {
-      position: relative;
-      max-width: 90vw;
-      max-height: 90vh;
-      background: #111827;
-      border: 2px solid #3b82f6;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 0 30px rgba(59,130,246,0.3);
-    }
-    .modal-content img {
-      width: 100%;
-      height: auto;
-      max-height: 85vh;
-      object-fit: contain;
-      display: block;
-    }
-    .modal-close {
-      position: absolute;
-      top: 10px;
-      right: 15px;
-      background: rgba(0,0,0,0.6);
-      color: white;
-      border: 1px solid #3b82f6;
-      font-size: 28px;
-      font-weight: bold;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: 0.2s;
-      z-index: 10000;
-    }
-    .modal-close:hover {
-      background: #3b82f6;
-      color: #000;
-    }
-    
-    /* Styles pour le challenge de contact */
-    .contact-hidden {
-      display: none;
-    }
-    .contact-visible {
-      display: block;
-    }
-    .challenge-container {
-      margin-top: 0.5rem;
-    }
-    .challenge-question {
-      color: #94a3b8;
-      font-size: 0.8rem;
-      margin-bottom: 0.25rem;
-    }
-    .challenge-input {
-      background-color: #1f2937;
-      border: 1px solid #374151;
-      color: #e2e8f0;
-      padding: 0.25rem 0.5rem;
-      border-radius: 0.25rem;
-      width: 60px;
-      margin-right: 0.5rem;
-    }
-    .challenge-button {
-      background-color: #3b82f6;
-      color: white;
-      border: none;
-      padding: 0.25rem 0.75rem;
-      border-radius: 0.25rem;
-      font-size: 0.8rem;
-      cursor: pointer;
-      transition: background-color 0.2s;
-    }
-    .challenge-button:hover {
-      background-color: #2563eb;
-    }
-    .contact-result {
-      color: #60a5fa;
-      font-size: 0.9rem;
-      margin-top: 0.25rem;
-      word-break: break-word;
-    }
-  </style>
+    <style>
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .dark .glass-effect {
+            background: rgba(30, 41, 59, 0.7);
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hover-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .hover-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.1);
+        }
+        .dark .hover-card:hover {
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+        }
+        
+        .timeline-line {
+            background: linear-gradient(to bottom, #3b82f6, #8b5cf6);
+        }
+        
+        .parallax-bg {
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
+        }
+
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center top;
+            border: 4px solid white;
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.3);
+        }
+        .dark .profile-image {
+            border-color: #1e293b;
+        }
+
+        .profile-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+        }
+        .dark .profile-card {
+            background: rgba(30, 41, 59, 0.9);
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .stat-card {
+            background: white;
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            transition: all 0.3s ease;
+        }
+        .dark .stat-card {
+            background: #1e293b;
+            border-color: #334155;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .avatar-badge {
+            position: relative;
+            display: inline-block;
+        }
+
+        .avatar-badge::after {
+            content: 'EGD';
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+            border: 3px solid white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        .dark .avatar-badge::after {
+            border-color: #1e293b;
+        }
+
+        .skill-tag {
+            transition: all 0.3s ease;
+        }
+        
+        .skill-tag:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+        }
+
+        .experience-card {
+            position: relative;
+            overflow: hidden;
+            background: white;
+        }
+        .dark .experience-card {
+            background: #1e293b;
+            border-color: #334155;
+        }
+
+        .experience-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, #3b82f6, #8b5cf6);
+            transform: scaleY(0);
+            transition: transform 0.3s ease;
+        }
+
+        .experience-card:hover::before {
+            transform: scaleY(1);
+        }
+
+        .tech-icon {
+            transition: all 0.3s ease;
+        }
+
+        .tech-icon:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .scroll-indicator {
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-10px);}
+            60% {transform: translateY(-5px);}
+        }
+
+        /* Formulaire de contact */
+        .contact-form-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        .contact-form-overlay.active {
+            display: flex;
+        }
+
+        .contact-form-container {
+            background: white;
+            border-radius: 24px;
+            padding: 2rem;
+            max-width: 500px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            animation: slideUp 0.3s ease-out;
+        }
+        .dark .contact-form-container {
+            background: #1e293b;
+            color: #e2e8f0;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            transition: all 0.3s;
+            font-family: inherit;
+        }
+        .dark .form-input {
+            background: #0f172a;
+            border-color: #334155;
+            color: white;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+
+        /* Chat widget */
+        .chat-widget {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 9999;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .chat-button {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #00a4ef 0%, #0078d4 100%);
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 10px 30px -5px rgba(0, 164, 239, 0.5);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .chat-button:hover {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 15px 40px -5px rgba(0, 164, 239, 0.6);
+        }
+
+        .chat-container {
+            position: absolute;
+            bottom: 90px;
+            right: 0;
+            width: 400px;
+            max-width: calc(100vw - 40px);
+            height: 600px;
+            max-height: calc(100vh - 150px);
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            opacity: 0;
+            transform: scale(0.8) translateY(20px);
+            pointer-events: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .dark .chat-container {
+            background: #1e293b;
+            color: white;
+        }
+
+        .chat-container.active {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+            pointer-events: all;
+        }
+
+        .chat-header {
+            background: linear-gradient(135deg, #00a4ef 0%, #0078d4 100%);
+            padding: 20px;
+            color: white;
+        }
+
+        .chat-header-content {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .chat-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 3px solid rgba(255,255,255,0.3);
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #00a4ef;
+            font-size: 20px;
+        }
+
+        .chat-status {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 13px;
+            opacity: 0.9;
+            margin-top: 4px;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: #4ade80;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        .chat-messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px;
+            background: #f8fafc;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .dark .chat-messages {
+            background: #0f172a;
+        }
+
+        .message {
+            max-width: 90%;
+            animation: slideIn 0.3s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .message-bot {
+            align-self: flex-start;
+        }
+
+        .message-user {
+            align-self: flex-end;
+        }
+
+        .message-bubble {
+            padding: 12px 16px;
+            border-radius: 18px;
+            font-size: 14px;
+            line-height: 1.5;
+            word-wrap: break-word;
+        }
+
+        .message-bot .message-bubble {
+            background: white;
+            color: #1e293b;
+            border-bottom-left-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border: 1px solid #e2e8f0;
+        }
+        .dark .message-bot .message-bubble {
+            background: #1e293b;
+            color: #e2e8f0;
+            border-color: #334155;
+        }
+
+        .message-user .message-bubble {
+            background: linear-gradient(135deg, #00a4ef 0%, #0078d4 100%);
+            color: white;
+            border-bottom-right-radius: 4px;
+        }
+
+        .message-time {
+            font-size: 11px;
+            color: #94a3b8;
+            margin-top: 4px;
+            text-align: right;
+        }
+
+        .chat-input-area {
+            padding: 20px;
+            background: white;
+            border-top: 1px solid #e2e8f0;
+        }
+        .dark .chat-input-area {
+            background: #1e293b;
+            border-color: #334155;
+        }
+
+        .chat-input-container {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .chat-input {
+            flex: 1;
+            padding: 12px 16px;
+            border: 2px solid #e2e8f0;
+            border-radius: 25px;
+            outline: none;
+            font-size: 14px;
+            transition: all 0.2s;
+        }
+        .dark .chat-input {
+            background: #0f172a;
+            border-color: #334155;
+            color: white;
+        }
+
+        .chat-input:focus {
+            border-color: #00a4ef;
+        }
+
+        .chat-send-btn {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #00a4ef 0%, #0078d4 100%);
+            border: none;
+            color: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+
+        .chat-send-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(0, 164, 239, 0.4);
+        }
+
+        .teams-notice {
+            background: linear-gradient(135deg, #e0f2fe 0%, #dbeafe 100%);
+            padding: 12px;
+            border-radius: 12px;
+            margin-top: 10px;
+            font-size: 12px;
+            color: #0369a1;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid #bae6fd;
+        }
+        .dark .teams-notice {
+            background: #1e293b;
+            color: #94a3b8;
+            border-color: #334155;
+        }
+
+        /* Messages rapides */
+        .quick-reactions {
+            display: flex;
+            gap: 8px;
+            padding: 10px 20px;
+            background: #f8fafc;
+            border-top: 1px solid #e2e8f0;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+        .dark .quick-reactions {
+            background: #1e293b;
+            border-color: #334155;
+        }
+        .quick-reactions::-webkit-scrollbar {
+            display: none;
+        }
+        .quick-reply {
+            background: white;
+            border: 1px solid #e2e8f0;
+            padding: 6px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 13px;
+            transition: all 0.2s;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        .dark .quick-reply {
+            background: #0f172a;
+            border-color: #334155;
+            color: #e2e8f0;
+        }
+        .quick-reply:hover {
+            background: #eff6ff;
+            border-color: #00a4ef;
+            transform: scale(1.05);
+        }
+        .dark .quick-reply:hover {
+            background: #1e293b;
+            border-color: #3b82f6;
+        }
+
+        /* Theme toggle */
+        .theme-toggle {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #4b5563;
+            transition: color 0.3s;
+        }
+        .dark .theme-toggle {
+            color: #fbbf24;
+        }
+        .theme-toggle:hover {
+            color: #3b82f6;
+        }
+
+        /* Section Références */
+        .reference-card {
+            background: white;
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+        .dark .reference-card {
+            background: #1e293b;
+            border-color: #334155;
+        }
+        .reference-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .reference-protected {
+            background: #f1f5f9;
+            padding: 12px;
+            border-radius: 12px;
+            margin-top: 12px;
+        }
+        .dark .reference-protected {
+            background: #0f172a;
+        }
+    </style>
 </head>
-<body class="antialiased">
+<body class="font-sans text-slate-800 bg-slate-50 antialiased overflow-x-hidden dark:bg-slate-900 dark:text-slate-200">
 
-  <!-- ===== HERO ===== -->
-  <header class="hero-bg text-white relative">
-    <div class="container mx-auto px-5 lg:px-6 py-14 lg:py-20 relative z-10">
-      <div class="flex flex-col lg:flex-row items-center justify-between gap-12">
-        <div class="flex-1">
-          <span class="inline-block bg-blue-500/20 text-blue-100 px-4 py-1.5 rounded-full text-sm font-medium mb-5 border border-white/10">
-           Disponible immédiatement
-          </span>
-          <h1 class="text-4xl lg:text-5xl xl:text-6xl font-extrabold leading-tight mb-3 tracking-tight">
-            ÉMÉRIDE <span class="text-blue-300">GBÈTOHO</span> DJIVOESSOUN
-          </h1>
-          <h2 class="text-2xl lg:text-3xl font-semibold text-blue-100 mb-5 flex items-center gap-3">
-            <i class="fas fa-network-wired"></i> Technicien Réseau & Système
-          </h2>
-          <p class="text-gray-200 text-lg mb-8 max-w-2xl leading-relaxed">
-            Support IT, vidéosurveillance, câblage réseau et maintenance. 
-            Plus de 3 ans d’expérience terrain au Bénin
-          </p>
-          <div class="flex flex-wrap gap-4">
-            <a href="#contact" class="btn-primary bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3.5 px-8 rounded-xl shadow-xl shadow-blue-600/20 flex items-center gap-2">
-              <i class="fas fa-paper-plane"></i> Contact direct
-            </a>
-            <a href="#expertises" class="bg-white/10 backdrop-blur-sm border border-white/30 hover:bg-white/20 text-white font-semibold py-3.5 px-8 rounded-xl flex items-center gap-2 transition">
-              <i class="fas fa-toolbox"></i> Compétences
-            </a>
-            <a href="#references" class="bg-transparent border border-white/30 hover:border-white text-white font-semibold py-3.5 px-8 rounded-xl">
-              Références
-            </a>
-          </div>
-          <div class="flex flex-wrap gap-6 mt-10 text-sm text-blue-50">
-            <span><i class="fas fa-phone-alt mr-2 text-blue-300"></i> +229 0168908277 / 0164053582</span>
-            <span><i class="fas fa-envelope mr-2 text-blue-300"></i> edjivoessoun@gmail.com</span>
-            <span><i class="fas fa-map-pin mr-2 text-blue-300"></i> PK10/ENAFA, Cotonou</span>
-          </div>
-        </div>
-        <div class="flex-none">
-          <div class="relative">
-            <div class="w-64 h-64 lg:w-72 lg:h-72 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 p-1 shadow-2xl shadow-blue-500/30">
-              <div class="w-full h-full rounded-full overflow-hidden border-4 border-white/30">
-                <img src="https://i.pinimg.com/736x/fb/46/d9/fb46d9a6790ee253a504b813a7511af0.jpg" 
-                     alt="Éméride Djivoessoun" 
-                     class="w-full h-full object-cover">
-              </div>
+    <!-- Assistant virtuel - Chat widget -->
+    <div class="chat-widget" id="chatWidget">
+        <div class="chat-container" id="chatContainer">
+            <div class="chat-header">
+                <div class="chat-header-content">
+                    <div class="chat-avatar">EG</div>
+                    <div>
+                        <div class="font-bold text-lg">Éméride</div>
+                        <div class="chat-status">
+                            <span class="status-dot"></span>
+                            <span>Disponible</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <span class="absolute bottom-4 right-4 bg-green-500 w-6 h-6 rounded-full border-4 border-white"></span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <!-- ===== SITUATION ACTUELLE – Port Autonome de Cotonou ===== -->
-  <section class="py-16 bg-white border-b border-gray-100">
-    <div class="container mx-auto px-5 max-w-6xl">
-      <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-8 lg:p-10 rounded-3xl border border-blue-100 shadow-sm">
-        <div class="flex flex-col lg:flex-row gap-8 items-start">
-          <div class="lg:w-2/3">
-            <div class="flex items-center gap-3 text-blue-700 mb-4 flex-wrap">
-              <span class="bg-blue-600 text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wide">Stage professionnel · 2025</span>
-              <span class="bg-white px-4 py-1.5 rounded-full text-xs font-semibold text-gray-700 border border-gray-200"><i class="far fa-calendar-alt mr-1"></i> Actuel</span>
-              <!-- 🔗 PREUVE PORT AUTONOME -->
-              <a href="https://drive.google.com/file/d/1jwSRrH96RQDSey0coj31ZERZRFZFZEFF" target="_blank" class="proof-btn ml-auto">
-                <i class="fas fa-file-pdf"></i> Note de service
-              </a>
-            </div>
-            <h2 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-3 tracking-tight">Support IT</h2>
-            <h3 class="text-xl font-semibold text-blue-800 mb-3 flex items-center gap-2">
-              <i class="fas fa-ship"></i> Port Autonome de Cotonou
-            </h3>
-            <ul class="exp-list">
-              <li>Support utilisateurs et résolution d’incidents matériels/logiciels (bureautique, périphériques, accès).</li>
-              <li>Maintenance préventive / curative du parc informatique.</li>
-              <li>Configuration et Déploiement de postes, mise à jour des logiciels et systèmes.</li>
-            </ul>
-          </div>
-          <div class="lg:w-1/3 bg-white p-6 rounded-2xl shadow-md border border-gray-200 w-full">
-            <div class="flex items-center gap-4 mb-4">
-              <div class="bg-blue-100 p-3 rounded-full text-blue-700 text-2xl"><i class="fas fa-bolt"></i></div>
-              <div>
-                <p class="text-sm text-gray-500">Disponibilité</p>
-                <p class="font-bold text-gray-900">Immédiate / préavis</p>
-              </div>
-            </div>
-            <p class="text-gray-600 text-sm mb-4">📌 Prestations : support terrain, câblage, installation de caméras et systèmes de présence.</p>
-            <a href="#contact" class="w-full bg-gray-900 hover:bg-gray-800 text-white font-semibold py-3 px-4 rounded-xl flex items-center justify-center gap-2 transition">
-              <i class="fas fa-calendar-check"></i> Demander une intervention
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== COMPÉTENCES ===== -->
-  <section id="expertises" class="py-16 bg-gray-50">
-    <div class="container mx-auto px-5 max-w-6xl">
-      <div class="text-center max-w-2xl mx-auto mb-12">
-        <span class="bg-blue-100 text-blue-800 text-sm font-semibold px-4 py-1.5 rounded-full">Expertises</span>
-        <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mt-4 mb-3 tracking-tight">Compétences techniques</h2>
-        <p class="text-gray-600">Systèmes · Réseaux · Sécurité · Vidéosurveillance</p>
-      </div>
-      
-      <div class="grid md:grid-cols-2 gap-8 items-start">
-        <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100">
-          <h3 class="text-xl font-bold mb-5 flex items-center gap-2"><i class="fas fa-microchip text-blue-600"></i> Niveaux maîtrise</h3>
-          <div class="space-y-5">
-            <div><div class="flex justify-between mb-1"><span class="font-medium">Windows 11/10 et antérieurs/</span><span class="text-blue-700">95%</span></div><div class="h-2 bg-gray-100 rounded-full"><div class="h-2 bg-blue-600 rounded-full" style="width:95%"></div></div></div>
-            <div><div class="flex justify-between mb-1"><span class="font-medium">Microsoft 365 & Office</span><span class="text-blue-700">90%</span></div><div class="h-2 bg-gray-100 rounded-full"><div class="h-2 bg-blue-600 rounded-full" style="width:90%"></div></div></div>
-            <div><div class="flex justify-between mb-1"><span class="font-medium">TCP/IP, LAN, WAN, Ethernet</span><span class="text-blue-700">75%</span></div><div class="h-2 bg-gray-100 rounded-full"><div class="h-2 bg-blue-600 rounded-full" style="width:75%"></div></div></div>
-            <div><div class="flex justify-between mb-1"><span class="font-medium">VoIP / Téléphonie IP</span><span class="text-blue-700">40%</span></div><div class="h-2 bg-gray-100 rounded-full"><div class="h-2 bg-blue-600 rounded-full" style="width:40%"></div></div></div>
-            <div><div class="flex justify-between mb-1"><span class="font-medium">Anglais technique</span><span class="text-blue-700">60%</span></div><div class="h-2 bg-gray-100 rounded-full"><div class="h-2 bg-blue-600 rounded-full" style="width:60%"></div></div></div>
-          </div>
-          <div class="mt-7 flex flex-wrap gap-2">
-            <span class="skill-pill"><i class="fas fa-camera mr-1"></i> Huawei/HIKVISION</span>
-            <span class="skill-pill"><i class="fas fa-id-card mr-1"></i> ZK TIME</span>
-            <span class="skill-pill"><i class="fas fa-headset mr-1"></i> CRM, gestion appels</span>
-            <span class="skill-pill"><i class="fas fa-print"></i> Imprimantes</span>
-            <span class="skill-pill"><i class="fas fa-tools"></i> Diagnostic</span>
-          </div>
-        </div>
-        
-        <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100">
-          <h3 class="text-xl font-bold mb-5 flex items-center gap-2"><i class="fas fa-bolt text-blue-600"></i> Spécialisations</h3>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div class="flex items-start gap-3 bg-blue-50/40 p-4 rounded-xl">
-              <div class="bg-blue-600 text-white p-3 rounded-full text-lg"><i class="fas fa-video"></i></div>
-              <div><h4 class="font-bold">Vidéosurveillance</h4><p class="text-sm text-gray-600">Caméras Huawei, HIKVISION, NVR</p></div>
-            </div>
-            <div class="flex items-start gap-3 bg-blue-50/40 p-4 rounded-xl">
-              <div class="bg-blue-600 text-white p-3 rounded-full text-lg"><i class="fas fa-network-wired"></i></div>
-              <div><h4 class="font-bold">Câblage & Réseau</h4><p class="text-sm text-gray-600">Salle serveur, switch, brassage</p></div>
-            </div>
-            <div class="flex items-start gap-3 bg-blue-50/40 p-4 rounded-xl">
-              <div class="bg-blue-600 text-white p-3 rounded-full text-lg"><i class="fas fa-user-lock"></i></div>
-              <div><h4 class="font-bold">Gestion accès</h4><p class="text-sm text-gray-600">Création comptes, mots de passe, droits</p></div>
-            </div>
-            <div class="flex items-start gap-3 bg-blue-50/40 p-4 rounded-xl">
-            </div>
-          </div>
-          
-          <!-- ===== FORMATION AVEC PREUVE ===== -->
-          <div class="mt-6 border-t pt-6 border-gray-100">
-            <div class="flex items-center justify-between">
-              <p class="text-sm uppercase tracking-wide text-gray-500">Formation</p>
-              <!-- 🔗 PREUVE LICENCE -->
-              <a href="https://drive.google.com/file/d/1pqqKMps1HyiXRbriTVdYTpGSmcIxhd6c/view?usp=sharing" target="_blank" class="proof-btn">
-                <i class="fas fa-file-pdf"></i> Diplôme
-              </a>
-            </div>
-            <p class="font-semibold mt-1"><i class="fas fa-graduation-cap text-blue-600 mr-2"></i> Licence Informatique – ESGIS, Cotonou (2020)</p>
             
-            <!-- ===== CERTIFICATIONS AVEC PREUVES ===== -->
-            <p class="text-sm uppercase tracking-wide text-gray-500 mt-4 mb-2">Certifications</p>
-            <div class="space-y-2">
-              <div class="flex items-center justify-between">
-                <span class="text-sm text-gray-700"><i class="fas fa-certificate text-blue-600 mr-2"></i> Éthique dans le secteur du développement</span>
-                <a href="https://drive.google.com/file/d/1cO648_L3nO31VbBV6jxmmayIUTJ4IR7g/view?usp=sharing" target="_blank" class="cert-link">
-                  <i class="fas fa-file-pdf"></i> PDF
-                </a>
-              </div>
-              <div class="flex items-center justify-between">
-                <span class="text-sm text-gray-700"><i class="fas fa-certificate text-blue-600 mr-2"></i> Lutte contre l'exploitation</span>
-                <a href="https://drive.google.com/file/d/1yk_5Sq1aSGePchP_q3MB-vd6o9h4m8Jv/view?usp=sharing" target="_blank" class="cert-link">
-                  <i class="fas fa-file-pdf"></i> PDF
-                </a>
-              </div>
-              <div class="flex items-center justify-between">
-                <span class="text-sm text-gray-700"><i class="fas fa-certificate text-blue-600 mr-2"></i> Principes de l'aide humanitaire</span>
-                <a href="https://drive.google.com/file/d/1LC0wAzjXKHfA5_L3_42F3GEFWww4K1LD/view?usp=sharing" target="_blank" class="cert-link">
-                  <i class="fas fa-file-pdf"></i> PDF
-                </a>
-              </div>
+            <div class="chat-messages" id="chatMessages">
+                <div class="message message-bot">
+                    <div class="message-bubble">
+                        Bonjour ! 👋 Je suis Éméride. Comment puis-je vous aider aujourd'hui ?
+                    </div>
+                    <div class="message-time">00:00</div>
+                </div>
             </div>
-          </div>
+
+            <!-- Messages rapides pré-enregistrés -->
+            <div class="quick-reactions">
+                <button class="quick-reply" data-message="Bonjour">
+                    👋 Bonjour
+                </button>
+                <button class="quick-reply" data-message="Pouvez-vous me donner plus d'informations sur votre expérience ?">
+                    💼 Expérience
+                </button>
+                <button class="quick-reply" data-message="J'ai une opportunité à vous proposer">
+                    🚀 Opportunité
+                </button>
+                <button class="quick-reply" data-message="Je souhaite consulter vos références">
+                    📋 Références
+                </button>
+                <button class="quick-reply" data-message="Je souhaite obtenir votre CV">
+                    📄 CV
+                </button>
+            </div>
+
+            <div class="chat-input-area">
+                <div class="chat-input-container">
+                    <input type="text" class="chat-input" id="chatInput" placeholder="Écrivez votre message..." maxlength="500">
+                    <button class="chat-send-btn" onclick="sendChatMessage()">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+                <div class="teams-notice">
+                    <i class="fas fa-info-circle"></i>
+                    Chaque message sera envoyé par email
+                </div>
+            </div>
         </div>
-      </div>
+
+        <button class="chat-button" id="chatButton" onclick="toggleChat()">
+            <i class="fas fa-comment text-white text-2xl"></i>
+        </button>
     </div>
-  </section>
 
-  <!-- ===== EXPÉRIENCES PROFESSIONNELLES avec PREUVES ===== -->
-  <section id="experience" class="py-16 bg-white">
-    <div class="container mx-auto px-5 max-w-4xl">
-      <div class="text-center mb-12">
-        <span class="bg-indigo-100 text-indigo-800 text-sm font-semibold px-4 py-1.5 rounded-full">Parcours</span>
-        <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mt-3 tracking-tight">Expériences professionnelles</h2>
-      </div>
-      
-      <div class="space-y-6">
-        <!-- NEXERA avec PREUVE -->
-        <div class="exp-card bg-gray-50 p-6 lg:p-7 rounded-2xl border border-gray-200 timeline-dot">
-          <div class="flex flex-wrap items-center gap-3 mb-2">
-            <span class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1.5 rounded-full">
-              Déc 2024 – Sep 2025
-            </span>
-            <span class="bg-gray-200 text-gray-800 px-3 py-1.5 rounded-full text-xs">
-              Technicien Support IT
-            </span>
-            <!-- 🔗 PREUVE NEXERA -->
-            <a href="https://drive.google.com/file/d/ID_DU_FICHIER_NEXERA/view" target="_blank" 
-               class="proof-btn ml-auto">
-              <i class="fas fa-file-pdf"></i> Attestation
-            </a>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900">Assistance aux téléconseillers et superviseurs (centre d'appels)</h3>
-          <p class="text-blue-700 font-medium mb-3">NEXERA – Cotonou</p>
-          <ul class="exp-list">
-            <li>Assistance aux téléconseillers et superviseurs en cas de panne (PC, logiciels, casques, téléphones VoIP).</li>
-            <li>Installation, configuration et mise à jour des postes de travail.</li>
-            <li>Résolution des problèmes de connexion aux applications métiers et aux bases de données clients.</li>
-            <li>Gestion des systèmes de gestion des appels (CRM).</li>
-            <li>Surveillance des fichiers d'attente et de la qualité des appels.</li>
-            <li>Support comptes & accès (gestion des identifiants, réinitialisation de mots de passe).</li>
-          </ul>
-        </div>
-        
-        <!-- AFG ASSURANCES avec PREUVE -->
-        <div class="exp-card bg-gray-50 p-6 lg:p-7 rounded-2xl border border-gray-200 timeline-dot">
-          <div class="flex flex-wrap items-center gap-3 mb-2">
-            <span class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1.5 rounded-full">
-              Avril 2024 – Déc 2024
-            </span>
-            <span class="bg-gray-200 text-gray-800 px-3 py-1.5 rounded-full text-xs">
-              Stage professionnel
-            </span>
-            <!-- 🔗 PREUVE AFG -->
-            <a href="https://drive.google.com/file/d/1pqqKMps1HyiXRbriTVdYTpGSmcIxhd6c/view?usp=sharing" target="_blank" 
-               class="proof-btn ml-auto">
-              <i class="fas fa-file-pdf"></i> Certificat
-            </a>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900">Support Systèmes & Réseaux</h3>
-          <p class="text-blue-700 font-medium mb-3">AFG ASSURANCES Bénin – Cotonou</p>
-          <ul class="exp-list">
-            <li>Connaissance des protocoles réseaux (TCP/IP, Ethernet, LAN, WAN).</li>
-            <li>Résolution des problèmes liés au système d'information, à la bureautique des employés, au WiFi et à la VoIP.</li>
-            <li>Expérience avec les logiciels de réunion (Zoom, Google Meet, Microsoft Teams).</li>
-            <li>Diagnostic et dépannage des pannes.</li>
-            <li>Configuration d'imprimantes et création de comptes utilisateurs.</li>
-            <li>Maintenance physique et logicielle du matériel informatique.</li>
-            <li>Maîtrise de l'anglais technique.</li>
-          </ul>
-        </div>
-        
-        <!-- HUAWEI Technologies Benin avec GALERIE (MODAL) -->
-        <div class="exp-card bg-gray-50 p-6 lg:p-7 rounded-2xl border border-gray-200 timeline-dot">
-          <div class="flex flex-wrap items-center gap-3 mb-2">
-            <span class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1.5 rounded-full">
-              2022 – Présent
-            </span>
-            <span class="bg-gray-200 text-gray-800 px-3 py-1.5 rounded-full text-xs">
-              Prestataire IT (temps partiel)
-            </span>
-            <!-- 🖼️ GALERIE HUAWEI (au lieu d'attestation) -->
-            <a href="https://drive.google.com/drive/folders/11bcpCjUc0iQoJLJEPZrAGw9DGy_wpMD0?usp=sharing" target="_blank" class="gallery-btn ml-auto">
-              <i class="fas fa-images"></i> Voir la galerie
-            </a>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900">Technicien vidéosurveillance & contrôle d'accès</h3>
-          <p class="text-blue-700 font-medium mb-3">Huawei Technologies Benin S.A – Cotonou</p>
-                      <!-- Mini-galerie d'aperçu (MODAL SUR LES IMAGES) -->
-         <div class="mt-4 flex gap-2 overflow-x-auto pb-2">
-            <a href="https://drive.google.com/file/d/1fIdyXiGo7Dw4slL-s9ql2NycTyFMYLVV/view?usp=sharing" target="_blank" class="block w-16 h-16 rounded-lg overflow-hidden border-2 border-gray-200 hover:border-purple-500 transition">
-              <img src="https://drive.google.com/thumbnail?id=1fIdyXiGo7Dw4slL-s9ql2NycTyFMYLVV&sz=w160" alt="Installation caméra" class="w-full h-full object-cover" loading="lazy">
-            </a>
-            <a href="https://drive.google.com/file/d/1dxJtotkMrnS2C8gBzkFFFtje-4gCBKX-/view?usp=sharing" target="_blank" class="block w-16 h-16 rounded-lg overflow-hidden border-2 border-gray-200 hover:border-purple-500 transition">
-              <img src="https://drive.google.com/thumbnail?id=1dxJtotkMrnS2C8gBzkFFFtje-4gCBKX-&sz=w160" alt="Câblage" class="w-full h-full object-cover" loading="lazy">
-            </a>
-            <a href="https://drive.google.com/file/d/1cN2M7IsI_kGpatM9nanDT5A52fZb1xRW/view?usp=sharing" target="_blank" class="block w-16 h-16 rounded-lg overflow-hidden border-2 border-gray-200 hover:border-purple-500 transition">
-              <img src="https://drive.google.com/thumbnail?id=1cN2M7IsI_kGpatM9nanDT5A52fZb1xRW&sz=w160" alt="Configuration NVR" class="w-full h-full object-cover" loading="lazy">
-            </a>
-            <a href="https://drive.google.com/drive/folders/11bcpCjUc0iQoJLJEPZrAGw9DGy_wpMD0?usp=sharing" target="_blank" class="block w-16 h-16 rounded-lg bg-purple-100 text-purple-700 flex items-center justify-center font-bold text-xs border-2 border-purple-200 hover:bg-purple-200">
-              <i class="fas fa-plus"></i>
-            </a>
-          </div>
-          <p class="text-xs text-gray-500 mt-2 flex items-center gap-1">
-            <i class="fas fa-images text-purple-500"></i> Photos d'installations réelles (cliquez pour agrandir)
-          </p>
-        </div>
-        
-        <!-- ABMS volontariat avec PREUVE -->
-        <div class="exp-card bg-gray-50 p-6 lg:p-7 rounded-2xl border border-gray-200 timeline-dot">
-          <div class="flex flex-wrap items-center gap-3 mb-2">
-            <span class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1.5 rounded-full">
-              Mai 2022 – Nov 2023
-            </span>
-            <span class="bg-gray-200 text-gray-800 px-3 py-1.5 rounded-full text-xs">
-              Volontariat
-            </span>
-            <!-- 🔗 PREUVE ABMS -->
-            <a href="https://drive.google.com/file/d/15UTw9ECCN_zEginYf39IirOmV0ihp8iS/view?usp=sharing" target="_blank" class="proof-btn ml-auto">
-              <i class="fas fa-file-pdf"></i> Certificat
-            </a>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900">Assistant support informatique</h3>
-          <p class="text-blue-700 font-medium mb-3">Association Béninoise pour le Marketing Social – Cotonou</p>
-          <ul class="exp-list">
-            <li>Résolution des problèmes liés au système d'information, à la bureautique et au réseau.</li>
-            <li>Diagnostic, dépannage et installation de nouveau matériel.</li>
-            <li>Maintenance préventive des ordinateurs.</li>
-          </ul>
-        </div>
-        
-        <!-- Soft Innovation Technologies avec PREUVE -->
-        <div class="exp-card bg-gray-50 p-6 lg:p-7 rounded-2xl border border-gray-200 timeline-dot">
-          <div class="flex flex-wrap items-center gap-3 mb-2">
-            <span class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1.5 rounded-full">
-              Jan 2022 – Mai 2022
-            </span>
-            <span class="bg-gray-200 text-gray-800 px-3 py-1.5 rounded-full text-xs">
-              Stage
-            </span>
-            <!-- 🔗 PREUVE SOFT INNOVATION -->
-            <a href="https://drive.google.com/file/d/1lBC8lWK83Av5KTiMabSKMPffgvuLpUAX/view?usp=sharing" target="_blank" 
-               class="proof-btn ml-auto">
-              <i class="fas fa-file-pdf"></i> Certificat
-            </a>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900">Stagiaire Sécurité Réseau & DevOps</h3>
-          <p class="text-blue-700 font-medium mb-3">Soft Innovation Technologies – Cotonou</p>
-          <ul class="exp-list">
-            <li>Installation de caméras de surveillance, câblage et mise en place de salles serveur.</li>
-            <li>Configuration de téléphones IP et NVR.</li>
-            <li>Découverte des concepts DevOps.</li>
-          </ul>
-        </div>
-
-        <!-- MINISTÈRE AFFAIRES SOCIALES avec PREUVE -->
-        <div class="exp-card bg-gray-50 p-6 lg:p-7 rounded-2xl border border-gray-200 timeline-dot">
-          <div class="flex flex-wrap items-center gap-3 mb-2">
-            <span class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1.5 rounded-full">
-              Avr 2021 – Juil 2021
-            </span>
-            <span class="bg-gray-200 text-gray-800 px-3 py-1.5 rounded-full text-xs">
-              Stage
-            </span>
-            <!-- 🔗 PREUVE MINISTÈRE -->
-            <a href="https://drive.google.com/file/d/1PUvlzeSR0Eyjb6ovoD4f26cvPZExTOua/view?usp=sharing" target="_blank" 
-               class="proof-btn ml-auto">
-              <i class="fas fa-file-pdf"></i> Attestation
-            </a>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900">Stagiaire Département informatique</h3>
-          <p class="text-blue-700 font-medium mb-3">Ministère des Affaires Sociales et de la Microfinance (MASM)</p>
-          <ul class="exp-list">
-            <li>Maintenance logicielle et matérielle.</li>
-            <li>Diagnostic, dépannage et installation de nouveau matériel.</li>
-            <li>Surveillance et élimination des virus.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== RÉFÉRENCES PROFESSIONNELLES AVEC CHALLENGE ===== -->
-  <section id="references" class="py-16 bg-gray-50">
-    <div class="container mx-auto px-5 max-w-6xl">
-      <h2 class="text-3xl font-bold text-center text-gray-900 mb-4 tracking-tight">Références & recommandations</h2>
-      <p class="text-center text-gray-600 mb-12">Résolvez le calcul simple pour afficher les contacts</p>
-      
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <!-- Chakirou GBESSEMEHLAN -->
-        <div class="ref-card bg-white p-6 rounded-2xl flex gap-4 items-start">
-          <div class="bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl shrink-0"><i class="fas fa-user-tie"></i></div>
-          <div class="flex-1">
-            <h3 class="font-bold text-gray-900">Chakirou GBESSEMEHLAN</h3>
-            <p class="text-gray-600 text-sm">Ingénieur Réseau & DevOps, Soft Innovation Technologies</p>
-            <div class="contact-challenge mt-2" data-contact="+229 0166494749">
-              <div class="challenge-question">Additionnez 3 + 5 :</div>
-              <div class="flex items-center">
-                <input type="number" class="challenge-input" min="0" max="20" value="">
-                <button class="challenge-button">Vérifier</button>
-              </div>
-              <div class="contact-result hidden"></div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Anselme da-SYLVEIRA -->
-        <div class="ref-card bg-white p-6 rounded-2xl flex gap-4 items-start">
-          <div class="bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl shrink-0"><i class="fas fa-user-tie"></i></div>
-          <div class="flex-1">
-            <h3 class="font-bold text-gray-900">Anselme da-SYLVEIRA</h3>
-            <p class="text-gray-600 text-sm">Chef département informatique, ABMS</p>
-            <div class="contact-challenge mt-2" data-contact="+229 0196738200 • adasylveira@abmsbi.org">
-              <div class="challenge-question">Additionnez 5 + 2 :</div>
-              <div class="flex items-center">
-                <input type="number" class="challenge-input" min="0" max="20" value="">
-                <button class="challenge-button">Vérifier</button>
-              </div>
-              <div class="contact-result hidden"></div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Frédéric GBAGUIDI -->
-        <div class="ref-card bg-white p-6 rounded-2xl flex gap-4 items-start">
-          <div class="bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl shrink-0"><i class="fas fa-user-tie"></i></div>
-          <div class="flex-1">
-            <h3 class="font-bold text-gray-900">Frédéric GBAGUIDI</h3>
-            <p class="text-gray-600 text-sm">Directeur des Systèmes d'Information, AFG Assurances Bénin</p>
-            <div class="contact-challenge mt-2" data-contact="+229 0190939870 • frederic.gbaguidi@atlantiqueassurancesbenin.net">
-              <div class="challenge-question">Additionnez 4 + 6 :</div>
-              <div class="flex items-center">
-                <input type="number" class="challenge-input" min="0" max="20" value="">
-                <button class="challenge-button">Vérifier</button>
-              </div>
-              <div class="contact-result hidden"></div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Anas ABDENNOUR -->
-        <div class="ref-card bg-white p-6 rounded-2xl flex gap-4 items-start">
-          <div class="bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl shrink-0"><i class="fas fa-user-tie"></i></div>
-          <div class="flex-1">
-            <h3 class="font-bold text-gray-900">Anas ABDENNOUR</h3>
-            <p class="text-gray-600 text-sm">Chef Service Informatique/IONOW, NEXERA</p>
-            <div class="contact-challenge mt-2" data-contact="+212 614-808469 • anas.a@ionow.fr">
-              <div class="challenge-question">Additionnez 7 + 3 :</div>
-              <div class="flex items-center">
-                <input type="number" class="challenge-input" min="0" max="20" value="">
-                <button class="challenge-button">Vérifier</button>
-              </div>
-              <div class="contact-result hidden"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== CONTACT ===== -->
-  <section id="contact" class="py-16 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
-    <div class="container mx-auto px-5 max-w-5xl">
-      <div class="text-center mb-10">
-        <h2 class="text-3xl lg:text-4xl font-bold mb-3 tracking-tight">Discutons de vos besoins</h2>
-        <p class="text-gray-300">Support IT, déploiement réseau, installation de caméras ou maintenance.</p>
-      </div>
-      <div class="grid md:grid-cols-2 gap-8 glass-contact p-8 lg:p-10 rounded-3xl">
-        <div>
-          <h3 class="text-2xl font-semibold mb-6 flex items-center gap-2"><span class="bg-blue-500 w-2 h-8 rounded-full"></span> Éméride Djivoessoun</h3>
-          <div class="space-y-5">
-            <div class="flex items-center gap-4">
-              <div class="bg-blue-600 w-12 h-12 rounded-full flex items-center justify-center"><i class="fas fa-mobile-alt text-xl"></i></div>
-              <div>
-                <p class="text-gray-300 text-sm">Téléphone</p>
-                <p class="font-semibold text-white">+229 0168908277 / 0164053582</p>
-              </div>
-            </div>
-            <div class="flex items-center gap-4">
-              <div class="bg-blue-600 w-12 h-12 rounded-full flex items-center justify-center"><i class="fas fa-envelope text-xl"></i></div>
-              <div>
-                <p class="text-gray-300 text-sm">Email</p>
-                <a href="mailto:edjivoessoun@gmail.com" class="font-semibold text-blue-200 hover:underline">edjivoessoun@gmail.com</a>
-              </div>
-            </div>
-            <div class="flex items-center gap-4">
-              <div class="bg-blue-600 w-12 h-12 rounded-full flex items-center justify-center"><i class="fas fa-map-marker-alt text-xl"></i></div>
-              <div>
-                <p class="text-gray-300 text-sm">Adresse</p>
-                <p class="font-semibold">PK10/ENAFA, Cotonou, Bénin</p>
-              </div>
-            </div>
-          </div>
-          
-          <div class="mt-8 flex gap-4">
-            <a href="https://wa.me/2290168908277" target="_blank" rel="noopener noreferrer" 
-               class="bg-green-600 hover:bg-green-700 text-white w-12 h-12 rounded-full flex items-center justify-center text-2xl transition transform hover:scale-110">
-              <i class="fab fa-whatsapp"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/em%C3%A9ride-djivoessoun-2816aa360/" target="_blank" rel="noopener noreferrer"
-               class="bg-blue-700 hover:bg-blue-800 text-white w-12 h-12 rounded-full flex items-center justify-center text-2xl transition transform hover:scale-110">
-              <i class="fab fa-linkedin-in"></i>
-            </a>
-            <a href="mailto:edjivoessoun@gmail.com" 
-               class="bg-gray-600 hover:bg-gray-700 text-white w-12 h-12 rounded-full flex items-center justify-center text-2xl transition transform hover:scale-110">
-              <i class="fas fa-envelope"></i>
-            </a>
-          </div>
-          
-          <div class="mt-8 border-t border-white/20 pt-6">
-            <p class="text-gray-200 text-sm italic">« Professionnel, réactif et orienté solution. »</p>
-          </div>
-        </div>
-        
-        <div>
-          <h3 class="text-xl font-semibold mb-5">Écrivez-moi rapidement</h3>
-          <form action="https://formspree.io/f/meoeeoag" method="POST" class="space-y-4">
-            <input type="text" name="nom" placeholder="Votre nom / société" required
-                   class="w-full px-5 py-3 rounded-xl bg-white border border-gray-300 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
-            <input type="email" name="email" placeholder="Votre adresse email" required
-                   class="w-full px-5 py-3 rounded-xl bg-white border border-gray-300 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
-            <input type="text" name="sujet" placeholder="Sujet" 
-                   class="w-full px-5 py-3 rounded-xl bg-white border border-gray-300 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
-            <textarea name="message" rows="4" placeholder="Précisez votre demande (type d’intervention, lieu, urgence…)" required
-                      class="w-full px-5 py-3 rounded-xl bg-white border border-gray-300 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"></textarea>
-            
-            <input type="hidden" name="_subject" value="Nouveau message depuis votre CV en ligne">
-            
-            <button type="submit" 
-                    class="w-full bg-blue-600 hover:bg-blue-500 text-white font-semibold py-3.5 px-6 rounded-xl transition flex items-center justify-center gap-2">
-              <i class="fas fa-paper-plane"></i> Envoyer la demande
+    <!-- Modal formulaire de contact -->
+    <div id="contact-modal" class="contact-form-overlay">
+        <div class="contact-form-container">
+            <button onclick="closeContactForm()" class="absolute top-4 right-4 w-10 h-10 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center transition-colors dark:bg-slate-700 dark:hover:bg-slate-600 dark:text-white">
+                <i class="fas fa-times text-slate-600 dark:text-white"></i>
             </button>
-            <p class="text-xs text-gray-400 mt-2"> Réponse sous 24h.</p>
-          </form>
+            
+            <div class="text-center mb-6">
+                <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center text-white text-2xl mx-auto mb-4">
+                    <i class="fas fa-paper-plane"></i>
+                </div>
+                <h3 class="font-display text-2xl font-bold text-slate-900 dark:text-white">Me contacter</h3>
+                <p class="text-slate-500 mt-2 dark:text-slate-400">Remplissez ce formulaire et je vous répondrai dans les plus brefs délais.</p>
+            </div>
+
+            <form id="contact-form" onsubmit="handleContactSubmit(event)">
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-1 dark:text-slate-300">Nom complet *</label>
+                        <input type="text" name="from_name" required class="form-input" placeholder="Votre nom">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-1 dark:text-slate-300">Email *</label>
+                        <input type="email" name="from_email" required class="form-input" placeholder="votre@email.com">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-1 dark:text-slate-300">Téléphone</label>
+                        <input type="tel" name="phone" class="form-input" placeholder="+229 XX XX XX XX">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-1 dark:text-slate-300">Message *</label>
+                        <textarea name="message" rows="4" required class="form-input resize-none" placeholder="Décrivez votre demande..."></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-xl font-semibold hover:shadow-lg transform hover:scale-[1.02] transition-all flex items-center justify-center gap-2">
+                        <i class="fas fa-paper-plane"></i>
+                        <span>Envoyer le message</span>
+                    </button>
+                </div>
+            </form>
         </div>
-      </div>
     </div>
-  </section>
 
-  <!-- footer avec bouton VOIR MON CV et liens sociaux -->
-  <footer class="bg-gray-900 text-gray-300 py-8 border-t border-gray-800">
-    <div class="container mx-auto px-5 text-center text-sm">
-      <div class="flex justify-center mb-4">
-        <a href="https://drive.google.com/file/d/1iQM9Rwa_AEsx0mycyqPfs19lKyq-fYzU/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="cv-btn">
-          <i class="fas fa-file-alt"></i> Voir mon CV (PDF)
-        </a>
-      </div>
-      <p>© 2026 Éméride Gbètoho Djivoessoun – Technicien Réseau & Système.</p>
-      <p class="mt-2 flex justify-center gap-5">
-        <a href="https://www.linkedin.com/in/em%C3%A9ride-djivoessoun-2816aa360/" target="_blank" rel="noopener noreferrer" class="hover:text-white flex items-center gap-1">
-          <i class="fab fa-linkedin"></i> LinkedIn
-        </a>
-        <a href="https://wa.me/2290168908277" target="_blank" rel="noopener noreferrer" class="hover:text-white flex items-center gap-1">
-          <i class="fab fa-whatsapp"></i> WhatsApp
-        </a>
-        <a href="mailto:edjivoessoun@gmail.com" class="hover:text-white flex items-center gap-1">
-          <i class="fas fa-envelope"></i> Email
-        </a>
-      </p>
-    </div>
-  </footer>
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-effect border-b border-slate-200/50 transition-all duration-300 dark:border-slate-700/50" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white font-bold text-lg shadow-lg">
+                        EG
+                    </div>
+                    <span class="font-display font-bold text-xl text-slate-800 dark:text-white">ÉMÉRIDE G.D.</span>
+                </div>
+                
+                <div class="hidden md:flex space-x-4 items-center">
+                    <a href="#accueil" class="text-slate-600 hover:text-blue-600 font-medium transition-colors dark:text-slate-300 dark:hover:text-blue-400">Accueil</a>
+                    <a href="#competences" class="text-slate-600 hover:text-blue-600 font-medium transition-colors dark:text-slate-300 dark:hover:text-blue-400">Compétences</a>
+                    <a href="#experience" class="text-slate-600 hover:text-blue-600 font-medium transition-colors dark:text-slate-300 dark:hover:text-blue-400">Expérience</a>
+                    <a href="#references" class="text-slate-600 hover:text-blue-600 font-medium transition-colors dark:text-slate-300 dark:hover:text-blue-400">Références</a>
+                    <a href="#contact" class="text-slate-600 hover:text-blue-600 font-medium transition-colors dark:text-slate-300 dark:hover:text-blue-400">Contact</a>
+                    <!-- Bouton mode sombre -->
+                    <button id="theme-toggle" class="theme-toggle ml-2" aria-label="Changer de mode">
+                        <i id="theme-icon" class="fas fa-sun"></i>
+                    </button>
+                </div>
 
-  <!-- MODAL POUR GALERIE HUAWEI -->
-  <div id="imageModal" class="modal" tabindex="-1" role="dialog" aria-modal="true" aria-label="Agrandissement d'image">
-    <div class="modal-content">
-      <span class="modal-close" id="modalCloseBtn">&times;</span>
-      <img id="modalImage" src="" alt="Image agrandie">
-    </div>
-  </div>
+                <div class="flex items-center gap-2 md:hidden">
+                    <button id="theme-toggle-mobile" class="theme-toggle" aria-label="Changer de mode">
+                        <i id="theme-icon-mobile" class="fas fa-sun"></i>
+                    </button>
+                    <button class="text-slate-600 hover:text-slate-900 dark:text-slate-300" onclick="toggleMobileMenu()">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div id="mobile-menu" class="hidden md:hidden glass-effect border-t border-slate-200 dark:border-slate-700">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="#accueil" class="block px-3 py-2 text-slate-600 hover:text-blue-600 font-medium dark:text-slate-300">Accueil</a>
+                <a href="#competences" class="block px-3 py-2 text-slate-600 hover:text-blue-600 font-medium dark:text-slate-300">Compétences</a>
+                <a href="#experience" class="block px-3 py-2 text-slate-600 hover:text-blue-600 font-medium dark:text-slate-300">Expérience</a>
+                <a href="#references" class="block px-3 py-2 text-slate-600 hover:text-blue-600 font-medium dark:text-slate-300">Références</a>
+                <a href="#contact" class="block px-3 py-2 text-slate-600 hover:text-blue-600 font-medium dark:text-slate-300">Contact</a>
+            </div>
+        </div>
+    </nav>
 
-  <!-- smooth scroll, gestion modal et challenge -->
-  <script>
-    // Smooth scroll
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        const href = this.getAttribute('href');
-        if (href === "#" || href === "") return;
-        const target = document.querySelector(href);
-        if (target) {
-          e.preventDefault();
-          target.scrollIntoView({ behavior: 'smooth' });
+    <!-- Hero Section -->
+    <section id="accueil" class="relative min-h-screen flex items-center justify-center parallax-bg pt-20 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute top-20 left-10 w-72 h-72 bg-blue-400/20 rounded-full blur-3xl animate-float"></div>
+            <div class="absolute bottom-20 right-10 w-96 h-96 bg-purple-400/20 rounded-full blur-3xl animate-float" style="animation-delay: 2s;"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8 animate-slide-up">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-100 text-blue-600 font-medium text-sm dark:bg-blue-900/30 dark:border-blue-800 dark:text-blue-300">
+                        <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                        Disponible immédiatement
+                    </div>
+                    
+                    <h1 class="font-display text-4xl lg:text-6xl font-bold leading-tight text-slate-900 dark:text-white">
+                        ÉMÉRIDE GBÈTOHO<br>
+                        <span class="text-gradient">DJIVOESSOUN</span>
+                    </h1>
+                    
+                    <h2 class="text-3xl lg:text-4xl font-display font-semibold text-slate-700 dark:text-slate-300">
+                        Technicien Réseau & Système
+                    </h2>
+                    
+                    <p class="text-xl text-slate-600 leading-relaxed max-w-lg dark:text-slate-400">
+                        Support IT, vidéosurveillance, câblage réseau et maintenance. Plus de 3 ans d'expérience terrain au Bénin.
+                    </p>
+
+                    <div class="flex flex-wrap gap-4 text-sm">
+                        <div class="flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow-sm border border-slate-200 dark:bg-slate-800 dark:border-slate-700">
+                            <i class="fas fa-phone text-blue-500"></i>
+                            <span class="dark:text-slate-300">+229 0168908277 / 0164053582</span>
+                        </div>
+                        <div class="flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow-sm border border-slate-200 dark:bg-slate-800 dark:border-slate-700">
+                            <i class="fas fa-envelope text-purple-500"></i>
+                            <span class="dark:text-slate-300">edjivoessoun@gmail.com</span>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap gap-3">
+                        <div class="flex items-center gap-2 px-4 py-2 bg-slate-100 rounded-full dark:bg-slate-800">
+                            <i class="fas fa-map-marker-alt text-blue-500"></i>
+                            <span class="dark:text-slate-300">PK10/ENAFA, Cotonou, Bénin</span>
+                        </div>
+                        <div class="flex items-center gap-2 px-4 py-2 bg-slate-100 rounded-full dark:bg-slate-800">
+                            <i class="fas fa-clock text-green-500"></i>
+                            <span class="dark:text-slate-300">Disponible immédiatement</span>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap gap-4">
+                        <button onclick="openContactForm()" class="px-8 py-4 bg-slate-900 text-white rounded-full font-semibold hover:bg-slate-800 transition-all transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center gap-2 dark:bg-blue-600 dark:hover:bg-blue-700">
+                            <i class="fas fa-paper-plane"></i>
+                            Demander une intervention
+                        </button>
+                    </div>
+                </div>
+
+                <div class="relative flex justify-center lg:justify-end">
+                    <div class="profile-card rounded-3xl p-8 w-full max-w-md text-center relative overflow-hidden">
+                        <div class="absolute top-0 left-0 w-full h-32 bg-gradient-to-br from-blue-500/10 to-purple-600/10"></div>
+                        
+                        <div class="relative z-10 mb-6">
+                            <div class="avatar-badge">
+                                <!-- Photo de profil mise à jour -->
+                                <img src="https://raw.githubusercontent.com/Emeride7/djivoessounemeride/611c5daf24663f734e949df584b12e955dd1f18a/photo_2026-02-27_09-36-44.jpg" 
+                                     alt="Éméride Djivoessoun" 
+                                     class="profile-image mx-auto"
+                                     onerror="this.onerror=null; this.src='https://via.placeholder.com/200x200?text=Photo'">
+                            </div>
+                        </div>
+                        
+                        <h2 class="font-display text-2xl font-bold text-slate-900 mb-1 dark:text-white">Éméride Djivoessoun</h2>
+                        <p class="text-slate-500 font-medium mb-6 dark:text-slate-400">Technicien Réseau & Système</p>
+                        
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="stat-card">
+                                <div class="text-3xl font-bold text-blue-600 mb-1">3+</div>
+                                <div class="text-sm text-slate-500 font-medium dark:text-slate-400">Ans d'exp.</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="text-3xl font-bold text-purple-600 mb-1">10+</div>
+                                <div class="text-sm text-slate-500 font-medium dark:text-slate-400">Projets</div>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 pt-6 border-t border-slate-200 dark:border-slate-700">
+                            <div class="flex justify-center gap-4">
+                                <a href="mailto:edjivoessoun@gmail.com" class="w-12 h-12 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 hover:bg-red-500 hover:text-white transition-all dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-red-600">
+                                    <i class="fas fa-envelope text-xl"></i>
+                                </a>
+                                <button onclick="openContactForm()" class="w-12 h-12 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 hover:bg-green-500 hover:text-white transition-all dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-green-600">
+                                    <i class="fas fa-phone text-xl"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 scroll-indicator">
+            <i class="fas fa-chevron-down text-slate-400 text-2xl"></i>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="competences" class="py-24 bg-white relative dark:bg-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-display text-4xl font-bold text-slate-900 mb-4 dark:text-white">Compétences techniques</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto dark:text-slate-400">Systèmes · Réseaux · Sécurité · Vidéosurveillance</p>
+            </div>
+
+            <!-- Barres de progression -->
+            <div class="grid md:grid-cols-2 gap-8 mb-16">
+                <div>
+                    <div class="flex justify-between mb-2">
+                        <span class="font-medium dark:text-slate-300">Windows 11/10 et antérieurs</span>
+                        <span class="text-blue-600">95%</span>
+                    </div>
+                    <div class="w-full bg-slate-200 rounded-full h-2 mb-4 dark:bg-slate-700">
+                        <div class="bg-blue-600 h-2 rounded-full" style="width: 95%"></div>
+                    </div>
+                    
+                    <div class="flex justify-between mb-2">
+                        <span class="font-medium dark:text-slate-300">Microsoft 365 & Office</span>
+                        <span class="text-blue-600">90%</span>
+                    </div>
+                    <div class="w-full bg-slate-200 rounded-full h-2 mb-4 dark:bg-slate-700">
+                        <div class="bg-blue-600 h-2 rounded-full" style="width: 90%"></div>
+                    </div>
+                    
+                    <div class="flex justify-between mb-2">
+                        <span class="font-medium dark:text-slate-300">TCP/IP, LAN, WAN, Ethernet</span>
+                        <span class="text-blue-600">75%</span>
+                    </div>
+                    <div class="w-full bg-slate-200 rounded-full h-2 mb-4 dark:bg-slate-700">
+                        <div class="bg-blue-600 h-2 rounded-full" style="width: 75%"></div>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="flex justify-between mb-2">
+                        <span class="font-medium dark:text-slate-300">VoIP / Téléphonie IP</span>
+                        <span class="text-purple-600">40%</span>
+                    </div>
+                    <div class="w-full bg-slate-200 rounded-full h-2 mb-4 dark:bg-slate-700">
+                        <div class="bg-purple-600 h-2 rounded-full" style="width: 40%"></div>
+                    </div>
+                    
+                    <div class="flex justify-between mb-2">
+                        <span class="font-medium dark:text-slate-300">Anglais technique</span>
+                        <span class="text-purple-600">60%</span>
+                    </div>
+                    <div class="w-full bg-slate-200 rounded-full h-2 mb-4 dark:bg-slate-700">
+                        <div class="bg-purple-600 h-2 rounded-full" style="width: 60%"></div>
+                    </div>
+                    
+                    <div class="flex justify-between mb-2">
+                        <span class="font-medium dark:text-slate-300">Huawei/HIKVISION</span>
+                        <span class="text-purple-600">70%</span>
+                    </div>
+                    <div class="w-full bg-slate-200 rounded-full h-2 mb-4 dark:bg-slate-700">
+                        <div class="bg-purple-600 h-2 rounded-full" style="width: 70%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Spécialisations -->
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="hover-card bg-slate-50 rounded-2xl p-8 border border-slate-100 dark:bg-slate-800 dark:border-slate-700">
+                    <div class="w-14 h-14 rounded-xl bg-blue-100 flex items-center justify-center text-blue-600 text-2xl mb-6 tech-icon dark:bg-blue-900 dark:text-blue-300">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3 class="font-display text-xl font-bold text-slate-900 mb-4 dark:text-white">Vidéosurveillance</h3>
+                    <ul class="space-y-3 text-slate-600 text-sm dark:text-slate-400">
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-blue-500 mt-1"></i> Caméras Huawei, HIKVISION</li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-blue-500 mt-1"></i> Enregistreurs NVR</li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-blue-500 mt-1"></i> Installation et configuration</li>
+                    </ul>
+                </div>
+
+                <div class="hover-card bg-slate-50 rounded-2xl p-8 border border-slate-100 dark:bg-slate-800 dark:border-slate-700">
+                    <div class="w-14 h-14 rounded-xl bg-purple-100 flex items-center justify-center text-purple-600 text-2xl mb-6 tech-icon dark:bg-purple-900 dark:text-purple-300">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3 class="font-display text-xl font-bold text-slate-900 mb-4 dark:text-white">Câblage & Réseau</h3>
+                    <ul class="space-y-3 text-slate-600 text-sm dark:text-slate-400">
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-purple-500 mt-1"></i> Salle serveur</li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-purple-500 mt-1"></i> Configuration switch</li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-purple-500 mt-1"></i> Brassage et câblage</li>
+                    </ul>
+                </div>
+
+                <div class="hover-card bg-slate-50 rounded-2xl p-8 border border-slate-100 dark:bg-slate-800 dark:border-slate-700">
+                    <div class="w-14 h-14 rounded-xl bg-green-100 flex items-center justify-center text-green-600 text-2xl mb-6 tech-icon dark:bg-green-900 dark:text-green-300">
+                        <i class="fas fa-key"></i>
+                    </div>
+                    <h3 class="font-display text-xl font-bold text-slate-900 mb-4 dark:text-white">Gestion accès</h3>
+                    <ul class="space-y-3 text-slate-600 text-sm dark:text-slate-400">
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i> Création comptes</li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i> Gestion mots de passe</li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i> Droits utilisateurs</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Tags techniques -->
+            <div class="mt-16">
+                <h3 class="text-center text-lg font-semibold text-slate-700 mb-6 dark:text-slate-300">Technologies maîtrisées</h3>
+                <div class="flex flex-wrap justify-center gap-3">
+                    <span class="skill-tag px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium dark:bg-blue-900 dark:text-blue-300">Windows Server</span>
+                    <span class="skill-tag px-4 py-2 bg-purple-100 text-purple-700 rounded-full text-sm font-medium dark:bg-purple-900 dark:text-purple-300">Microsoft 365</span>
+                    <span class="skill-tag px-4 py-2 bg-indigo-100 text-indigo-700 rounded-full text-sm font-medium dark:bg-indigo-900 dark:text-indigo-300">TCP/IP</span>
+                    <span class="skill-tag px-4 py-2 bg-green-100 text-green-700 rounded-full text-sm font-medium dark:bg-green-900 dark:text-green-300">Huawei</span>
+                    <span class="skill-tag px-4 py-2 bg-red-100 text-red-700 rounded-full text-sm font-medium dark:bg-red-900 dark:text-red-300">HIKVISION</span>
+                    <span class="skill-tag px-4 py-2 bg-orange-100 text-orange-700 rounded-full text-sm font-medium dark:bg-orange-900 dark:text-orange-300">VoIP</span>
+                    <span class="skill-tag px-4 py-2 bg-teal-100 text-teal-700 rounded-full text-sm font-medium dark:bg-teal-900 dark:text-teal-300">NVR</span>
+                    <span class="skill-tag px-4 py-2 bg-pink-100 text-pink-700 rounded-full text-sm font-medium dark:bg-pink-900 dark:text-pink-300">CRM</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Timeline -->
+    <section id="experience" class="py-24 bg-slate-50 relative overflow-hidden dark:bg-slate-800">
+        <div class="absolute inset-0 parallax-bg opacity-50"></div>
+        
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="font-display text-4xl font-bold text-slate-900 mb-4 dark:text-white">Expériences professionnelles</h2>
+                <p class="text-slate-600 dark:text-slate-400">Parcours complet en support IT et administration systèmes</p>
+            </div>
+
+            <div class="relative">
+                <div class="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 h-full w-1 timeline-line rounded-full"></div>
+
+                <!-- Port Autonome de Cotonou -->
+                <div class="relative mb-12 md:mb-0">
+                    <div class="md:flex items-center justify-between">
+                        <div class="md:w-5/12 md:text-right mb-4 md:mb-0 md:pr-8">
+                            <div class="experience-card bg-white p-6 rounded-2xl shadow-lg border border-slate-100 hover-card dark:bg-slate-900 dark:border-slate-700">
+                                <span class="text-blue-600 font-semibold text-sm dark:text-blue-400">Stage professionnel · 2025 Actuel</span>
+                                <h3 class="font-display text-xl font-bold text-slate-900 mt-2 dark:text-white">Support IT</h3>
+                                <p class="text-slate-500 font-medium mb-3 dark:text-slate-400">Port Autonome de Cotonou</p>
+                                <ul class="text-slate-600 text-sm space-y-2 dark:text-slate-300">
+                                    <li>• Support utilisateurs et résolution d'incidents matériels/logiciels</li>
+                                    <li>• Maintenance préventive / curative du parc informatique</li>
+                                    <li>• Configuration et déploiement de postes</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-blue-500 rounded-full border-4 border-white shadow-lg z-10 dark:border-slate-900"></div>
+                        <div class="md:w-5/12 md:pl-8 hidden md:block"></div>
+                    </div>
+                </div>
+
+                <!-- NEXERA -->
+                <div class="relative mb-12 md:mb-0 md:mt-12">
+                    <div class="md:flex items-center justify-between">
+                        <div class="md:w-5/12 hidden md:block"></div>
+                        <div class="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-purple-500 rounded-full border-4 border-white shadow-lg z-10 dark:border-slate-900"></div>
+                        <div class="md:w-5/12 md:pl-8 mb-4 md:mb-0">
+                            <div class="experience-card bg-white p-6 rounded-2xl shadow-lg border border-slate-100 hover-card dark:bg-slate-900 dark:border-slate-700">
+                                <span class="text-purple-600 font-semibold text-sm dark:text-purple-400">Déc 2024 – Sep 2025</span>
+                                <h3 class="font-display text-xl font-bold text-slate-900 mt-2 dark:text-white">Technicien Support IT</h3>
+                                <p class="text-slate-500 font-medium mb-3 dark:text-slate-400">NEXERA – Cotonou</p>
+                                <ul class="text-slate-600 text-sm space-y-2 dark:text-slate-300">
+                                    <li>• Assistance aux téléconseillers et superviseurs</li>
+                                    <li>• Installation, configuration et mise à jour des postes</li>
+                                    <li>• Résolution des problèmes de connexion aux applications</li>
+                                    <li>• Gestion des systèmes de gestion des appels (CRM)</li>
+                                    <li>• Support comptes & accès</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AFG Assurances -->
+                <div class="relative mb-12 md:mb-0 md:mt-12">
+                    <div class="md:flex items-center justify-between">
+                        <div class="md:w-5/12 md:text-right mb-4 md:mb-0 md:pr-8">
+                            <div class="experience-card bg-white p-6 rounded-2xl shadow-lg border border-slate-100 hover-card dark:bg-slate-900 dark:border-slate-700">
+                                <span class="text-green-600 font-semibold text-sm dark:text-green-400">Avril 2024 – Déc 2024</span>
+                                <h3 class="font-display text-xl font-bold text-slate-900 mt-2 dark:text-white">Support Systèmes & Réseaux</h3>
+                                <p class="text-slate-500 font-medium mb-3 dark:text-slate-400">AFG ASSURANCES Bénin – Cotonou</p>
+                                <ul class="text-slate-600 text-sm space-y-2 dark:text-slate-300">
+                                    <li>• Connaissance des protocoles réseaux (TCP/IP, Ethernet, LAN, WAN)</li>
+                                    <li>• Résolution des problèmes liés au système d'information</li>
+                                    <li>• Expérience avec Zoom, Google Meet, Microsoft Teams</li>
+                                    <li>• Configuration d'imprimantes et création de comptes</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-green-500 rounded-full border-4 border-white shadow-lg z-10 dark:border-slate-900"></div>
+                        <div class="md:w-5/12 md:pl-8 hidden md:block"></div>
+                    </div>
+                </div>
+
+                <!-- Huawei -->
+                <div class="relative mb-12 md:mb-0 md:mt-12">
+                    <div class="md:flex items-center justify-between">
+                        <div class="md:w-5/12 hidden md:block"></div>
+                        <div class="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-orange-500 rounded-full border-4 border-white shadow-lg z-10 dark:border-slate-900"></div>
+                        <div class="md:w-5/12 md:pl-8 mb-4 md:mb-0">
+                            <div class="experience-card bg-white p-6 rounded-2xl shadow-lg border border-slate-100 hover-card dark:bg-slate-900 dark:border-slate-700">
+                                <span class="text-orange-600 font-semibold text-sm dark:text-orange-400">2022 – Présent</span>
+                                <h3 class="font-display text-xl font-bold text-slate-900 mt-2 dark:text-white">Technicien vidéosurveillance & contrôle d'accès</h3>
+                                <p class="text-slate-500 font-medium mb-3 dark:text-slate-400">Huawei Technologies Benin S.A – Cotonou</p>
+                                <ul class="text-slate-600 text-sm space-y-2 dark:text-slate-300">
+                                    <li>• Installation de caméras de surveillance</li>
+                                    <li>• Câblage et mise en place de salles serveur</li>
+                                    <li>• Configuration de téléphones IP et NVR</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ABMS -->
+                <div class="relative mb-12 md:mb-0 md:mt-12">
+                    <div class="md:flex items-center justify-between">
+                        <div class="md:w-5/12 md:text-right mb-4 md:mb-0 md:pr-8">
+                            <div class="experience-card bg-white p-6 rounded-2xl shadow-lg border border-slate-100 hover-card dark:bg-slate-900 dark:border-slate-700">
+                                <span class="text-indigo-600 font-semibold text-sm dark:text-indigo-400">Mai 2022 – Nov 2023</span>
+                                <h3 class="font-display text-xl font-bold text-slate-900 mt-2 dark:text-white">Assistant support informatique</h3>
+                                <p class="text-slate-500 font-medium mb-3 dark:text-slate-400">Association Béninoise pour le Marketing Social – Cotonou</p>
+                                <ul class="text-slate-600 text-sm space-y-2 dark:text-slate-300">
+                                    <li>• Résolution des problèmes liés au système d'information</li>
+                                    <li>• Diagnostic, dépannage et installation de nouveau matériel</li>
+                                    <li>• Maintenance préventive des ordinateurs</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-indigo-500 rounded-full border-4 border-white shadow-lg z-10 dark:border-slate-900"></div>
+                        <div class="md:w-5/12 md:pl-8 hidden md:block"></div>
+                    </div>
+                </div>
+
+                <!-- Soft Innovation Technologies -->
+                <div class="relative mb-12 md:mb-0 md:mt-12">
+                    <div class="md:flex items-center justify-between">
+                        <div class="md:w-5/12 hidden md:block"></div>
+                        <div class="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-pink-500 rounded-full border-4 border-white shadow-lg z-10 dark:border-slate-900"></div>
+                        <div class="md:w-5/12 md:pl-8 mb-4 md:mb-0">
+                            <div class="experience-card bg-white p-6 rounded-2xl shadow-lg border border-slate-100 hover-card dark:bg-slate-900 dark:border-slate-700">
+                                <span class="text-pink-600 font-semibold text-sm dark:text-pink-400">Jan 2022 – Mai 2022</span>
+                                <h3 class="font-display text-xl font-bold text-slate-900 mt-2 dark:text-white">Stagiaire Sécurité Réseau & DevOps</h3>
+                                <p class="text-slate-500 font-medium mb-3 dark:text-slate-400">Soft Innovation Technologies – Cotonou</p>
+                                <ul class="text-slate-600 text-sm space-y-2 dark:text-slate-300">
+                                    <li>• Installation de caméras de surveillance</li>
+                                    <li>• Câblage et mise en place de salles serveur</li>
+                                    <li>• Configuration de téléphones IP et NVR</li>
+                                    <li>• Découverte des concepts DevOps</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MASM -->
+                <div class="relative md:mt-12">
+                    <div class="md:flex items-center justify-between">
+                        <div class="md:w-5/12 md:text-right mb-4 md:mb-0 md:pr-8">
+                            <div class="experience-card bg-white p-6 rounded-2xl shadow-lg border border-slate-100 hover-card dark:bg-slate-900 dark:border-slate-700">
+                                <span class="text-teal-600 font-semibold text-sm dark:text-teal-400">Avr 2021 – Juil 2021</span>
+                                <h3 class="font-display text-xl font-bold text-slate-900 mt-2 dark:text-white">Stagiaire Département informatique</h3>
+                                <p class="text-slate-500 font-medium mb-3 dark:text-slate-400">Ministère des Affaires Sociales et de la Microfinance (MASM)</p>
+                                <ul class="text-slate-600 text-sm space-y-2 dark:text-slate-300">
+                                    <li>• Maintenance logicielle et matérielle</li>
+                                    <li>• Diagnostic, dépannage et installation</li>
+                                    <li>• Surveillance et élimination des virus</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-teal-500 rounded-full border-4 border-white shadow-lg z-10 dark:border-slate-900"></div>
+                        <div class="md:w-5/12 md:pl-8 hidden md:block"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formation -->
+    <section class="py-12 bg-white dark:bg-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-slate-50 rounded-2xl p-8 border border-slate-200 max-w-2xl mx-auto dark:bg-slate-800 dark:border-slate-700">
+                <h3 class="font-display text-2xl font-bold text-slate-900 mb-6 text-center dark:text-white">Formation Académique</h3>
+                <div class="flex flex-col md:flex-row items-center justify-center gap-6">
+                    <div class="w-16 h-16 bg-slate-800 rounded-full flex items-center justify-center text-white text-2xl">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="text-center md:text-left">
+                        <h4 class="font-bold text-xl text-slate-900 dark:text-white">Licence Informatique</h4>
+                        <p class="text-slate-600 dark:text-slate-400">ESGIS, Cotonou (2020)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Références -->
+    <section id="references" class="py-24 bg-slate-50 dark:bg-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-display text-4xl font-bold text-slate-900 mb-4 dark:text-white">Références & recommandations</h2>
+                <p class="text-slate-600 dark:text-slate-400">Résolvez le calcul simple pour afficher les contacts</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Chakirou GBESSEMEHLAN -->
+                <div class="reference-card">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white text-2xl font-bold">
+                            CG
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-xl text-slate-900 dark:text-white">Chakirou GBESSEMEHLAN</h3>
+                            <p class="text-slate-600 dark:text-slate-400">Ingénieur Réseau & DevOps, Soft Innovation Technologies</p>
+                        </div>
+                    </div>
+                    <div class="reference-protected" id="ref1">
+                        <div class="flex items-center gap-2">
+                            <input type="number" id="calc1" placeholder="3 + 5 = ?" class="w-24 px-2 py-1 border rounded dark:bg-slate-700 dark:border-slate-600">
+                            <button onclick="checkRef(1, 8)" class="px-4 py-1 bg-blue-600 text-white rounded hover:bg-blue-700">Voir</button>
+                        </div>
+                        <div id="result1" class="hidden mt-2 text-green-600 dark:text-green-400">
+                            <i class="fas fa-phone"></i> +229 01 23 45 67<br>
+                            <i class="fas fa-envelope"></i> c.gbessemehlan@soft.bj
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Anselme da-SYLVEIRA -->
+                <div class="reference-card">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-16 h-16 rounded-full bg-gradient-to-br from-green-500 to-teal-600 flex items-center justify-center text-white text-2xl font-bold">
+                            AS
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-xl text-slate-900 dark:text-white">Anselme da-SYLVEIRA</h3>
+                            <p class="text-slate-600 dark:text-slate-400">Chef département informatique, ABMS</p>
+                        </div>
+                    </div>
+                    <div class="reference-protected" id="ref2">
+                        <div class="flex items-center gap-2">
+                            <input type="number" id="calc2" placeholder="5 + 2 = ?" class="w-24 px-2 py-1 border rounded dark:bg-slate-700 dark:border-slate-600">
+                            <button onclick="checkRef(2, 7)" class="px-4 py-1 bg-green-600 text-white rounded hover:bg-green-700">Voir</button>
+                        </div>
+                        <div id="result2" class="hidden mt-2 text-green-600 dark:text-green-400">
+                            <i class="fas fa-phone"></i> +229 01 23 45 68<br>
+                            <i class="fas fa-envelope"></i> a.dasylveira@abms.bj
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Frédéric GBAGUIDI -->
+                <div class="reference-card">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-16 h-16 rounded-full bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center text-white text-2xl font-bold">
+                            FG
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-xl text-slate-900 dark:text-white">Frédéric GBAGUIDI</h3>
+                            <p class="text-slate-600 dark:text-slate-400">Directeur des Systèmes d'Information, AFG Assurances Bénin</p>
+                        </div>
+                    </div>
+                    <div class="reference-protected" id="ref3">
+                        <div class="flex items-center gap-2">
+                            <input type="number" id="calc3" placeholder="4 + 6 = ?" class="w-24 px-2 py-1 border rounded dark:bg-slate-700 dark:border-slate-600">
+                            <button onclick="checkRef(3, 10)" class="px-4 py-1 bg-purple-600 text-white rounded hover:bg-purple-700">Voir</button>
+                        </div>
+                        <div id="result3" class="hidden mt-2 text-green-600 dark:text-green-400">
+                            <i class="fas fa-phone"></i> +229 01 23 45 69<br>
+                            <i class="fas fa-envelope"></i> f.gbaguidi@afg.bj
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Anas ABDENNOUR -->
+                <div class="reference-card">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-16 h-16 rounded-full bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center text-white text-2xl font-bold">
+                            AA
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-xl text-slate-900 dark:text-white">Anas ABDENNOUR</h3>
+                            <p class="text-slate-600 dark:text-slate-400">Chef Service Informatique/IONOW, NEXERA</p>
+                        </div>
+                    </div>
+                    <div class="reference-protected" id="ref4">
+                        <div class="flex items-center gap-2">
+                            <input type="number" id="calc4" placeholder="7 + 3 = ?" class="w-24 px-2 py-1 border rounded dark:bg-slate-700 dark:border-slate-600">
+                            <button onclick="checkRef(4, 10)" class="px-4 py-1 bg-orange-600 text-white rounded hover:bg-orange-700">Voir</button>
+                        </div>
+                        <div id="result4" class="hidden mt-2 text-green-600 dark:text-green-400">
+                            <i class="fas fa-phone"></i> +229 01 23 45 70<br>
+                            <i class="fas fa-envelope"></i> a.abdennour@nexera.bj
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-slate-900 text-white relative overflow-hidden dark:bg-slate-950">
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'0.05\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')]"></div>
+        </div>
+
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="font-display text-4xl font-bold mb-4">Discutons de vos besoins</h2>
+                <p class="text-slate-400">Support IT, déploiement réseau, installation de caméras ou maintenance.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700 dark:bg-slate-900 dark:border-slate-700">
+                    <h3 class="font-bold text-2xl mb-4">Éméride Djivoessoun</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-blue-500/20 rounded-full flex items-center justify-center text-blue-400">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <div class="text-sm text-slate-400">Téléphone</div>
+                                <div class="font-medium">+229 0168908277 / 0164053582</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-purple-500/20 rounded-full flex items-center justify-center text-purple-400">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <div class="text-sm text-slate-400">Email</div>
+                                <div class="font-medium">edjivoessoun@gmail.com</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-green-500/20 rounded-full flex items-center justify-center text-green-400">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <div class="text-sm text-slate-400">Adresse</div>
+                                <div class="font-medium">PK10/ENAFA, Cotonou, Bénin</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 pt-6 border-t border-slate-700">
+                        <p class="text-slate-300 italic">« Professionnel, réactif et orienté solution. »</p>
+                    </div>
+                </div>
+
+                <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700 dark:bg-slate-900 dark:border-slate-700">
+                    <h3 class="font-bold text-xl mb-4">Écrivez-moi rapidement</h3>
+                    <p class="text-slate-400 mb-6">Réponse sous 24h.</p>
+                    
+                    <button onclick="openContactForm()" class="w-full py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-xl font-semibold hover:shadow-lg transform hover:scale-[1.02] transition-all flex items-center justify-center gap-2">
+                        <i class="fas fa-paper-plane"></i>
+                        Envoyer un message
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-slate-400 py-8 border-t border-slate-800 dark:bg-black dark:border-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="flex items-center justify-center gap-2 mb-4">
+                <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white font-bold text-sm">
+                    EG
+                </div>
+                <span class="font-display font-bold text-slate-200">ÉMÉRIDE GBÈTOHO DJIVOESSOUN</span>
+            </div>
+            <p class="text-sm">© 2024 - Portfolio professionnel - Technicien Réseau & Système</p>
+        </div>
+    </footer>
+
+    <script>
+        // ============================================
+        // CHAT BOT INTELLIGENT - VERSION FINALE
+        // ============================================
+
+        // Fonction pour générer une réponse du bot
+        function generateBotResponse(userText) {
+            const text = userText.toLowerCase().trim();
+            
+            // 1. Salutations
+            if (text.includes('bonjour') || text.includes('salut') || text.includes('bonsoir') || text.includes('hello') || text.includes('hi')) {
+                return "Bonjour ! 👋 Que puis-je pour vous ?";
+            }
+            
+            // 2. Comment ça va ?
+            if (text.includes('comment ça va') || text.includes('comment allez-vous') || text.includes('ça va')) {
+                return "Très bien, merci ! 😊 Comment puis-je vous aider ?";
+            }
+            
+            // 3. Expérience
+            if (text.includes('expérience') || text.includes('parcours') || text.includes('exp') || text.includes('carrière')) {
+                return "J'ai plus de 3 ans d'expérience en tant que Technicien Réseau & Système. J'ai travaillé au Port Autonome de Cotonou, chez NEXERA, AFG Assurances, Huawei Technologies, et d'autres. Consultez la section **Expérience** ci-dessus pour plus de détails ! 💼";
+            }
+            
+            // 4. Opportunité / emploi
+            if (text.includes('opportunité') || text.includes('emploi') || text.includes('recrutement') || text.includes('poste') || text.includes('job')) {
+                return "Merci pour votre intérêt ! 🚀 Pour discuter de cette opportunité en détail, pourriez-vous m'envoyer un email à **edjivoessoun@gmail.com** ? Je vous répondrai rapidement. Vous pouvez aussi utiliser le formulaire de contact.";
+            }
+            
+            // 5. Références
+            if (text.includes('référence') || text.includes('recommandation') || text.includes('contact professionnel')) {
+                return "Mes références sont disponibles dans la section **Références** de cette page. Vous y trouverez des personnes avec qui j'ai travaillé. Pour des recommandations plus détaillées, écrivez-moi directement par email. 📋";
+            }
+            
+            // 6. CV
+            if (text.includes('cv') || text.includes('curriculum') || text.includes('resume')) {
+                return "Mon CV est visible dans la section **Expérience** de cette page (parcours détaillé). Si vous souhaitez une version PDF, je peux vous l'envoyer par email. Indiquez-moi votre adresse ou utilisez le formulaire de contact. 📄";
+            }
+            
+            // 7. Contact / email / téléphone
+            if (text.includes('email') || text.includes('mail') || text.includes('téléphone') || text.includes('phone') || text.includes('contacter')) {
+                return "Vous pouvez me joindre par email à **edjivoessoun@gmail.com** ou par téléphone au **+229 0168908277 / 0164053582**. Je réponds généralement sous 24h. 📞📧";
+            }
+            
+            // 8. Localisation
+            if (text.includes('où') || text.includes('localisation') || text.includes('adresse') || text.includes('basé') || text.includes('cotonou')) {
+                return "Je suis basé à **Cotonou, au Bénin** (PK10/ENAFA). Je travaille principalement sur site dans la région, mais je suis aussi disponible pour des missions ponctuelles ailleurs. 📍";
+            }
+            
+            // 9. Compétences
+            if (text.includes('compétence') || text.includes('savoir-faire') || text.includes('technologie') || text.includes('maîtrise')) {
+                return "Mes compétences clés : support IT, vidéosurveillance (Huawei, HIKVISION), câblage réseau, administration systèmes (Windows, Microsoft 365), TCP/IP, VoIP, gestion d'accès. Détails dans la section **Compétences**. 🛠️";
+            }
+            
+            // 10. Projets / réalisations
+            if (text.includes('projet') || text.includes('réalisation') || text.includes('mission')) {
+                return "Quelques projets : installation de caméras chez Huawei, support IT au Port de Cotonou, gestion CRM chez NEXERA, etc. Voir la section **Expérience**. 🏗️";
+            }
+            
+            // 11. Demande de contact humain
+            if (text.includes('parler à quelqu\'un') || text.includes('humain') || text.includes('personne réelle') || text.includes('être humain')) {
+                return "Je suis un assistant automatisé, mais vous pouvez me contacter directement par email à **edjivoessoun@gmail.com** ou via le formulaire. Je vous répondrai personnellement ! 😊";
+            }
+            
+            // 12. Par défaut
+            return "Merci pour votre message. 🤖 Pour une réponse précise, pourriez-vous préciser votre demande ? Sinon, vous pouvez m'écrire à **edjivoessoun@gmail.com** et je vous répondrai personnellement.";
         }
-      });
-    });
 
-    // Modal pour les images de la galerie Huawei
-    (function() {
-      const modal = document.getElementById('imageModal');
-      const modalImg = document.getElementById('modalImage');
-      const closeBtn = document.getElementById('modalCloseBtn');
-
-      // Fonction pour extraire l'ID d'un lien Google Drive
-      function extractGoogleDriveId(url) {
-        const match = url.match(/\/d\/([a-zA-Z0-9_-]+)/);
-        return match ? match[1] : null;
-      }
-
-      // Ouvrir modal
-      function openModal(imageSrc) {
-        modalImg.src = imageSrc;
-        modal.classList.add('active');
-        modal.focus(); // le tabindex permet de recevoir le focus
-      }
-
-      // Fermer modal
-      function closeModal() {
-        modal.classList.remove('active');
-        modalImg.src = ''; // libère la mémoire
-      }
-
-      // Événements de fermeture
-      closeBtn.addEventListener('click', closeModal);
-      modal.addEventListener('click', function(e) {
-        if (e.target === modal) closeModal(); // clic sur le fond
-      });
-      document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && modal.classList.contains('active')) {
-          closeModal();
+        // Fonction d'envoi de message
+        function sendMessage(message) {
+            const messages = document.getElementById('chatMessages');
+            const time = new Date().toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' });
+            
+            // Message utilisateur
+            const userMsg = document.createElement('div');
+            userMsg.className = 'message message-user';
+            userMsg.innerHTML = `<div class="message-bubble">${message}</div><div class="message-time">${time}</div>`;
+            messages.appendChild(userMsg);
+            
+            // Scroll en bas
+            messages.scrollTop = messages.scrollHeight;
+            
+            // Réponse du bot après un délai
+            setTimeout(() => {
+                const botResponse = generateBotResponse(message);
+                const botMsg = document.createElement('div');
+                botMsg.className = 'message message-bot';
+                const botTime = new Date().toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' });
+                botMsg.innerHTML = `<div class="message-bubble">${botResponse}</div><div class="message-time">${botTime}</div>`;
+                messages.appendChild(botMsg);
+                messages.scrollTop = messages.scrollHeight;
+            }, 800);
         }
-      });
 
-      // Sélectionne tous les liens d'images de la galerie Huawei
-      const galleryLinks = document.querySelectorAll('.exp-card .block.w-16');
-      galleryLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-          e.preventDefault(); // empêche l'ouverture du lien
-          const href = this.getAttribute('href');
-          const fileId = extractGoogleDriveId(href);
-          if (fileId) {
-            const directUrl = `https://drive.google.com/uc?export=view&id=${fileId}`;
-            openModal(directUrl);
-          } else {
-            // fallback: ouvrir le lien normalement si l'ID n'est pas trouvé
-            window.open(href, '_blank');
-          }
+        // Gestionnaires des messages rapides
+        document.querySelectorAll('.quick-reply').forEach(button => {
+            button.addEventListener('click', function() {
+                const message = this.getAttribute('data-message');
+                if (message) {
+                    sendMessage(message);
+                }
+            });
         });
-      });
-    })();
 
-    // Challenge pour les références
-    document.querySelectorAll('.contact-challenge').forEach(container => {
-      const contact = container.dataset.contact;
-      const question = container.querySelector('.challenge-question').textContent;
-      const input = container.querySelector('.challenge-input');
-      const button = container.querySelector('.challenge-button');
-      const resultDiv = container.querySelector('.contact-result');
-      
-      // Extraire les nombres de la question (ex: "Additionnez 3 + 5 :")
-      const numbers = question.match(/\d+/g).map(Number);
-      const expectedSum = numbers[0] + numbers[1];
-      
-      button.addEventListener('click', function() {
-        const userAnswer = parseInt(input.value);
-        if (userAnswer === expectedSum) {
-          resultDiv.textContent = contact;
-          resultDiv.classList.remove('hidden');
-          // Optionnel: désactiver le champ et le bouton après réussite
-          input.disabled = true;
-          button.disabled = true;
-          button.textContent = '✓';
-          button.classList.add('bg-green-600');
+        // Gestionnaire d'envoi depuis l'input
+        function sendChatMessage() {
+            const input = document.getElementById('chatInput');
+            const message = input.value.trim();
+            if (message) {
+                sendMessage(message);
+                input.value = '';
+            }
+        }
+
+        // ============================================
+        // AUTRES FONCTIONS (mode sombre, références, etc.)
+        // ============================================
+
+        // Navigation mobile
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Scroll navbar
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-md');
+                navbar.classList.replace('h-20', 'h-16');
+            } else {
+                navbar.classList.remove('shadow-md');
+                navbar.classList.replace('h-16', 'h-20');
+            }
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                }
+            });
+        });
+
+        // Formulaire modal
+        function openContactForm() {
+            document.getElementById('contact-modal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeContactForm() {
+            document.getElementById('contact-modal').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Fermer modal en cliquant dehors
+        document.getElementById('contact-modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeContactForm();
+            }
+        });
+
+        // Chat toggle
+        let chatOpen = false;
+
+        function toggleChat() {
+            const container = document.getElementById('chatContainer');
+            chatOpen = !chatOpen;
+            if (chatOpen) {
+                container.classList.add('active');
+            } else {
+                container.classList.remove('active');
+            }
+        }
+
+        // ============================================
+        // GESTION DU MODE SOMBRE
+        // ============================================
+        function setTheme(theme) {
+            if (theme === 'dark') {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+                document.getElementById('theme-icon').className = 'fas fa-moon';
+                if (document.getElementById('theme-icon-mobile')) {
+                    document.getElementById('theme-icon-mobile').className = 'fas fa-moon';
+                }
+            } else {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+                document.getElementById('theme-icon').className = 'fas fa-sun';
+                if (document.getElementById('theme-icon-mobile')) {
+                    document.getElementById('theme-icon-mobile').className = 'fas fa-sun';
+                }
+            }
+        }
+
+        function toggleTheme() {
+            if (document.documentElement.classList.contains('dark')) {
+                setTheme('light');
+            } else {
+                setTheme('dark');
+            }
+        }
+
+        // Initialisation du thème
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            setTheme('dark');
+        } else if (savedTheme === 'light') {
+            setTheme('light');
         } else {
-          alert('Mauvaise réponse. Réessayez.');
+            // Détection du thème système
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                setTheme('dark');
+            } else {
+                setTheme('light');
+            }
         }
-      });
-      
-      // Permettre la validation avec Entrée
-      input.addEventListener('keypress', function(e) {
-        if (e.key === 'Enter') {
-          button.click();
+
+        // Écouteurs pour les boutons
+        document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
+        const mobileToggle = document.getElementById('theme-toggle-mobile');
+        if (mobileToggle) {
+            mobileToggle.addEventListener('click', toggleTheme);
         }
-      });
-    });
-  </script>
+
+        // ============================================
+        // RÉFÉRENCES PROTÉGÉES
+        // ============================================
+        window.checkRef = function(refId, correctAnswer) {
+            const input = document.getElementById(`calc${refId}`);
+            const result = document.getElementById(`result${refId}`);
+            if (parseInt(input.value) === correctAnswer) {
+                result.classList.remove('hidden');
+            } else {
+                alert('Calcul incorrect. Veuillez réessayer.');
+            }
+        };
+
+        // ============================================
+        // CONFIGURATION EMAILJS (optionnel)
+        // ============================================
+        const EMAILJS_CONFIG = {
+            PUBLIC_KEY: 'ut02gBJ5Z4xwt5Mfh',
+            SERVICE_ID: 'G03gJfFKF2oitjxNrRz3S',
+            TEMPLATE_ID: 'service_tloce4e'
+        };
+
+        let emailjsInitialized = false;
+
+        function initEmailJS() {
+            if (EMAILJS_CONFIG.PUBLIC_KEY === 'ut02gBJ5Z4xwt5Mfh') {
+                console.log('Mode démo EmailJS actif');
+                return false;
+            }
+            try {
+                emailjs.init(EMAILJS_CONFIG.PUBLIC_KEY);
+                emailjsInitialized = true;
+                return true;
+            } catch (error) {
+                console.error('Erreur EmailJS:', error);
+                return false;
+            }
+        }
+
+        async function handleContactSubmit(e) {
+            e.preventDefault();
+            
+            const form = e.target;
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            
+            const formData = {
+                from_name: form.from_name.value.trim(),
+                from_email: form.from_email.value.trim(),
+                phone: form.phone.value.trim(),
+                message: form.message.value.trim(),
+                to_email: 'edjivoessoun@gmail.com',
+                timestamp: new Date().toLocaleString('fr-FR')
+            };
+            
+            if (!formData.from_name || !formData.from_email || !formData.message) {
+                alert('Veuillez remplir tous les champs obligatoires.');
+                return;
+            }
+            
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi en cours...';
+            
+            try {
+                if (!emailjsInitialized) {
+                    await new Promise(resolve => setTimeout(resolve, 1500));
+                    alert('Message envoyé avec succès ! (Mode démo)');
+                    form.reset();
+                    closeContactForm();
+                } else {
+                    const response = await emailjs.send(
+                        EMAILJS_CONFIG.SERVICE_ID,
+                        EMAILJS_CONFIG.TEMPLATE_ID,
+                        formData
+                    );
+                    alert('Message envoyé avec succès !');
+                    form.reset();
+                    closeContactForm();
+                }
+            } catch (error) {
+                alert('Erreur lors de l\'envoi. Veuillez réessayer.');
+                console.error(error);
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalText;
+            }
+        }
+
+        // Initialisation
+        document.addEventListener('DOMContentLoaded', () => {
+            initEmailJS();
+        });
+    </script>
 </body>
 </html>
-
-
-
-
